@@ -1,0 +1,302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeds | Agripulse</title>
+    <link rel="stylesheet" href="{% static 'css/fertilizers.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="fertilizers-header">
+        <h1>Seed Categories</h1>
+        <p>Explore a wide range of seeds for your crops</p>
+    </header>
+    <main>
+        <section class="fertilizer-category-grid">
+            <div class="fertilizer-card" data-group="Cereal">
+                <img src="{% static 'images/11.webp' %}" alt="Cereal Seeds">
+                <h3>Cereal Seeds</h3>
+                <div class="desc">Wheat, rice, maize, and more.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Oilseed">
+                <img src="{% static 'images/12.jpg' %}" alt="Oilseed Seeds">
+                <h3>Oilseed Seeds</h3>
+                <div class="desc">Mustard, sunflower, soybean, etc.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Vegetable">
+                <img src="{% static 'images/13t2.webp' %}" alt="Vegetable Seeds">
+                <h3>Vegetable Seeds</h3>
+                <div class="desc">Tomato, brinjal, okra, and more.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Fruit">
+                <img src="{% static 'images/14.jpeg' %}" alt="Fruit Seeds">
+                <h3>Fruit Seeds</h3>
+                <div class="desc">Watermelon, muskmelon, papaya, etc.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Fodder">
+                <img src="{% static 'images/15.jpeg' %}" alt="Fodder Seeds">
+                <h3>Fodder Seeds</h3>
+                <div class="desc">Berseem, lucerne, maize, etc.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Commercial">
+                <img src="{% static 'images/16t.jpg' %}" alt="Commercial Crops Seeds">
+                <h3>Commercial Crops Seeds</h3>
+                <div class="desc">Cotton, sugarcane, jute, and more.</div>
+                <button class="view-btn">View All</button>
+            </div>
+        </section>
+    </main>
+    <div class="fertilizer-modal-overlay" id="fertilizer-modal-overlay">
+        <div class="fertilizer-modal" id="fertilizer-modal">
+            <button class="close-modal" id="close-fertilizer-modal">&times;</button>
+            <img id="modal-seed-img" src="" alt="Seed Image" style="display:none;">
+            <h2 id="modal-seed-title"></h2>
+            <div class="modal-desc" id="modal-seed-desc" style="display:none;"></div>
+            <div id="modal-seed-company" style="display:none;margin:0.5rem 0 0.5rem 0;"></div>
+            <div id="modal-seed-reqs" style="display:none;margin-top:1rem;"></div>
+            <!-- Group Types List (hidden by default) -->
+            <div id="group-types-list" style="display:none; margin-top:1.5rem;">
+                <h3 style="margin-bottom:0.5rem;">Types</h3>
+                <input id="group-search-input" type="text" placeholder="Search types..." style="width:100%;padding:0.5rem 0.7rem;margin-bottom:1rem;border-radius:0.5rem;border:1px solid #bdbdbd;font-size:1rem;">
+                <div id="group-types-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;"></div>
+            </div>
+            <button id="back-to-list-btn" style="display:none;margin-top:1rem;">&larr; Back to List</button>
+      </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Agripulse</h3>
+                <p>Your trusted companion for plant care and farming</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@agripulse.com</p>
+                <p>Phone: +1 9999999999</p>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; agripulse. All rights reserved.</p>
+        </div>
+    </footer>
+    <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","fr","it","es","te","hi","ta","kn","ml","mr","pa","gu"],"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script>
+    // Seed group/type data (with company, requirements, and conditions)
+    const seedGroups = {
+        Cereal: [
+            { name: 'Wheat (HD-2967)', img: '{% static "images/111.jpeg" %}', company: 'IFFCO', companies: ['IFFCO', 'NSC', 'KRIBHCO'], desc: 'High-yielding wheat variety.', requirements: { soil: 'Loamy, well-drained', climate: 'Cool, dry', sowing: 'Nov-Dec', spacing: '20-22 cm', water: 'Medium (4-6 irrigations)' }, conditions: 'Requires irrigation at critical stages. Avoid waterlogging.' },
+            { name: 'Rice (IR-64)', img: '{% static "images/112.jpeg" %}', company: 'KRIBHCO', companies: ['KRIBHCO', 'NSC', 'Mahyco'], desc: 'Popular rice hybrid.', requirements: { soil: 'Clayey, fertile', climate: 'Warm, humid', sowing: 'June-July', spacing: '15-20 cm', water: 'High (standing water)' }, conditions: 'Needs standing water during early growth.' },
+            { name: 'Maize (HQPM-1)', img: '{% static "images/113.jpeg" %}', company: 'Mahyco', companies: ['Mahyco', 'IFFCO'], desc: 'Quality protein maize.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '60x20 cm', water: 'Medium (3-4 irrigations)' }, conditions: 'Sensitive to water stress at flowering.' },
+            { name: 'Barley (RD-2552)', img: '{% static "images/114.jpeg" %}', company: 'NSC', desc: 'High-yielding barley.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '22 cm' }, conditions: 'Prefers cool, dry weather.' },
+            { name: 'Sorghum (CSV-15)', img: '{% static "images/115.jpg" %}', company: 'Advanta', desc: 'Dual-purpose sorghum.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '45x15 cm' }, conditions: 'Tolerant to drought.' },
+            { name: 'Millet (HHB-67)', img: '{% static "images/116.jpeg" %}', company: 'Mahyco', desc: 'Hybrid pearl millet.', requirements: { soil: 'Light, sandy', climate: 'Hot, dry', sowing: 'June-July', spacing: '45x10 cm' }, conditions: 'Grows well in arid regions.' },
+            { name: 'Oat (Kent)', img: '{% static "images/117.jpeg" %}', company: 'NSC', desc: 'Forage oat variety.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '25 cm' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Rye (Dankowskie)', img: '{% static "images/118.jpeg" %}', company: 'KRIBHCO', desc: 'Winter rye.', requirements: { soil: 'Sandy loam', climate: 'Cold', sowing: 'Oct-Nov', spacing: '15 cm' }, conditions: 'Tolerates poor soils.' },
+            { name: 'Foxtail Millet (SiA-3085)', img: '{% static "images/119.jpeg" %}', company: 'IFFCO', desc: 'Short-duration millet.', requirements: { soil: 'Sandy', climate: 'Warm', sowing: 'June-July', spacing: '25x10 cm' }, conditions: 'Drought tolerant.' },
+            { name: 'Finger Millet (GPU-28)', img: '{% static "images/1110.jpeg" %}', company: 'Syngenta', desc: 'Popular ragi variety.', requirements: { soil: 'Red loam', climate: 'Warm', sowing: 'June-July', spacing: '30x10 cm' }, conditions: 'Needs moderate rainfall.' },
+            { name: 'Proso Millet (PRC-1)', img: '{% static "images/1111.jpeg" %}', company: 'Nunhems', desc: 'Short-season millet.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '20x10 cm' }, conditions: 'Quick maturing.' },
+            { name: 'Teff (Quncho)', img: '{% static "images/111.jpeg" %}', company: 'East-West', desc: 'Ethiopian cereal.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: 'Broadcast' }, conditions: 'Requires fine seedbed.' },
+            { name: 'Triticale (TL-419)', img: '{% static "images/111.jpeg" %}', company: 'NSC', desc: 'Hybrid of wheat and rye.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '20 cm' }, conditions: 'Tolerates acidic soils.' },
+            { name: 'Buckwheat (Himalayan Black)', img: '{% static "images/111.jpeg" %}', company: 'KRIBHCO', desc: 'Short-season pseudocereal.', requirements: { soil: 'Sandy loam', climate: 'Cool', sowing: 'May-June', spacing: '20 cm' }, conditions: 'Grows in poor soils.' },
+            { name: 'Quinoa (QQ-74)', img: '{% static "images/111.jpeg" %}', company: 'Mahyco', desc: 'Protein-rich pseudocereal.', requirements: { soil: 'Well-drained', climate: 'Cool', sowing: 'March-April', spacing: '30x10 cm' }, conditions: 'Salt tolerant.' },
+            { name: 'Amaranth (Rajgira-1)', img: '{% static "images/111.jpeg" %}', company: 'Advanta', desc: 'Nutritious grain amaranth.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '30x10 cm' }, conditions: 'Needs regular weeding.' }
+        ],
+        Oilseed: [
+            { name: 'Mustard (Pusa Bold)', img: '{% static "images/121.webp" %}', company: 'NSC', desc: 'High oil content mustard.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '30 cm' }, conditions: 'Prefers cool, dry weather.' },
+            { name: 'Sunflower (KBSH-1)', img: '{% static "images/122.jpeg" %}', company: 'Advanta', desc: 'Popular hybrid sunflower.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'Jan-Feb', spacing: '60x30 cm' }, conditions: 'Needs full sunlight.' },
+            { name: 'Soybean (JS-335)', img: '{% static "images/123.jpeg" %}', company: 'Mahyco', desc: 'High-yielding soybean.', requirements: { soil: 'Clay loam', climate: 'Warm', sowing: 'June-July', spacing: '45x10 cm' }, conditions: 'Needs well-drained soil.' },
+            { name: 'Groundnut (GG-20)', img: '{% static "images/124.jpeg" %}', company: 'IFFCO', desc: 'Popular groundnut variety.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '30x10 cm' }, conditions: 'Avoid waterlogging.' },
+            { name: 'Sesame (T-78)', img: '{% static "images/125.jpeg" %}', company: 'KRIBHCO', desc: 'High oil sesame.', requirements: { soil: 'Light, sandy', climate: 'Warm', sowing: 'June-July', spacing: '30x10 cm' }, conditions: 'Drought tolerant.' },
+            { name: 'Linseed (Shubhra)', img: '{% static "images/126.jpeg" %}', company: 'NSC', desc: 'High-yielding linseed.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '20 cm' }, conditions: 'Prefers cool, dry weather.' },
+            { name: 'Castor (DCH-177)', img: '{% static "images/127.jpeg" %}', company: 'Advanta', desc: 'Hybrid castor.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '90x60 cm' }, conditions: 'Needs full sunlight.' },
+            { name: 'Safflower (A-1)', img: '{% static "images/128.jpeg" %}', company: 'Mahyco', desc: 'Popular safflower.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '45x20 cm' }, conditions: 'Tolerates drought.' },
+            { name: 'Niger (IGP-76)', img: '{% static "images/129.jpeg" %}', company: 'IFFCO', desc: 'Oilseed niger.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '30x10 cm' }, conditions: 'Needs moderate rainfall.' },
+            { name: 'Rapeseed (Varuna)', img: '{% static "images/seeds-rapeseed.png" %}', company: 'KRIBHCO', desc: 'High-yielding rapeseed.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '30 cm' }, conditions: 'Prefers cool, dry weather.' },
+            { name: 'Peanut (JL-24)', img: '{% static "images/seeds-peanut.png" %}', company: 'Syngenta', desc: 'Early maturing peanut.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '30x10 cm' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Canola (Hyola-401)', img: '{% static "images/1210401.jpeg" %}', company: 'Nunhems', desc: 'Hybrid canola.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '30 cm' }, conditions: 'Prefers cool, moist weather.' },
+            { name: 'Flax (Golden)', img: '{% static "images/seeds-flax.png" %}', company: 'East-West', desc: 'Golden flaxseed.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '20 cm' }, conditions: 'Needs well-drained soil.' },
+            { name: 'Pumpkinseed (PS-1)', img: '{% static "images/1211 ps1.webp" %}', company: 'Advanta', desc: 'Oil-rich pumpkinseed.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '60x30 cm' }, conditions: 'Needs full sunlight.' }
+        ],
+        Vegetable: [
+            { name: 'Tomato (Pusa Ruby)', img: '{% static "images/131.webp" %}', company: 'Syngenta', desc: 'Early maturing tomato.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'Dec-Jan', spacing: '60x45 cm' }, conditions: 'Avoid frost, needs staking.' },
+            { name: 'Okra (Parbhani Kranti)', img: '{% static "images/132.webp" %}', company: 'Nunhems', desc: 'Popular okra hybrid.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'Feb-Mar', spacing: '45x30 cm' }, conditions: 'Sensitive to waterlogging.' },
+            { name: 'Brinjal (Arka Nidhi)', img: '{% static "images/133.webp" %}', company: 'Mahyco', desc: 'High-yielding brinjal.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '60x45 cm' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Cabbage (Golden Acre)', img: '{% static "images/134.webp" %}', company: 'NSC', desc: 'Popular cabbage variety.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '45x45 cm' }, conditions: 'Prefers cool weather.' },
+            { name: 'Cauliflower (Pusa Snowball)', img: '{% static "images/135.webp" %}', company: 'Advanta', desc: 'Early cauliflower.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '45x45 cm' }, conditions: 'Sensitive to heat.' },
+            { name: 'Carrot (Pusa Kesar)', img: '{% static "images/136.avif" %}', company: 'KRIBHCO', desc: 'Popular carrot.', requirements: { soil: 'Sandy loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '30x10 cm' }, conditions: 'Needs loose soil.' },
+            { name: 'Radish (Pusa Chetki)', img: '{% static "images/137.png" %}', company: 'IFFCO', desc: 'Early radish.', requirements: { soil: 'Sandy loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '30x10 cm' }, conditions: 'Harvest early for best quality.' },
+            { name: 'Spinach (All Green)', img: '{% static "images/138.jpg" %}', company: 'Syngenta', desc: 'Popular spinach.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '20x10 cm' }, conditions: 'Needs regular watering.' },
+            { name: 'Pea (Arkel)', img: '{% static "images/139.jpeg" %}', company: 'Mahyco', desc: 'Early pea.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '30x10 cm' }, conditions: 'Prefers cool, moist weather.' },
+            { name: 'Pumpkin (Arka Suryamukhi)', img: '{% static "images/1310.webp" %}', company: 'NSC', desc: 'High-yielding pumpkin.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '2x0.5 m' }, conditions: 'Needs full sunlight.' },
+            { name: 'Cucumber (Pusa Sanyog)', img: '{% static "images/1311.jpeg" %}', company: 'Advanta', desc: 'Hybrid cucumber.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '1.5x0.5 m' }, conditions: 'Needs trellising.' },
+            { name: 'Chilli (Pusa Jwala)', img: '{% static "images/1311.webp" %}', company: 'KRIBHCO', desc: 'Popular chilli.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '60x45 cm' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Onion (Pusa Red)', img: '{% static "images/1313.jpg" %}', company: 'IFFCO', desc: 'Red onion.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: '15x10 cm' }, conditions: 'Needs loose soil.' },
+            { name: 'Bottle Gourd (Pusa Summer Prolific)', img: '{% static "images/1314.png" %}', company: 'Syngenta', desc: 'Popular bottle gourd.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '2x0.5 m' }, conditions: 'Needs trellising.' }
+        ],
+        Fruit: [
+            { name: 'Watermelon (Sugar Baby)', img: '{% static "images/141.jpg" %}', company: 'East-West', desc: 'Sweet, early watermelon.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'Jan-Mar', spacing: '2x0.5 m' }, conditions: 'Requires high temperature for germination.' },
+            { name: 'Muskmelon (Hara Madhu)', img: '{% static "images/142.webp" %}', company: 'Mahyco', desc: 'Popular muskmelon.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'Feb-Mar', spacing: '2x0.5 m' }, conditions: 'Needs full sunlight.' },
+            { name: 'Papaya (Red Lady)', img: '{% static "images/143.webp" %}', company: 'IFFCO', desc: 'Hybrid papaya.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'Feb-Mar', spacing: '2x2 m' }, conditions: 'Sensitive to frost.' },
+            { name: 'Banana (Grand Naine)', img: '{% static "images/144.jpeg" %}', company: 'KRIBHCO', desc: 'Tissue culture banana.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'Year-round', spacing: '2x2 m' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Guava (Allahabad Safeda)', img: '{% static "images/145.jpeg" %}', company: 'NSC', desc: 'Popular guava.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '6x6 m' }, conditions: 'Needs pruning.' },
+            { name: 'Mango (Alphonso)', img: '{% static "images/146.jpeg" %}', company: 'Advanta', desc: 'Famous mango.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '10x10 m' }, conditions: 'Needs regular fertilization.' },
+            { name: 'Pomegranate (Bhagwa)', img: '{% static "images/147.jpeg" %}', company: 'Mahyco', desc: 'Popular pomegranate.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '5x5 m' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Apple (Red Delicious)', img: '{% static "images/148.jpeg" %}', company: 'Syngenta', desc: 'Popular apple.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Dec-Jan', spacing: '5x5 m' }, conditions: 'Needs chilling hours.' },
+            { name: 'Pear (Patharnakh)', img: '{% static "images/149.jpeg" %}', company: 'Nunhems', desc: 'Popular pear.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Dec-Jan', spacing: '6x6 m' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Grape (Thompson Seedless)', img: '{% static "images/1410.jpeg" %}', company: 'East-West', desc: 'Popular grape.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'Jan-Feb', spacing: '3x3 m' }, conditions: 'Needs trellising.' },
+            { name: 'Orange (Nagpur)', img: '{% static "images/1411.jpeg" %}', company: 'NSC', desc: 'Popular orange.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '6x6 m' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Lemon (Kagzi)', img: '{% static "images/1412.jpeg" %}', company: 'KRIBHCO', desc: 'Popular lemon.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '6x6 m' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Sapota (Kalipatti)', img: '{% static "images/1413.jpeg" %}', company: 'IFFCO', desc: 'Popular sapota.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '10x10 m' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Custard Apple (Balanagar)', img: '{% static "images/1414.jpeg" %}', company: 'Advanta', desc: 'Popular custard apple.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '5x5 m' }, conditions: 'Needs regular irrigation.' }
+        ],
+        Fodder: [
+            { name: 'Berseem (Mescavi)', img: '{% static "images/seeds-berseem.png" %}', company: 'NSC', desc: 'High protein fodder.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: 'Broadcast' }, conditions: 'Needs frequent irrigation.' },
+            { name: 'Lucerne (Anand-2)', img: '{% static "images/seeds-lucerne.png" %}', company: 'Mahyco', desc: 'Popular lucerne.', requirements: { soil: 'Loam', climate: 'Cool', sowing: 'Oct-Nov', spacing: 'Broadcast' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Maize (African Tall)', img: '{% static "images/seeds-maize.png" %}', company: 'IFFCO', desc: 'Fodder maize.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '30x10 cm' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Sorghum (SSG-988)', img: '{% static "images/seeds-sorghum.png" %}', company: 'Advanta', desc: 'Fodder sorghum.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '30x10 cm' }, conditions: 'Tolerant to drought.' },
+            { name: 'Cowpea (Bundel Lobia-1)', img: '{% static "images/seeds-cowpea.png" %}', company: 'KRIBHCO', desc: 'Popular cowpea.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '30x10 cm' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Cluster Bean (Pusa Navbahar)', img: '{% static "images/seeds-cluster-bean.png" %}', company: 'NSC', desc: 'Popular cluster bean.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '30x10 cm' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Napier Grass (CO-3)', img: '{% static "images/seeds-napier.png" %}', company: 'Syngenta', desc: 'Popular napier grass.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '60x60 cm' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Guinea Grass (Pusa Giant)', img: '{% static "images/seeds-guinea.png" %}', company: 'Mahyco', desc: 'Popular guinea grass.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '60x60 cm' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Sunhemp (K-12 Yellow)', img: '{% static "images/seeds-sunhemp.png" %}', company: 'IFFCO', desc: 'Popular sunhemp.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: 'Broadcast' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Stylo (Stylosanthes hamata)', img: '{% static "images/seeds-stylo.png" %}', company: 'Advanta', desc: 'Popular stylo.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: 'Broadcast' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Setaria (Narok)', img: '{% static "images/seeds-setaria.png" %}', company: 'KRIBHCO', desc: 'Popular setaria.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: 'Broadcast' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Dinanath Grass (Pusa Giant)', img: '{% static "images/seeds-dinanath.png" %}', company: 'NSC', desc: 'Popular dinanath grass.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: 'Broadcast' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Bajra Napier Hybrid (CO-4)', img: '{% static "images/seeds-bajra-napier.png" %}', company: 'Syngenta', desc: 'Popular bajra napier hybrid.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '60x60 cm' }, conditions: 'Needs regular irrigation.' },
+            { name: 'Para Grass (Hamil)', img: '{% static "images/seeds-para.png" %}', company: 'Mahyco', desc: 'Popular para grass.', requirements: { soil: 'Loam', climate: 'Warm', sowing: 'June-July', spacing: '60x60 cm' }, conditions: 'Needs regular irrigation.' }
+        ],
+        Commercial: [
+            { name: 'Cotton (Bollgard-II)', img: '{% static "images/161.jpg" %}', company: 'Mahyco', companies: ['Mahyco', 'Bayer', 'Syngenta'], desc: 'BT cotton hybrid resistant to bollworms.', requirements: { soil: 'Black cotton soil', climate: 'Warm, dry', sowing: 'June-July', spacing: '90x45 cm', water: 'Medium (4-5 irrigations)' }, conditions: 'Requires proper spacing and pest management.' },
+            { name: 'Sugarcane (Co-0238)', img: '{% static "images/162.webp" %}', company: 'IFFCO', companies: ['IFFCO', 'NSC'], desc: 'High-yielding sugarcane variety.', requirements: { soil: 'Deep, fertile loam', climate: 'Warm, humid', sowing: 'Feb-Mar', spacing: '90 cm', water: 'High (regular irrigation)' }, conditions: 'Needs regular irrigation and ratooning.' },
+            { name: 'Jute (JRO-524)', img: '{% static "images/163.png" %}', company: 'KRIBHCO', desc: 'Popular jute variety.', requirements: { soil: 'Sandy loam', climate: 'Warm, humid', sowing: 'March-April', spacing: '30x5 cm', water: 'High (standing water)' }, conditions: 'Requires standing water during early growth.' },
+            { name: 'Tobacco (Virginia)', img: '{% static "images/164.jpg" %}', company: 'ITC', desc: 'Virginia tobacco variety.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'Dec-Jan', spacing: '90x60 cm', water: 'Medium (3-4 irrigations)' }, conditions: 'Needs proper curing and drying.' },
+            { name: 'Tea (Assamica)', img: '{% static "images/165.jpeg" %}', company: 'Tata Tea', desc: 'Assam tea variety.', requirements: { soil: 'Acidic, well-drained', climate: 'Warm, humid', sowing: 'June-July', spacing: '1.2x0.6 m', water: 'High (regular rainfall)' }, conditions: 'Requires acidic soil and pruning.' },
+            { name: 'Coffee (Arabica)', img: '{% static "images/166.jpeg" %}', company: 'Nestle', desc: 'Arabica coffee variety.', requirements: { soil: 'Well-drained, acidic', climate: 'Cool, humid', sowing: 'June-July', spacing: '2x2 m', water: 'Medium (regular rainfall)' }, conditions: 'Needs shade and proper pruning.' },
+            { name: 'Rubber (RRII-105)', img: '{% static "images/167.jpg" %}', company: 'MRF', desc: 'High-yielding rubber variety.', requirements: { soil: 'Deep, well-drained', climate: 'Warm, humid', sowing: 'June-July', spacing: '7x3 m', water: 'High (regular rainfall)' }, conditions: 'Requires 6-7 years for tapping.' },
+            { name: 'Coconut (ECT)', img: '{% static "images/168.jpeg" %}', company: 'Kerala State', desc: 'Early coconut variety.', requirements: { soil: 'Sandy loam', climate: 'Warm, humid', sowing: 'June-July', spacing: '7.5x7.5 m', water: 'High (regular irrigation)' }, conditions: 'Needs regular irrigation and fertilization.' },
+            { name: 'Arecanut (Mangala)', img: '{% static "images/seeds-arecanut.png" %}', company: 'Karnataka State', desc: 'Popular arecanut variety.', requirements: { soil: 'Sandy loam', climate: 'Warm, humid', sowing: 'June-July', spacing: '2.7x2.7 m', water: 'High (regular irrigation)' }, conditions: 'Needs regular irrigation and shade.' },
+            { name: 'Cashew (Vengurla-4)', img: '{% static "images/seeds-cashew.png" %}', company: 'Maharashtra State', desc: 'High-yielding cashew variety.', requirements: { soil: 'Sandy loam', climate: 'Warm', sowing: 'June-July', spacing: '8x8 m', water: 'Medium (3-4 irrigations)' }, conditions: 'Requires 3-4 years for fruiting.' },
+            { name: 'Cardamom (Mudigere-1)', img: '{% static "images/seeds-cardamom.png" %}', company: 'Karnataka State', desc: 'Popular cardamom variety.', requirements: { soil: 'Rich, well-drained', climate: 'Warm, humid', sowing: 'June-July', spacing: '2x2 m', water: 'High (regular rainfall)' }, conditions: 'Needs shade and regular irrigation.' },
+            { name: 'Pepper (Panniyur-1)', img: '{% static "images/seeds-pepper.png" %}', company: 'Kerala State', desc: 'High-yielding pepper variety.', requirements: { soil: 'Rich, well-drained', climate: 'Warm, humid', sowing: 'June-July', spacing: '2x2 m', water: 'Medium (regular rainfall)' }, conditions: 'Needs support and regular pruning.' },
+            { name: 'Cinnamon (Sri Lanka)', img: '{% static "images/seeds-cinnamon.png" %}', company: 'Spice Board', desc: 'Sri Lankan cinnamon variety.', requirements: { soil: 'Sandy loam', climate: 'Warm, humid', sowing: 'June-July', spacing: '2x2 m', water: 'Medium (regular rainfall)' }, conditions: 'Requires 3-4 years for bark harvest.' },
+            { name: 'Vanilla (Bourbon)', img: '{% static "images/seeds-vanilla.png" %}', company: 'Spice Board', desc: 'Bourbon vanilla variety.', requirements: { soil: 'Rich, well-drained', climate: 'Warm, humid', sowing: 'June-July', spacing: '2x2 m', water: 'Medium (regular rainfall)' }, conditions: 'Needs support and hand pollination.' },
+            { name: 'Cocoa (Forastero)', img: '{% static "images/seeds-cocoa.png" %}', company: 'Cadbury', desc: 'Forastero cocoa variety.', requirements: { soil: 'Rich, well-drained', climate: 'Warm, humid', sowing: 'June-July', spacing: '3x3 m', water: 'High (regular rainfall)' }, conditions: 'Needs shade and regular pruning.' }
+        ]
+    };
+
+    const modalOverlay = document.getElementById('fertilizer-modal-overlay');
+    const modal = document.getElementById('fertilizer-modal');
+    const closeModalBtn = document.getElementById('close-fertilizer-modal');
+    const modalImg = document.getElementById('modal-seed-img');
+    const modalTitle = document.getElementById('modal-seed-title');
+    const modalDesc = document.getElementById('modal-seed-desc');
+    const modalCompany = document.getElementById('modal-seed-company');
+    const modalReqs = document.getElementById('modal-seed-reqs');
+    const groupTypesList = document.getElementById('group-types-list');
+    const groupTypesGrid = document.getElementById('group-types-grid');
+    const backToListBtn = document.getElementById('back-to-list-btn');
+    const groupSearchInput = document.getElementById('group-search-input');
+
+    let currentGroup = null;
+    let currentTypes = [];
+
+    document.querySelectorAll('.fertilizer-card[data-group]').forEach(card => {
+        const group = card.getAttribute('data-group');
+        card.querySelector('.view-btn').addEventListener('click', () => {
+            modalImg.style.display = 'none';
+            modalDesc.style.display = 'none';
+            modalCompany.style.display = 'none';
+            modalReqs.style.display = 'none';
+            backToListBtn.style.display = 'none';
+            modalTitle.textContent = card.querySelector('h3').textContent;
+            groupTypesList.style.display = 'block';
+            currentGroup = group;
+            currentTypes = seedGroups[group] || [];
+            renderGroupTypes(currentTypes);
+            modalOverlay.classList.add('active');
+        });
+    });
+
+    function renderGroupTypes(types) {
+        groupTypesGrid.innerHTML = '';
+        types.forEach((type, idx) => {
+            const typeCard = document.createElement('div');
+            typeCard.className = 'fertilizer-card';
+            typeCard.style.boxShadow = '0 1px 4px rgba(56,142,60,0.10)';
+            typeCard.style.background = '#f7f7f7';
+            typeCard.style.padding = '1rem';
+            typeCard.style.borderRadius = '0.7rem';
+            typeCard.style.cursor = 'pointer';
+            typeCard.innerHTML = `
+                <img src="${type.img}" alt="${type.name}" style="width:50px;height:50px;">
+                <h4 style="margin:0.5rem 0 0.2rem 0;font-size:1rem;color:#388e3c;">${type.name}</h4>
+                <div style="font-size:0.95rem;color:#444;opacity:0.85;">${type.desc}</div>
+                <div style="font-size:0.95rem;color:#888;">${type.company}</div>
+                <button class="view-btn" style="margin-top:0.7rem;font-size:0.95rem;">View Details</button>
+            `;
+            typeCard.querySelector('.view-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                modalImg.src = type.img;
+                modalImg.alt = type.name;
+                modalImg.style.display = '';
+                modalTitle.textContent = type.name;
+                modalDesc.textContent = type.desc;
+                modalDesc.style.display = '';
+                modalCompany.innerHTML = `<strong>Company:</strong> ${type.company}<br><strong>Other Producers:</strong> ${(type.companies||[]).join(', ')}`;
+                modalCompany.style.display = '';
+                modalReqs.innerHTML = `
+                  <table style='width:100%;border-collapse:collapse;font-size:0.98rem;'>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Soil Type</td><td style='padding:0.3rem 0.5rem;'>${type.requirements.soil}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Climate</td><td style='padding:0.3rem 0.5rem;'>${type.requirements.climate}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Sowing Time</td><td style='padding:0.3rem 0.5rem;'>${type.requirements.sowing}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Spacing</td><td style='padding:0.3rem 0.5rem;'>${type.requirements.spacing}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Water Requirement</td><td style='padding:0.3rem 0.5rem;'>${type.requirements.water || '-'}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Plantation & Growth</td><td style='padding:0.3rem 0.5rem;'>${type.conditions}</td></tr>
+                  </table>
+                `;
+                modalReqs.style.display = '';
+                groupTypesList.style.display = 'none';
+                backToListBtn.style.display = '';
+            });
+            groupTypesGrid.appendChild(typeCard);
+        });
+    }
+
+    groupSearchInput.addEventListener('input', function() {
+        const val = this.value.trim().toLowerCase();
+        if (!val) {
+            renderGroupTypes(currentTypes);
+        } else {
+            renderGroupTypes(currentTypes.filter(type => type.name.toLowerCase().includes(val) || type.desc.toLowerCase().includes(val) || type.company.toLowerCase().includes(val)));
+        }
+    });
+
+    backToListBtn.addEventListener('click', () => {
+        modalImg.style.display = 'none';
+        modalDesc.style.display = 'none';
+        modalCompany.style.display = 'none';
+        modalReqs.style.display = 'none';
+        backToListBtn.style.display = 'none';
+        groupTypesList.style.display = 'block';
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
+    });
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+        }
+    });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,244 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizers | Agripulse</title>
+    <link rel="stylesheet" href="{% static 'css/fertilizers.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="fertilizers-header">
+        <h1>Fertilizer Categories</h1>
+        <p>Explore a wide range of fertilizers for your crops</p>
+    </header>
+    <main>
+        <section class="fertilizer-category-grid">
+            <!-- Group Cards -->
+            <div class="fertilizer-card" data-group="NPK">
+                <img src="{% static 'images/31.jpg' %}" alt="NPK Fertilizers">
+                <h3>NPK Fertilizers</h3>
+                <div class="desc">All NPK blends for balanced crop nutrition.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Urea">
+                <img src="{% static 'images/32.jpeg' %}" alt="Urea Fertilizers">
+                <h3>Urea Fertilizers</h3>
+                <div class="desc">All urea-based nitrogen fertilizers.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Potash">
+                <img src="{% static 'images/33.jpg' %}" alt="Potash Fertilizers">
+                <h3>Potash Fertilizers</h3>
+                <div class="desc">All potassium-rich fertilizers.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Micronutrients">
+                <img src="{% static 'images/fertilizer-micronutrient.png' %}" alt="Micronutrient Mixes">
+                <h3>Micronutrient Mixes</h3>
+                <div class="desc">All essential trace element fertilizers.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Organic">
+                <img src="{% static 'images/35.jpeg' %}" alt="Organic Fertilizers">
+                <h3>Organic Fertilizers</h3>
+                <div class="desc">Compost, vermicompost, FYM, and more.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <!-- Add more group cards as needed -->
+        </section>
+    </main>
+    <div class="fertilizer-modal-overlay" id="fertilizer-modal-overlay">
+        <div class="fertilizer-modal" id="fertilizer-modal">
+            <button class="close-modal" id="close-fertilizer-modal">&times;</button>
+            <img id="modal-fertilizer-img" src="" alt="Fertilizer Image" style="display:none;">
+            <h2 id="modal-fertilizer-title"></h2>
+            <div class="modal-desc" id="modal-fertilizer-desc" style="display:none;"></div>
+            <div class="modal-usage" style="display:none;"><strong>Usage Instructions:</strong> <span id="modal-fertilizer-usage"></span></div>
+            <div class="modal-benefits" style="display:none;"><strong>Benefits:</strong> <span id="modal-fertilizer-benefits"></span></div>
+            <div id="modal-fertilizer-knowledge" style="display:none;margin-top:1rem;"></div>
+            <!-- Group Types List (hidden by default) -->
+            <div id="group-types-list" style="display:none; margin-top:1.5rem;">
+                <h3 style="margin-bottom:0.5rem;">Types</h3>
+                <input id="group-search-input" type="text" placeholder="Search types..." style="width:100%;padding:0.5rem 0.7rem;margin-bottom:1rem;border-radius:0.5rem;border:1px solid #bdbdbd;font-size:1rem;">
+                <div id="group-types-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;"></div>
+            </div>
+            <button id="back-to-list-btn" style="display:none;margin-top:1rem;">&larr; Back to List</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Agripulse</h3>
+                <p>Your trusted companion for plant care and farming</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@agripulse.com</p>
+                <p>Phone: +1 9999999999</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; agripulse. All rights reserved.</p>
+        </div>
+    </footer>
+    <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","fr","it","es","te","hi","ta","kn","ml","mr","pa","gu"],"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script>
+    // Fertilizer group/type data (now with more knowledge fields)
+    const fertilizerGroups = {
+        NPK: [
+            { name: 'NPK 10-26-26', img: '{% static "images/311.jpeg" %}', desc: 'High phosphorus for root development.', usage: 'Apply as basal dose at sowing.', benefits: 'Promotes strong roots and flowering.', npk: '10-26-26', solubility: 'Granular', crops: 'Wheat, Rice, Maize', application: 'Basal', safety: 'Store in dry place.' },
+            { name: 'NPK 12-32-16', img: '{% static "images/312.jpeg" %}', desc: 'Rich in phosphorus and moderate potassium.', usage: 'Use during early crop growth.', benefits: 'Improves root and shoot growth.', npk: '12-32-16', solubility: 'Granular', crops: 'Pulses, Oilseeds', application: 'Basal', safety: 'Avoid over-application.' },
+            { name: 'NPK 15-15-15', img: '{% static "images/313.jpeg" %}', desc: 'Balanced for all stages of crop.', usage: 'Apply as basal or top dressing.', benefits: 'Supports overall plant health.', npk: '15-15-15', solubility: 'Granular', crops: 'Vegetables, Fruits', application: 'Basal/Top dressing', safety: 'Wear gloves during application.' },
+            { name: 'NPK 19-19-19', img: '{% static "images/314.webp" %}', desc: 'Water soluble, suitable for foliar spray.', usage: 'Dissolve in water and spray on leaves.', benefits: 'Quick nutrient uptake.', npk: '19-19-19', solubility: 'Water Soluble', crops: 'Horticulture, Floriculture', application: 'Foliar/Fertigation', safety: 'Avoid contact with eyes.' },
+            { name: 'NPK 20-20-20', img: '{% static "images/315.jpeg" %}', desc: 'Balanced, water soluble for all crops.', usage: 'Use in fertigation or foliar spray.', benefits: 'Uniform growth and yield.', npk: '20-20-20', solubility: 'Water Soluble', crops: 'All crops', application: 'Foliar/Fertigation', safety: 'Keep away from children.' },
+            { name: 'NPK 14-35-14', img: '{% static "images/316.jpeg" %}', desc: 'High phosphorus for flowering.', usage: 'Use before flowering stage.', benefits: 'Enhances flowering and fruit set.', npk: '14-35-14', solubility: 'Granular', crops: 'Cotton, Sunflower', application: 'Basal', safety: 'Do not inhale dust.' },
+            { name: 'NPK 28-28-0', img: '{% static "images/317.jpeg" %}', desc: 'High N and P, no K.', usage: 'Apply as basal dose.', benefits: 'Boosts early plant growth.', npk: '28-28-0', solubility: 'Granular', crops: 'Cereals', application: 'Basal', safety: 'Wash hands after use.' }
+        ],
+        Urea: [
+            { name: 'Urea', img: '{% static "images/321.jpg" %}', desc: 'High-nitrogen fertilizer for rapid plant growth.', usage: 'Apply as top dressing or dissolve in water.', benefits: 'Boosts vegetative growth.', npk: '46-0-0', solubility: 'Granular', crops: 'All crops', application: 'Top dressing', safety: 'Store in cool, dry place.' },
+            { name: 'Urea Ammonium Nitrate', img: '{% static "images/322.jpeg" %}', desc: 'Liquid nitrogen fertilizer.', usage: 'Use in fertigation or foliar spray.', benefits: 'Quick nitrogen uptake.', npk: '32-0-0', solubility: 'Liquid', crops: 'Cereals, Vegetables', application: 'Fertigation/Foliar', safety: 'Avoid skin contact.' },
+            { name: 'Coated Urea', img: '{% static "images/323.jpeg" %}', desc: 'Slow-release urea for sustained nutrition.', usage: 'Apply as per crop schedule.', benefits: 'Reduces nitrogen loss.', npk: '46-0-0 (coated)', solubility: 'Granular', crops: 'Rice, Wheat', application: 'Basal/Top dressing', safety: 'Do not mix with water.' }
+        ],
+        Potash: [
+            { name: 'MOP (Muriate of Potash)', img: '{% static "images/331.jpeg" %}', desc: 'Potassium-rich fertilizer.', usage: 'Apply as basal or top dressing.', benefits: 'Improves fruit and flower quality.', npk: '0-0-60', solubility: 'Granular', crops: 'Fruits, Vegetables', application: 'Basal/Top dressing', safety: 'Avoid excessive use.' },
+            { name: 'SOP (Sulphate of Potash)', img: '{% static "images/332.jpeg" %}', desc: 'Low chloride potassium source.', usage: 'Use for chloride-sensitive crops.', benefits: 'Enhances crop quality.', npk: '0-0-50', solubility: 'Granular', crops: 'Potato, Tobacco', application: 'Basal', safety: 'Store in original bag.' },
+            { name: 'Potassium Nitrate', img: '{% static "images/333.jpeg" %}', desc: 'Source of potassium and nitrogen.', usage: 'Apply as foliar spray or fertigation.', benefits: 'Promotes flowering and fruiting.', npk: '13-0-45', solubility: 'Water Soluble', crops: 'Horticulture', application: 'Foliar/Fertigation', safety: 'Avoid inhalation.' }
+        ],
+        Micronutrients: [
+            { name: 'Zinc Sulphate', img: '{% static "images/341.jpeg" %}', desc: 'Corrects zinc deficiency.', usage: 'Apply as foliar spray or soil application.', benefits: 'Improves crop yield.', npk: '-', solubility: 'Powder', crops: 'Rice, Wheat', application: 'Foliar/Soil', safety: 'Avoid eye contact.' },
+            { name: 'Boron', img: '{% static "images/342.jpeg" %}', desc: 'Essential for fruit and seed development.', usage: 'Apply as per soil test.', benefits: 'Prevents fruit cracking.', npk: '-', solubility: 'Powder', crops: 'Fruits, Vegetables', application: 'Soil/Foliar', safety: 'Do not overapply.' },
+            { name: 'Copper Sulphate', img: '{% static "images/342.jpg" %}', desc: 'Micronutrient for enzyme activation.', usage: 'Apply as foliar spray.', benefits: 'Improves disease resistance.', npk: '-', solubility: 'Powder', crops: 'Cereals', application: 'Foliar', safety: 'Toxic if ingested.' },
+            { name: 'Iron Sulphate', img: '{% static "images/344.jpg" %}', desc: 'Prevents iron chlorosis.', usage: 'Apply as foliar spray.', benefits: 'Greener leaves.', npk: '-', solubility: 'Powder', crops: 'All crops', application: 'Foliar', safety: 'Avoid dust inhalation.' }
+        ],
+        Organic: [
+            { name: 'Compost', img: '{% static "images/351.jpeg" %}', desc: 'Decomposed organic matter.', usage: 'Mix into soil before planting.', benefits: 'Improves soil structure.', npk: 'Varies', solubility: 'Solid', crops: 'All crops', application: 'Soil incorporation', safety: 'Wash hands after use.' },
+            { name: 'Vermicompost', img: '{% static "images/351.jpg" %}', desc: 'Nutrient-rich compost from earthworms.', usage: 'Apply as top dressing.', benefits: 'Enhances soil fertility.', npk: 'Varies', solubility: 'Solid', crops: 'Vegetables, Fruits', application: 'Top dressing', safety: 'Store in shade.' },
+            { name: 'Farmyard Manure (FYM)', img: '{% static "images/352.webp" %}', desc: 'Traditional organic fertilizer.', usage: 'Incorporate into soil.', benefits: 'Improves soil health.', npk: 'Varies', solubility: 'Solid', crops: 'All crops', application: 'Soil incorporation', safety: 'Use gloves.' },
+            { name: 'Green Manure', img: '{% static "images/354.jpeg" %}', desc: 'Crops grown and plowed under.', usage: 'Grow and incorporate before main crop.', benefits: 'Adds organic matter.', npk: 'Varies', solubility: 'Green biomass', crops: 'Paddy, Pulses', application: 'Soil incorporation', safety: 'No special precautions.' }
+        ]
+        // Add more groups/types as needed
+    };
+
+    // Modal logic for fertilizer group/type details
+    const modalOverlay = document.getElementById('fertilizer-modal-overlay');
+    const modal = document.getElementById('fertilizer-modal');
+    const closeModalBtn = document.getElementById('close-fertilizer-modal');
+    const modalImg = document.getElementById('modal-fertilizer-img');
+    const modalTitle = document.getElementById('modal-fertilizer-title');
+    const modalDesc = document.getElementById('modal-fertilizer-desc');
+    const modalUsage = document.getElementById('modal-fertilizer-usage');
+    const modalBenefits = document.getElementById('modal-fertilizer-benefits');
+    const modalKnowledge = document.getElementById('modal-fertilizer-knowledge');
+    const groupTypesList = document.getElementById('group-types-list');
+    const groupTypesGrid = document.getElementById('group-types-grid');
+    const backToListBtn = document.getElementById('back-to-list-btn');
+    const groupSearchInput = document.getElementById('group-search-input');
+
+    let currentGroup = null;
+    let currentTypes = [];
+
+    // Show group types modal
+    document.querySelectorAll('.fertilizer-card[data-group]').forEach(card => {
+        const group = card.getAttribute('data-group');
+        card.querySelector('.view-btn').addEventListener('click', () => {
+            // Hide details
+            modalImg.style.display = 'none';
+            modalDesc.style.display = 'none';
+            modalUsage.parentElement.style.display = 'none';
+            modalBenefits.parentElement.style.display = 'none';
+            backToListBtn.style.display = 'none';
+            // Show group types list
+            modalTitle.textContent = card.querySelector('h3').textContent;
+            groupTypesList.style.display = 'block';
+            currentGroup = group;
+            currentTypes = fertilizerGroups[group] || [];
+            renderGroupTypes(currentTypes);
+            modalOverlay.classList.add('active');
+        });
+    });
+
+    // Render group types (with filter)
+    function renderGroupTypes(types) {
+        groupTypesGrid.innerHTML = '';
+        types.forEach((type, idx) => {
+            const typeCard = document.createElement('div');
+            typeCard.className = 'fertilizer-card';
+            typeCard.style.boxShadow = '0 1px 4px rgba(56,142,60,0.10)';
+            typeCard.style.background = '#f7f7f7';
+            typeCard.style.padding = '1rem';
+            typeCard.style.borderRadius = '0.7rem';
+            typeCard.style.cursor = 'pointer';
+            typeCard.innerHTML = `
+                <img src="${type.img}" alt="${type.name}" style="width:50px;height:50px;">
+                <h4 style="margin:0.5rem 0 0.2rem 0;font-size:1rem;color:#388e3c;">${type.name}</h4>
+                <div style="font-size:0.95rem;color:#444;opacity:0.85;">${type.desc}</div>
+                <button class="view-btn" style="margin-top:0.7rem;font-size:0.95rem;">View Details</button>
+            `;
+            typeCard.querySelector('.view-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Show details for this type
+                modalImg.src = type.img;
+                modalImg.alt = type.name;
+                modalImg.style.display = '';
+                modalTitle.textContent = type.name;
+                modalDesc.textContent = type.desc;
+                modalDesc.style.display = '';
+                modalUsage.textContent = type.usage;
+                modalUsage.parentElement.style.display = '';
+                modalBenefits.textContent = type.benefits;
+                modalBenefits.parentElement.style.display = '';
+                // Show knowledge table
+                modalKnowledge.innerHTML = `
+                  <table style='width:100%;border-collapse:collapse;font-size:0.98rem;'>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>NPK Ratio</td><td style='padding:0.3rem 0.5rem;'>${type.npk || '-'}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Solubility</td><td style='padding:0.3rem 0.5rem;'>${type.solubility || '-'}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Recommended Crops</td><td style='padding:0.3rem 0.5rem;'>${type.crops || '-'}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Application Method</td><td style='padding:0.3rem 0.5rem;'>${type.application || '-'}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Safety Tips</td><td style='padding:0.3rem 0.5rem;'>${type.safety || '-'}</td></tr>
+                  </table>
+                `;
+                modalKnowledge.style.display = '';
+                groupTypesList.style.display = 'none';
+                backToListBtn.style.display = '';
+            });
+            groupTypesGrid.appendChild(typeCard);
+        });
+    }
+
+    // Search filter logic
+    groupSearchInput.addEventListener('input', function() {
+        const val = this.value.trim().toLowerCase();
+        if (!val) {
+            renderGroupTypes(currentTypes);
+        } else {
+            renderGroupTypes(currentTypes.filter(type => type.name.toLowerCase().includes(val) || type.desc.toLowerCase().includes(val)));
+        }
+    });
+
+    // Back to group types list
+    backToListBtn.addEventListener('click', () => {
+        modalImg.style.display = 'none';
+        modalDesc.style.display = 'none';
+        modalUsage.parentElement.style.display = 'none';
+        modalBenefits.parentElement.style.display = 'none';
+        backToListBtn.style.display = 'none';
+        groupTypesList.style.display = 'block';
+        modalKnowledge.style.display = 'none';
+    });
+
+    // Modal close logic
+    closeModalBtn.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
+    });
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+        }
+    });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools | Agripulse</title>
+    <link rel="stylesheet" href="{% static 'css/fertilizers.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="fertilizers-header">
+        <h1>Tool Categories</h1>
+        <p>Explore a wide range of agricultural tools for your farm</p>
+    </header>
+    <main>
+        <section class="fertilizer-category-grid">
+            <div class="fertilizer-card" data-group="Hand">
+                <img src="{% static 'images/21.jpg' %}" alt="Hand Tools">
+                <h3>Hand Tools</h3>
+                <div class="desc">Spades, sickles, hoes, and more.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Power">
+                <img src="{% static 'images/22.jpeg' %}" alt="Power Tools">
+                <h3>Power Tools</h3>
+                <div class="desc">Rotavators, tillers, chainsaws, etc.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Irrigation">
+                <img src="{% static 'images/23.jpeg' %}" alt="Irrigation Tools">
+                <h3>Irrigation Tools</h3>
+                <div class="desc">Drip kits, sprinklers, pipes, and more.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Harvesting">
+                <img src="{% static 'images/24.jpeg' %}" alt="Harvesting Tools">
+                <h3>Harvesting Tools</h3>
+                <div class="desc">Sickles, reapers, harvesters, etc.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="SoilTesting">
+                <img src="{% static 'images/25.jpeg' %}" alt="Soil Testing Tools">
+                <h3>Soil Testing Tools</h3>
+                <div class="desc">pH meters, soil kits, augers, etc.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Sprayers">
+                <img src="{% static 'images/26.jpeg' %}" alt="Sprayers">
+                <h3>Sprayers</h3>
+                <div class="desc">Knapsack, battery, power sprayers, etc.</div>
+                <button class="view-btn">View All</button>
+            </div>
+        </section>
+    </main>
+    <div class="fertilizer-modal-overlay" id="fertilizer-modal-overlay">
+        <div class="fertilizer-modal" id="fertilizer-modal">
+            <button class="close-modal" id="close-fertilizer-modal">&times;</button>
+            <img id="modal-tool-img" src="" alt="Tool Image" style="display:none;">
+            <h2 id="modal-tool-title"></h2>
+            <div class="modal-desc" id="modal-tool-desc" style="display:none;"></div>
+            <div id="modal-tool-company" style="display:none;margin:0.5rem 0 0.5rem 0;"></div>
+            <div id="modal-tool-details" style="display:none;margin-top:1rem;"></div>
+            <!-- Group Types List (hidden by default) -->
+            <div id="group-types-list" style="display:none; margin-top:1.5rem;">
+                <h3 style="margin-bottom:0.5rem;">Types</h3>
+                <input id="group-search-input" type="text" placeholder="Search types..." style="width:100%;padding:0.5rem 0.7rem;margin-bottom:1rem;border-radius:0.5rem;border:1px solid #bdbdbd;font-size:1rem;">
+                <div id="group-types-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;"></div>
+            </div>
+            <button id="back-to-list-btn" style="display:none;margin-top:1rem;">&larr; Back to List</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Agripulse</h3>
+                <p>Your trusted companion for plant care and farming</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@agripulse.com</p>
+                <p>Phone: +1 9999999999</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; agripulse. All rights reserved.</p>
+        </div>
+    </footer>
+    <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","fr","it","es","te","hi","ta","kn","ml","mr","pa","gu"],"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script>
+    // Tool group/type data (with company, usage, maintenance, safety, best use cases)
+    const toolGroups = {
+        Hand: [
+            { name: 'Spade', img: '{% static "images/211.jpg" %}', company: 'Falcon', companies: ['Falcon', 'Neptune', 'KisanKraft'], desc: 'Essential for digging and turning soil.', usage: 'Digging, mixing, and moving soil.', maintenance: 'Clean after use, store dry.', safety: 'Wear boots and gloves.', best: 'Land preparation, garden beds.' },
+            { name: 'Hoe', img: '{% static "images/212.jpg" %}', company: 'Neptune', companies: ['Neptune', 'Falcon'], desc: 'Used for weeding and soil aeration.', usage: 'Weeding, breaking up soil.', maintenance: 'Sharpen blade, keep rust-free.', safety: 'Use with care to avoid injury.', best: 'Weed control, soil aeration.' },
+            { name: 'Sickle', img: '{% static "images/213.webp" %}', company: 'KisanKraft', companies: ['KisanKraft', 'Falcon'], desc: 'For harvesting crops and cutting grass.', usage: 'Harvesting, cutting grass.', maintenance: 'Sharpen regularly.', safety: 'Keep away from children.', best: 'Harvesting paddy, wheat.' },
+            { name: 'Hand Fork', img: '{% static "images/214.jpg" %}', company: 'Falcon', companies: ['Falcon'], desc: 'Loosens soil and removes weeds.', usage: 'Loosening soil, removing weeds.', maintenance: 'Clean tines after use.', safety: 'Use gloves.', best: 'Garden beds, pots.' },
+            { name: 'Trowel', img: '{% static "images/215.jpg" %}', company: 'Neptune', companies: ['Neptune'], desc: 'For planting and transplanting.', usage: 'Planting, digging small holes.', maintenance: 'Wipe after use.', safety: 'Avoid sharp edges.', best: 'Seedling transplanting.' },
+            { name: 'Pruning Shear', img: '{% static "images/216.jpg" %}', company: 'Falcon', companies: ['Falcon', 'Neptune'], desc: 'For cutting branches and stems.', usage: 'Pruning, trimming.', maintenance: 'Oil blades, keep sharp.', safety: 'Keep away from children.', best: 'Fruit trees, shrubs.' },
+            { name: 'Garden Rake', img: '{% static "images/217.jpg" %}', company: 'KisanKraft', companies: ['KisanKraft'], desc: 'For leveling and clearing debris.', usage: 'Leveling soil, removing debris.', maintenance: 'Clean tines after use.', safety: 'Store safely.', best: 'Garden beds, lawns.' },
+            { name: 'Weeder', img: '{% static "images/218.jpg" %}', company: 'Neptune', companies: ['Neptune'], desc: 'Removes weeds from soil.', usage: 'Weeding.', maintenance: 'Clean after use.', safety: 'Use gloves.', best: 'Vegetable beds.' },
+            { name: 'Hand Cultivator', img: '{% static "images/219.jpg" %}', company: 'Falcon', companies: ['Falcon'], desc: 'Loosens and aerates soil.', usage: 'Soil aeration.', maintenance: 'Clean after use.', safety: 'Use with care.', best: 'Small plots.' }
+        ],
+        Power: [
+            { name: 'Rotavator', img: '{% static "images/221.webp" %}', company: 'Mahindra', companies: ['Mahindra', 'John Deere'], desc: 'Power tiller for soil preparation.', usage: 'Tilling, mixing soil.', maintenance: 'Check oil, clean blades.', safety: 'Read manual, use guards.', best: 'Large field preparation.' },
+            { name: 'Chainsaw', img: '{% static "images/222.jpg" %}', company: 'Stihl', companies: ['Stihl', 'Husqvarna'], desc: 'For cutting wood and branches.', usage: 'Cutting trees, branches.', maintenance: 'Sharpen chain, check oil.', safety: 'Wear helmet, gloves.', best: 'Orchard, forestry.' },
+            { name: 'Brush Cutter', img: '{% static "images/223.jpg" %}', company: 'KisanKraft', companies: ['KisanKraft', 'Neptune'], desc: 'Clears weeds and grass.', usage: 'Cutting grass, weeds.', maintenance: 'Clean blade, check fuel.', safety: 'Wear boots, eye protection.', best: 'Weed control, lawns.' },
+            { name: 'Power Weeder', img: '{% static "images/224.webp" %}', company: 'Honda', companies: ['Honda', 'VST'], desc: 'For inter-row cultivation.', usage: 'Weeding between rows.', maintenance: 'Check oil, clean after use.', safety: 'Use as per manual.', best: 'Vegetable fields.' },
+            { name: 'Mini Tiller', img: '{% static "images/225.webp" %}', company: 'VST', companies: ['VST', 'Honda'], desc: 'Compact tiller for small farms.', usage: 'Tilling, mixing soil.', maintenance: 'Check oil, clean after use.', safety: 'Use as per manual.', best: 'Kitchen gardens.' },
+            { name: 'Electric Drill', img: '{% static "images/226.webp" %}', company: 'Bosch', companies: ['Bosch', 'Makita'], desc: 'For drilling holes in wood/metal.', usage: 'Drilling.', maintenance: 'Check bits, keep dry.', safety: 'Wear goggles.', best: 'Farm repairs.' },
+            { name: 'Earth Auger', img: '{% static "images/227.jpg" %}', company: 'KisanKraft', companies: ['KisanKraft', 'Neptune'], desc: 'For digging holes for planting.', usage: 'Digging holes.', maintenance: 'Clean auger, check fuel.', safety: 'Use as per manual.', best: 'Tree plantation.' },
+            { name: 'Power Sprayer', img: '{% static "images/228.jpg" %}', company: 'Neptune', companies: ['Neptune', 'KisanKraft'], desc: 'Motorized pesticide sprayer.', usage: 'Spraying pesticides.', maintenance: 'Clean tank, check motor.', safety: 'Wear mask, gloves.', best: 'Large fields.' }
+        ],
+        Irrigation: [
+            { name: 'Drip Kit', img: '{% static "images/231.webp" %}', company: 'Jain Irrigation', companies: ['Jain Irrigation', 'Netafim'], desc: 'Efficient water delivery to roots.', usage: 'Drip irrigation for crops.', maintenance: 'Flush lines, check emitters.', safety: 'Check for leaks.', best: 'Vegetables, orchards.' },
+            { name: 'Sprinkler', img: '{% static "images/232.webp" %}', company: 'Netafim', companies: ['Netafim', 'Jain Irrigation'], desc: 'Sprays water over crops.', usage: 'Overhead irrigation.', maintenance: 'Clean nozzles.', safety: 'Avoid high pressure.', best: 'Lawns, cereals.' },
+            { name: 'PVC Pipe', img: '{% static "images/233.webp" %}', company: 'Supreme', companies: ['Supreme', 'Astral'], desc: 'For water conveyance.', usage: 'Transporting water.', maintenance: 'Check for cracks.', safety: 'Lay properly to avoid leaks.', best: 'All irrigation systems.' },
+            { name: 'Rain Gun', img: '{% static "images/234.webp" %}', company: 'Jain Irrigation', companies: ['Jain Irrigation', 'Netafim'], desc: 'High-volume sprinkler.', usage: 'Irrigating large areas.', maintenance: 'Clean nozzle, check pressure.', safety: 'Avoid direct exposure.', best: 'Sugarcane, maize.' },
+            { name: 'Soaker Hose', img: '{% static "images/235.webp" %}', company: 'Neptune', companies: ['Neptune'], desc: 'Porous hose for slow watering.', usage: 'Slow irrigation.', maintenance: 'Flush regularly.', safety: 'Check for clogs.', best: 'Garden beds.' },
+            { name: 'Water Timer', img: '{% static "images/236.webp" %}', company: 'Orbit', companies: ['Orbit', 'Rain Bird'], desc: 'Automates irrigation timing.', usage: 'Set irrigation schedule.', maintenance: 'Check battery.', safety: 'Install properly.', best: 'Drip/sprinkler systems.' },
+            { name: 'Filter', img: '{% static "images/237.webp" %}', company: 'Netafim', companies: ['Netafim', 'Jain Irrigation'], desc: 'Removes debris from water.', usage: 'Water filtration.', maintenance: 'Clean filter element.', safety: 'Install as per manual.', best: 'All irrigation systems.' },
+            { name: 'Hydroponic Kit', img: '{% static "images/238.jpg" %}', company: 'KisanKraft', companies: ['KisanKraft'], desc: 'For soilless cultivation.', usage: 'Hydroponic farming.', maintenance: 'Check nutrient solution.', safety: 'Monitor pH/EC.', best: 'Urban farming.' }
+        ],
+        Harvesting: [
+            { name: 'Reaper', img: '{% static "images/241.webp" %}', company: 'VST', companies: ['VST', 'Mahindra'], desc: 'Mechanized crop harvesting.', usage: 'Harvesting cereals.', maintenance: 'Lubricate moving parts.', safety: 'Keep hands clear.', best: 'Wheat, rice.' },
+            { name: 'Combine Harvester', img: '{% static "images/242.webp" %}', company: 'John Deere', companies: ['John Deere', 'Mahindra'], desc: 'Harvests, threshes, cleans grain.', usage: 'Harvesting, threshing.', maintenance: 'Service regularly.', safety: 'Operate by trained personnel.', best: 'Large farms.' },
+            { name: 'Sickle', img: '{% static "images/243.webp" %}', company: 'KisanKraft', companies: ['KisanKraft', 'Falcon'], desc: 'For manual harvesting.', usage: 'Cutting crops.', maintenance: 'Sharpen blade.', safety: 'Keep away from children.', best: 'Small plots.' },
+            { name: 'Threshing Machine', img: '{% static "images/244.webp" %}', company: 'Mahindra', companies: ['Mahindra', 'John Deere'], desc: 'Separates grain from chaff.', usage: 'Threshing.', maintenance: 'Clean after use.', safety: 'Use as per manual.', best: 'Wheat, rice.' },
+            { name: 'Corn Sheller', img: '{% static "images/245.jpg" %}', company: 'Falcon', companies: ['Falcon'], desc: 'Removes kernels from cob.', usage: 'Shelling corn.', maintenance: 'Clean after use.', safety: 'Use with care.', best: 'Maize.' },
+            { name: 'Potato Digger', img: '{% static "images/246.webp" %}', company: 'Neptune', companies: ['Neptune'], desc: 'Harvests potatoes.', usage: 'Digging potatoes.', maintenance: 'Clean after use.', safety: 'Use gloves.', best: 'Potato fields.' },
+            { name: 'Fruit Picker', img: '{% static "images/247.webp" %}', company: 'KisanKraft', companies: ['KisanKraft'], desc: 'Picks fruits from trees.', usage: 'Picking fruits.', maintenance: 'Clean basket.', safety: 'Use with care.', best: 'Orchards.' },
+            { name: 'Sugarcane Harvester', img: '{% static "images/248.webp" %}', company: 'John Deere', companies: ['John Deere'], desc: 'Harvests sugarcane.', usage: 'Cutting sugarcane.', maintenance: 'Service regularly.', safety: 'Operate by trained personnel.', best: 'Sugarcane fields.' }
+        ],
+        SoilTesting: [
+            { name: 'pH Meter', img: '{% static "images/251.webp" %}', company: 'Hanna', companies: ['Hanna', 'Eutech'], desc: 'Measures soil pH.', usage: 'Test soil acidity/alkalinity.', maintenance: 'Calibrate regularly.', safety: 'Handle probes with care.', best: 'Soil testing labs.' },
+            { name: 'Soil Auger', img: '{% static "images/252.webp" %}', company: 'Falcon', companies: ['Falcon'], desc: 'Collects soil samples.', usage: 'Sampling soil.', maintenance: 'Clean after use.', safety: 'Use gloves.', best: 'Field sampling.' },
+            { name: 'Soil Test Kit', img: '{% static "images/253.webp" %}', company: 'Neptune', companies: ['Neptune'], desc: 'Tests NPK and pH.', usage: 'On-farm soil testing.', maintenance: 'Store reagents properly.', safety: 'Wear gloves.', best: 'Farmers, extension.' },
+            { name: 'EC Meter', img: '{% static "images/254.webp" %}', company: 'Hanna', companies: ['Hanna'], desc: 'Measures soil salinity.', usage: 'Test soil EC.', maintenance: 'Calibrate regularly.', safety: 'Handle with care.', best: 'Soil labs.' },
+            { name: 'Moisture Meter', img: '{% static "images/255.webp" %}', company: 'Falcon', companies: ['Falcon'], desc: 'Measures soil moisture.', usage: 'Test soil moisture.', maintenance: 'Keep probes clean.', safety: 'Do not immerse in water.', best: 'Field, greenhouse.' },
+            { name: 'Soil Thermometer', img: '{% static "images/256.webp" %}', company: 'Neptune', companies: ['Neptune'], desc: 'Measures soil temperature.', usage: 'Test soil temp.', maintenance: 'Clean after use.', safety: 'Handle with care.', best: 'Nurseries.' }
+        ],
+        Sprayers: [
+            { name: 'Knapsack Sprayer', img: '{% static "images/261.webp" %}', company: 'Neptune', companies: ['Neptune', 'KisanKraft'], desc: 'Manual pesticide sprayer.', usage: 'Spraying pesticides.', maintenance: 'Clean tank, check nozzle.', safety: 'Wear mask, gloves.', best: 'Vegetable crops.' },
+            { name: 'Battery Sprayer', img: '{% static "images/262.webp" %}', company: 'KisanKraft', companies: ['KisanKraft', 'Neptune'], desc: 'Battery-powered sprayer.', usage: 'Spraying pesticides.', maintenance: 'Charge battery, clean tank.', safety: 'Avoid water contact with battery.', best: 'Orchards, large fields.' },
+            { name: 'Power Sprayer', img: '{% static "images/263.webp" %}', company: 'Neptune', companies: ['Neptune', 'KisanKraft'], desc: 'Motorized pesticide sprayer.', usage: 'Spraying pesticides.', maintenance: 'Clean tank, check motor.', safety: 'Wear mask, gloves.', best: 'Large fields.' },
+            { name: 'Foot Sprayer', img: '{% static "images/264.webp" %}', company: 'Falcon', companies: ['Falcon'], desc: 'Foot-operated sprayer.', usage: 'Spraying pesticides.', maintenance: 'Clean after use.', safety: 'Use with care.', best: 'Small plots.' },
+            { name: 'Mist Blower', img: '{% static "images/265.webp" %}', company: 'KisanKraft', companies: ['KisanKraft'], desc: 'For misting pesticides.', usage: 'Misting.', maintenance: 'Clean tank, check blower.', safety: 'Wear mask.', best: 'Orchards.' },
+            { name: 'Compression Sprayer', img: '{% static "images/266.webp" %}', company: 'Neptune', companies: ['Neptune'], desc: 'Hand-pressurized sprayer.', usage: 'Spraying pesticides.', maintenance: 'Check seals, clean tank.', safety: 'Release pressure after use.', best: 'Home gardens.' }
+        ]
+    };
+
+    const modalOverlay = document.getElementById('fertilizer-modal-overlay');
+    const modal = document.getElementById('fertilizer-modal');
+    const closeModalBtn = document.getElementById('close-fertilizer-modal');
+    const modalImg = document.getElementById('modal-tool-img');
+    const modalTitle = document.getElementById('modal-tool-title');
+    const modalDesc = document.getElementById('modal-tool-desc');
+    const modalCompany = document.getElementById('modal-tool-company');
+    const modalDetails = document.getElementById('modal-tool-details');
+    const groupTypesList = document.getElementById('group-types-list');
+    const groupTypesGrid = document.getElementById('group-types-grid');
+    const backToListBtn = document.getElementById('back-to-list-btn');
+    const groupSearchInput = document.getElementById('group-search-input');
+
+    let currentGroup = null;
+    let currentTypes = [];
+
+    document.querySelectorAll('.fertilizer-card[data-group]').forEach(card => {
+        const group = card.getAttribute('data-group');
+        card.querySelector('.view-btn').addEventListener('click', () => {
+            modalImg.style.display = 'none';
+            modalDesc.style.display = 'none';
+            modalCompany.style.display = 'none';
+            modalDetails.style.display = 'none';
+            backToListBtn.style.display = 'none';
+            modalTitle.textContent = card.querySelector('h3').textContent;
+            groupTypesList.style.display = 'block';
+            currentGroup = group;
+            currentTypes = toolGroups[group] || [];
+            renderGroupTypes(currentTypes);
+            modalOverlay.classList.add('active');
+        });
+    });
+
+    function renderGroupTypes(types) {
+        groupTypesGrid.innerHTML = '';
+        types.forEach((type, idx) => {
+            const typeCard = document.createElement('div');
+            typeCard.className = 'fertilizer-card';
+            typeCard.style.boxShadow = '0 1px 4px rgba(56,142,60,0.10)';
+            typeCard.style.background = '#f7f7f7';
+            typeCard.style.padding = '1rem';
+            typeCard.style.borderRadius = '0.7rem';
+            typeCard.style.cursor = 'pointer';
+            typeCard.innerHTML = `
+                <img src="${type.img}" alt="${type.name}" style="width:50px;height:50px;">
+                <h4 style="margin:0.5rem 0 0.2rem 0;font-size:1rem;color:#388e3c;">${type.name}</h4>
+                <div style="font-size:0.95rem;color:#444;opacity:0.85;">${type.desc}</div>
+                <div style="font-size:0.95rem;color:#888;">${type.company}</div>
+                <button class="view-btn" style="margin-top:0.7rem;font-size:0.95rem;">View Details</button>
+            `;
+            typeCard.querySelector('.view-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                modalImg.src = type.img;
+                modalImg.alt = type.name;
+                modalImg.style.display = '';
+                modalTitle.textContent = type.name;
+                modalDesc.textContent = type.desc;
+                modalDesc.style.display = '';
+                modalCompany.innerHTML = `<strong>Company:</strong> ${type.company}<br><strong>Other Producers:</strong> ${(type.companies||[]).join(', ')}`;
+                modalCompany.style.display = '';
+                modalDetails.innerHTML = `
+                  <table style='width:100%;border-collapse:collapse;font-size:0.98rem;'>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Usage</td><td style='padding:0.3rem 0.5rem;'>${type.usage}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Maintenance</td><td style='padding:0.3rem 0.5rem;'>${type.maintenance}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Safety Tips</td><td style='padding:0.3rem 0.5rem;'>${type.safety}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Best Use Cases</td><td style='padding:0.3rem 0.5rem;'>${type.best}</td></tr>
+                  </table>
+                `;
+                modalDetails.style.display = '';
+                groupTypesList.style.display = 'none';
+                backToListBtn.style.display = '';
+            });
+            groupTypesGrid.appendChild(typeCard);
+        });
+    }
+
+    groupSearchInput.addEventListener('input', function() {
+        const val = this.value.trim().toLowerCase();
+        if (!val) {
+            renderGroupTypes(currentTypes);
+        } else {
+            renderGroupTypes(currentTypes.filter(type => type.name.toLowerCase().includes(val) || type.desc.toLowerCase().includes(val) || type.company.toLowerCase().includes(val)));
+        }
+    });
+
+    backToListBtn.addEventListener('click', () => {
+        modalImg.style.display = 'none';
+        modalDesc.style.display = 'none';
+        modalCompany.style.display = 'none';
+        modalDetails.style.display = 'none';
+        backToListBtn.style.display = 'none';
+        groupTypesList.style.display = 'block';
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
+    });
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+        }
+    });
+    </script>
+</body>
+</html> 
