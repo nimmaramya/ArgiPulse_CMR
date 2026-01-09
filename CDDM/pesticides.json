@@ -1,0 +1,358 @@
+{
+  "Cotton_leaf_healthy": {
+    "crop": "Cotton",
+    "disease": "Leaf - Healthy",
+    "type": "None",
+    "recommended_pesticide": "No pesticide needed; maintain routine monitoring"
+  },
+  "Cotton_leaf_white_spots": {
+    "crop": "Cotton",
+    "disease": "White spots",
+    "type": "Fungal",
+    "recommended_pesticide": "Carbendazim or Mancozeb",
+    "application_frequency": "Apply at early signs; repeat every 10 days if needed",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Cotton_plant_healthy": {
+    "crop": "Cotton",
+    "disease": "Plant - Healthy",
+    "type": "None",
+    "recommended_pesticide": "No pesticide needed; maintain good cultural practices"
+  },
+  "Cotton_plant_mold": {
+    "crop": "Cotton",
+    "disease": "Plant mold",
+    "type": "Fungal",
+    "recommended_pesticide": "Sulfur dust or Chlorothalonil",
+    "application_frequency": "Weekly during humid periods",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Pepper_bell_Bacterial_spot": {
+    "crop": "Pepper bell",
+    "disease": "Bacterial spot",
+    "type": "Bacterial",
+    "recommended_pesticide": "Copper-based fungicides (Copper hydroxide or Copper oxychloride)",
+    "application_frequency": "Every 7 to 10 days during infection periods",
+    "expected_control_time": "2 to 3 weeks depending on severity"
+  },
+  "Pepper_bell_healthy": {
+    "crop": "Pepper bell",
+    "disease": "Healthy",
+    "type": "None",
+    "recommended_pesticide": "No pesticide needed; regular monitoring is advised"
+  },
+  "Potato_Early_blight": {
+    "crop": "Potato",
+    "disease": "Early blight",
+    "type": "Fungal",
+    "recommended_pesticide": "Chlorothalonil or Mancozeb; alternate with Azoxystrobin",
+    "application_frequency": "Every 7 to 10 days after symptoms appear",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Potato_Late_blight": {
+    "crop": "Potato",
+    "disease": "Late blight",
+    "type": "Fungal",
+    "recommended_pesticide": "Metalaxyl + Mancozeb or Cymoxanil-based fungicides",
+    "application_frequency": "Every 7 to 10 days, especially in wet weather",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Potato_healthy": {
+    "crop": "Potato",
+    "disease": "Healthy",
+    "type": "None",
+    "recommended_pesticide": "No pesticide needed; maintain good cultural practices"
+  },
+  "Rice_Bacterial_leaf_blight": {
+    "crop": "Rice",
+    "disease": "Bacterial leaf blight",
+    "type": "Bacterial",
+    "recommended_pesticide": "Copper oxychloride or Streptomycin spray",
+    "application_frequency": "Every 7 to 10 days",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Rice_Brown_spot": {
+    "crop": "Rice",
+    "disease": "Brown spot",
+    "type": "Fungal",
+    "recommended_pesticide": "Mancozeb or Carbendazim",
+    "application_frequency": "Every 7 to 10 days",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Rice_Leaf_smut": {
+    "crop": "Rice",
+    "disease": "Leaf smut",
+    "type": "Fungal",
+    "recommended_pesticide": "Mancozeb or Carbendazim",
+    "application_frequency": "Every 7 to 10 days",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Tomato_Target_Spot": {
+    "crop": "Tomato",
+    "disease": "Target Spot",
+    "type": "Fungal",
+    "recommended_pesticide": "Azoxystrobin or Mancozeb + Metalaxyl",
+    "application_frequency": "Every 7 to 10 days",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Tomato_Tomato_mosaic_virus": {
+    "crop": "Tomato",
+    "disease": "Tomato mosaic virus",
+    "type": "Viral",
+    "recommended_pesticide": "No chemical cure; control vectors (whiteflies) with imidacloprid or neem oil",
+    "application_frequency": "Remove infected plants",
+    "expected_control_time": "Not applicable"
+  },
+  "Tomato_Tomato_Yellow_Leaf_Curl_Virus": {
+    "crop": "Tomato",
+    "disease": "Tomato Yellow Leaf Curl Virus",
+    "type": "Viral",
+    "recommended_pesticide": "No chemical cure; control vectors and remove infected plants",
+    "application_frequency": "Monitor regularly",
+    "expected_control_time": "Not applicable"
+  },
+  "Tomato_Bacterial_spot": {
+    "crop": "Tomato",
+    "disease": "Bacterial spot",
+    "type": "Bacterial",
+    "recommended_pesticide": "Copper + Mancozeb sprays",
+    "application_frequency": "Every 7 to 10 days",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Tomato_Early_blight": {
+    "crop": "Tomato",
+    "disease": "Early blight",
+    "type": "Fungal",
+    "recommended_pesticide": "Mancozeb + Metalaxyl or Azoxystrobin",
+    "application_frequency": "Every 7 to 10 days",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Tomato_Late_blight": {
+    "crop": "Tomato",
+    "disease": "Late blight",
+    "type": "Fungal",
+    "recommended_pesticide": "Mancozeb + Metalaxyl or combination fungicides",
+    "application_frequency": "Every 7 to 10 days",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Tomato_Leaf_Mold": {
+    "crop": "Tomato",
+    "disease": "Leaf Mold",
+    "type": "Fungal",
+    "recommended_pesticide": "Chlorothalonil, Copper-based fungicides, or Azoxystrobin",
+    "application_frequency": "Every 7 to 10 days, especially during humid conditions",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Tomato_Septoria_leaf_spot": {
+    "crop": "Tomato",
+    "disease": "Septoria leaf spot",
+    "type": "Fungal",
+    "recommended_pesticide": "Chlorothalonil or Mancozeb",
+    "application_frequency": "Every 7 to 10 days",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "Tomato_Spider_mites": {
+    "crop": "Tomato",
+    "disease": "Spider mites (Two spotted spider mite)",
+    "type": "Mite/Pest",
+    "recommended_pesticide": "Abamectin or Spiromesifen (acaricide); can use neem oil for mild cases",
+    "application_frequency": "Repeat after 7 days if needed",
+    "expected_control_time": "1 to 2 weeks depending on severity"
+  },
+  "Tomato_healthy": {
+    "crop": "Tomato",
+    "disease": "Healthy",
+    "type": "None",
+    "recommended_pesticide": "Monitor regularly; no pesticide needed unless symptoms appear"
+  },
+  "Wheat_Healthy": {
+    "crop": "Wheat",
+    "disease": "Healthy",
+    "type": "None",
+    "recommended_pesticide": "No pesticide needed; monitor for symptoms"
+  },
+  "Wheat_Septoria": {
+    "crop": "Wheat",
+    "disease": "Septoria",
+    "type": "Fungal",
+    "recommended_pesticide": "Tebuconazole or Propiconazole",
+    "application_frequency": "Every 10 to 14 days at disease onset",
+    "expected_control_time": "2 to 3 weeks if started early"
+  },
+  "Wheat_stripe_rust": {
+    "crop": "Wheat",
+    "disease": "Stripe rust",
+    "type": "Fungal",
+    "recommended_pesticide": "Propiconazole or Mancozeb",
+    "application_frequency": "First appearance of symptoms; repeat every 10–14 days",
+    "expected_control_time": "Control in 2 to 3 weeks"
+  },
+  "groundnut_rust": {
+    "crop": "Groundnut",
+    "disease": "Rust",
+    "type": "Fungal",
+    "recommended_pesticide": "Chlorothalonil or Mancozeb",
+    "application_frequency": "Every 10 to 14 days starting at early symptoms",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "groundnut_nutrition_deficiency": {
+    "crop": "Groundnut",
+    "disease": "Nutrition deficiency",
+    "type": "Nutritional",
+    "recommended_pesticide": "Apply micronutrient mixture with Zinc, Iron, and Boron",
+    "application_frequency": "Apply 2 to 3 times during growth phase",
+    "expected_control_time": "Visible recovery in 1 to 2 weeks"
+  },
+  "groundnut_late leaf spot": {
+    "crop": "Groundnut",
+    "disease": "Late leaf spot",
+    "type": "Fungal",
+    "recommended_pesticide": "Tebuconazole or Mancozeb",
+    "application_frequency": "Every 10 to 12 days after first symptoms",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "groundnut_healthy_leaf": {
+    "crop": "Groundnut",
+    "disease": "Healthy Leaf",
+    "type": "None",
+    "recommended_pesticide": "No pesticide needed; regular monitoring advised"
+  },
+  "groundnut_early_leaf_spot": {
+    "crop": "Groundnut",
+    "disease": "Early leaf spot",
+    "type": "Fungal",
+    "recommended_pesticide": "Chlorothalonil or Mancozeb",
+    "application_frequency": "Every 10 to 12 days from early vegetative stage",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "sugarcane_Yellow": {
+    "crop": "Sugarcane",
+    "disease": "Yellowing (possible iron/zinc deficiency)",
+    "type": "Nutritional",
+    "recommended_pesticide": "Apply Ferrous sulfate and Zinc sulfate",
+    "application_frequency": "Foliar spray at 15-day intervals",
+    "expected_control_time": "1 to 2 weeks for visible response"
+  },
+  "sugarcane_Rust": {
+    "crop": "Sugarcane",
+    "disease": "Rust",
+    "type": "Fungal",
+    "recommended_pesticide": "Hexaconazole or Propiconazole",
+    "application_frequency": "Every 10 to 15 days during initial symptoms",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "sugarcane_RedRot": {
+    "crop": "Sugarcane",
+    "disease": "Red Rot",
+    "type": "Fungal",
+    "recommended_pesticide": "Use disease-free setts; apply Carbendazim to seed setts",
+    "application_frequency": "Treat once before planting",
+    "expected_control_time": "Prevention focused"
+  },
+  "sugarcane_Mosaic": {
+    "crop": "Sugarcane",
+    "disease": "Mosaic Virus",
+    "type": "Viral",
+    "recommended_pesticide": "No chemical cure; rogue infected plants and control aphids with Dimethoate",
+    "application_frequency": "Spray at early detection",
+    "expected_control_time": "Control spread in 2 to 3 weeks"
+  },
+  "sugarcane_healthy": {
+    "crop": "Sugarcane",
+    "disease": "Healthy",
+    "type": "None",
+    "recommended_pesticide": "No pesticide required; maintain weed and pest control"
+  },
+  "mango_Sooty_Mould": {
+    "crop": "Mango",
+    "disease": "Sooty Mould",
+    "type": "Fungal",
+    "recommended_pesticide": "Spray 1% starch solution or neem-based formulations",
+    "application_frequency": "Once or twice during infection",
+    "expected_control_time": "7 to 10 days"
+  },
+  "mango_Powdery_Mildew": {
+    "crop": "Mango",
+    "disease": "Powdery Mildew",
+    "type": "Fungal",
+    "recommended_pesticide": "Wettable Sulfur or Hexaconazole",
+    "application_frequency": "Every 10 days during flowering",
+    "expected_control_time": "2 weeks"
+  },
+  "mango_healthy": {
+    "crop": "Mango",
+    "disease": "Healthy",
+    "type": "None",
+    "recommended_pesticide": "No treatment needed; observe regularly for pests"
+  },
+  "mango_Gall_Midge": {
+    "crop": "Mango",
+    "disease": "Gall Midge",
+    "type": "Insect",
+    "recommended_pesticide": "Imidacloprid or Chlorpyrifos",
+    "application_frequency": "Apply at panicle emergence and repeat after 15 days",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "mango_Die_Back": {
+    "crop": "Mango",
+    "disease": "Die Back",
+    "type": "Fungal",
+    "recommended_pesticide": "Carbendazim or Copper oxychloride",
+    "application_frequency": "Twice at 15-day intervals",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "mango_Cutting_Weevil": {
+    "crop": "Mango",
+    "disease": "Cutting Weevil",
+    "type": "Insect",
+    "recommended_pesticide": "Chlorpyrifos or Quinalphos",
+    "application_frequency": "Once at fruit set stage",
+    "expected_control_time": "1 week"
+  },
+  "mango_Bacterial_Canker": {
+    "crop": "Mango",
+    "disease": "Bacterial Canker",
+    "type": "Bacterial",
+    "recommended_pesticide": "Copper oxychloride + Streptomycin spray",
+    "application_frequency": "Spray every 10 days in wet season",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "mango_Anthracnose": {
+    "crop": "Mango",
+    "disease": "Anthracnose",
+    "type": "Fungal",
+    "recommended_pesticide": "Carbendazim or Mancozeb",
+    "application_frequency": "Every 10 to 14 days after flowering",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "maize_healthy": {
+    "crop": "Maize",
+    "disease": "Healthy",
+    "type": "None",
+    "recommended_pesticide": "Routine monitoring; no pesticide needed"
+  },
+  "maize_Gray_Leaf_Spot": {
+    "crop": "Maize",
+    "disease": "Gray Leaf Spot",
+    "type": "Fungal",
+    "recommended_pesticide": "Azoxystrobin or Propiconazole",
+    "application_frequency": "Apply at disease onset, repeat every 10–14 days",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "maize_Common_Rust": {
+    "crop": "Maize",
+    "disease": "Common Rust",
+    "type": "Fungal",
+    "recommended_pesticide": "Propiconazole or Mancozeb",
+    "application_frequency": "Spray every 10 days if symptoms appear",
+    "expected_control_time": "2 to 3 weeks"
+  },
+  "maize_Blight": {
+    "crop": "Maize",
+    "disease": "Blight",
+    "type": "Fungal",
+    "recommended_pesticide": "Carbendazim or Mancozeb",
+    "application_frequency": "At first signs, repeat in 10 days if needed",
+    "expected_control_time": "2 to 3 weeks"
+  }
+}

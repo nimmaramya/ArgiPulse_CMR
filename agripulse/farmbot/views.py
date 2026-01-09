@@ -4,10 +4,10 @@ from django.shortcuts import render
 import json
 import requests
 import datetime
-#from .models import SoilCropRecommendation
-#from .models import CropDuration
-#from .models import PlantingCalendar
-#from .disease_prediction_service import disease_service
+from .models import SoilCropRecommendation
+from .models import CropDuration
+from .models import PlantingCalendar
+from .disease_prediction_service import disease_service
 
 @csrf_exempt
 def dialogflow_webhook(request):
@@ -191,7 +191,7 @@ def dialogflow_webhook(request):
 
 
 
-#from .models import CropSoilIrrigation
+from .models import CropSoilIrrigation
 def get_irrigation_tip(crop, soil):
     try:
         # print("hii")
@@ -328,4 +328,3 @@ def crop_disease_prediction(request):
             }
     
     return render(request, 'crop_disease.html', {'result': result})
-

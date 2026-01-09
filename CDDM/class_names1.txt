@@ -1,0 +1,47 @@
+Cotton_leaf_healthy
+Cotton_leaf_white_spots
+Cotton_plant_healthy
+Cotton_plant_mold
+Pepper__bell___Bacterial_spot
+Pepper__bell___healthy
+Potato___Early_blight
+Potato___Late_blight
+Potato___healthy
+Rice_Bacterial_leaf_blight
+Rice_Brown_spot
+Rice_Leaf_smut
+Tomato_Bacterial_spot
+Tomato_Early_blight
+Tomato_Late_blight
+Tomato_Leaf_Mold
+Tomato_Septoria_leaf_spot
+Tomato_Spider_mites_Two_spotted_spider_mite
+Tomato__Target_Spot
+Tomato__Tomato_YellowLeaf__Curl_Virus
+Tomato__Tomato_mosaic_virus
+Tomato_healthy
+Wheat_healthy
+Wheat_septoria
+Wheat_stripe_rust
+groundnut_early_leaf_spot
+groundnut_healthy leaf
+groundnut_late leaf spot
+groundnut_nutrition deficiency
+groundnut_rust
+maize_Blight
+maize_Common_Rust
+maize_Gray_Leaf_Spot
+maize_healthy
+mango_Anthracnose
+mango_Bacterial_Canker
+mango_Cutting_Weevil
+mango_Die_Back
+mango_Gall_Midge
+mango_Powdery_Mildew
+mango_Sooty_Mould
+mango_healthy
+sugarcane_Mosaic
+sugarcane_RedRot
+sugarcane_Rust
+sugarcane_Yellow
+sugarcane_healthy
