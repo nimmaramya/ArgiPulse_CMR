@@ -1,0 +1,260 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Protection | Agripulse</title>
+    <link rel="stylesheet" href="{% static 'css/fertilizers.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="fertilizers-header">
+        <h1>Crop Protection Products</h1>
+        <p>Comprehensive solutions for healthy and protected crops</p>
+    </header>
+    <main>
+        <section class="fertilizer-category-grid">
+            <div class="fertilizer-card" data-group="SeedProtection">
+                <img src="{% static 'images/61.jpg' %}" alt="Seed Protection">
+                <h3>Seed Protection</h3>
+                <div class="desc">Seed treatments, coatings, and protectants.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Fungicides">
+                <img src="{% static 'images/62.jpg' %}" alt="Fungicides">
+                <h3>Fungicides</h3>
+                <div class="desc">Fungal disease control and prevention.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Herbicides">
+                <img src="{% static 'images/63.jpg' %}" alt="Herbicides">
+                <h3>Herbicides</h3>
+                <div class="desc">Weed control and management solutions.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="Insecticides">
+                <img src="{% static 'images/64.jpg' %}" alt="Insecticides">
+                <h3>Insecticides</h3>
+                <div class="desc">Pest control and insect management.</div>
+                <button class="view-btn">View All</button>
+            </div>
+            <div class="fertilizer-card" data-group="CropEnhancement">
+                <img src="{% static 'images/65.webp' %}" alt="Crop Enhancement">
+                <h3>Crop Enhancement</h3>
+                <div class="desc">Growth promoters and stress relievers.</div>
+                <button class="view-btn">View All</button>
+            </div>
+        </section>
+    </main>
+    <div class="fertilizer-modal-overlay" id="fertilizer-modal-overlay">
+        <div class="fertilizer-modal" id="fertilizer-modal">
+            <button class="close-modal" id="close-fertilizer-modal">&times;</button>
+            <img id="modal-seed-img" src="" alt="Product Image" style="display:none;">
+            <h2 id="modal-seed-title"></h2>
+            <div class="modal-desc" id="modal-seed-desc" style="display:none;"></div>
+            <div id="modal-seed-company" style="display:none;margin:0.5rem 0 0.5rem 0;"></div>
+            <div id="modal-seed-reqs" style="display:none;margin-top:1rem;"></div>
+            <!-- Group Types List (hidden by default) -->
+            <div id="group-types-list" style="display:none; margin-top:1.5rem;">
+                <h3 style="margin-bottom:0.5rem;">Products</h3>
+                <input id="group-search-input" type="text" placeholder="Search products..." style="width:100%;padding:0.5rem 0.7rem;margin-bottom:1rem;border-radius:0.5rem;border:1px solid #bdbdbd;font-size:1rem;">
+                <div id="group-types-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;"></div>
+            </div>
+            <button id="back-to-list-btn" style="display:none;margin-top:1rem;">&larr; Back to List</button>
+      </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Agripulse</h3>
+                <p>Your trusted companion for plant care and farming</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@agripulse.com</p>
+                <p>Phone: +1 9999999999</p>
+        </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; agripulse. All rights reserved.</p>
+        </div>
+    </footer>
+    <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","fr","it","es","te","hi","ta","kn","ml","mr","pa","gu"],"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","fr","it","es","te","hi","ta","kn","ml","mr","pa","gu"],"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+    <script>
+    // Crop Protection Products Data
+    const cropProtectionGroups = {
+        SeedProtection: [
+            { name: 'Cruiser Maxx (Thiamethoxam)', img: '{% static "images/ce1.webp" %}', company: 'Syngenta', companies: ['Syngenta', 'Bayer'], desc: 'Systemic seed treatment for early season protection.', requirements: { application: 'Seed treatment', dosage: '2-3 ml/kg seed', timing: 'Before sowing', target: 'Early season pests' }, conditions: 'Provides protection for 3-4 weeks after germination. Avoid direct contact with skin.' },
+            { name: 'Gaucho (Imidacloprid)', img: '{% static "images/ce2.png" %}', company: 'Bayer', desc: 'Systemic insecticide seed treatment.', requirements: { application: 'Seed treatment', dosage: '1.5-2 ml/kg seed', timing: 'Before sowing', target: 'Sucking pests' }, conditions: 'Effective against aphids and whiteflies. Do not use on food crops.' },
+            { name: 'Apron XL (Metalaxyl-M)', img: '{% static "images/ce3.jpeg" %}', company: 'Syngenta', desc: 'Fungicide seed treatment for soil-borne diseases.', requirements: { application: 'Seed treatment', dosage: '1-2 ml/kg seed', timing: 'Before sowing', target: 'Pythium, Phytophthora' }, conditions: 'Protects against damping-off diseases. Use with proper PPE.' },
+            { name: 'Maxim XL (Fludioxonil)', img: '{% static "images/ce4.jpg" %}', company: 'Syngenta', desc: 'Broad-spectrum fungicide seed treatment.', requirements: { application: 'Seed treatment', dosage: '1-1.5 ml/kg seed', timing: 'Before sowing', target: 'Fusarium, Rhizoctonia' }, conditions: 'Controls seed and soil-borne fungal diseases. Safe for most crops.' },
+            { name: 'Poncho (Clothianidin)', img: '{% static "images/ce5.png" %}', company: 'Bayer', desc: 'Neonicotinoid seed treatment for pest control.', requirements: { application: 'Seed treatment', dosage: '2-3 ml/kg seed', timing: 'Before sowing', target: 'Corn rootworm, wireworms' }, conditions: 'Long-lasting protection. Follow label instructions carefully.' },
+            { name: 'Allegiance FL (Metalaxyl)', img: '{% static "images/ce6.jpg" %}', company: 'Bayer', desc: 'Fungicide for seed and soil-borne diseases.', requirements: { application: 'Seed treatment', dosage: '1-2 ml/kg seed', timing: 'Before sowing', target: 'Pythium, Phytophthora' }, conditions: 'Effective against water mold diseases. Use in well-drained soils.' },
+            { name: 'Kernal Guard (Thiram)', img: '{% static "images/ce7.jpg" %}', company: 'UPL', desc: 'Protectant fungicide seed treatment.', requirements: { application: 'Seed treatment', dosage: '2-3 g/kg seed', timing: 'Before sowing', target: 'Seed-borne fungi' }, conditions: 'Prevents seed rot and seedling blight. Wear protective equipment.' },
+            { name: 'Vitavax (Carboxin)', img: '{% static "images/ce8.png" %}', company: 'UPL', desc: 'Systemic fungicide for seed treatment.', requirements: { application: 'Seed treatment', dosage: '1-2 g/kg seed', timing: 'Before sowing', target: 'Loose smut, bunt' }, conditions: 'Controls smut diseases in cereals. Apply with proper ventilation.' },
+            { name: 'Raxil (Tebuconazole)', img: '{% static "images/ce9.webp" %}', company: 'Bayer', desc: 'Triazole fungicide seed treatment.', requirements: { application: 'Seed treatment', dosage: '1-1.5 ml/kg seed', timing: 'Before sowing', target: 'Fusarium, Septoria' }, conditions: 'Broad-spectrum fungicide. Avoid excessive application.' },
+            { name: 'Dividend (Difenoconazole)', img: '{% static "images/ce10.jpeg" %}', company: 'Syngenta', desc: 'Systemic fungicide for seed protection.', requirements: { application: 'Seed treatment', dosage: '1-2 ml/kg seed', timing: 'Before sowing', target: 'Fusarium, Rhizoctonia' }, conditions: 'Provides long-lasting protection. Use according to label.' }
+        ],
+        Fungicides: [
+            { name: 'Quadris (Azoxystrobin)', img: '{% static "images/f1.jpg" %}', company: 'Syngenta', companies: ['Syngenta', 'Bayer'], desc: 'Broad-spectrum fungicide for foliar diseases.', requirements: { application: 'Foliar spray', dosage: '250-500 ml/ha', timing: 'Preventive or early infection', target: 'Powdery mildew, rust, blight' }, conditions: 'Apply before disease development. Rotate with other fungicides.' },
+            { name: 'Tilt (Propiconazole)', img: '{% static "images/f2.jpeg" %}', company: 'Syngenta', desc: 'Triazole fungicide for cereal diseases.', requirements: { application: 'Foliar spray', dosage: '500-750 ml/ha', timing: 'Early disease stage', target: 'Rust, leaf spots' }, conditions: 'Systemic action. Do not exceed recommended rates.' },
+            { name: 'Mancozeb (Dithane)', img: '{% static "images/f3.jpg" %}', company: 'UPL', desc: 'Protectant fungicide for multiple crops.', requirements: { application: 'Foliar spray', dosage: '2-3 kg/ha', timing: 'Preventive application', target: 'Early blight, late blight' }, conditions: 'Contact fungicide. Reapply after rain. Wear protective gear.' },
+            { name: 'Copper Oxychloride', img: '{% static "images/f4.jpeg" %}', company: 'UPL', desc: 'Copper-based fungicide for organic farming.', requirements: { application: 'Foliar spray', dosage: '2-3 kg/ha', timing: 'Preventive', target: 'Bacterial diseases, blight' }, conditions: 'Organic approved. May cause phytotoxicity in hot weather.' },
+            { name: 'Carbendazim (Bavistin)', img: '{% static "images/f5.png" %}', company: 'Bayer', desc: 'Systemic fungicide for broad-spectrum control.', requirements: { application: 'Foliar spray', dosage: '500-750 g/ha', timing: 'Early disease stage', target: 'Fusarium, Botrytis' }, conditions: 'Systemic action. Avoid resistance development.' },
+            { name: 'Chlorothalonil (Bravo)', img: '{% static "images/f6.jpg" %}', company: 'Syngenta', desc: 'Protectant fungicide for vegetable crops.', requirements: { application: 'Foliar spray', dosage: '1-2 kg/ha', timing: 'Preventive', target: 'Early blight, late blight' }, conditions: 'Contact fungicide. Good coverage essential.' },
+            { name: 'Tebuconazole (Folicur)', img: '{% static "images/f7.jpg" %}', company: 'Bayer', desc: 'Triazole fungicide for cereal diseases.', requirements: { application: 'Foliar spray', dosage: '500-750 ml/ha', timing: 'Early disease stage', target: 'Rust, powdery mildew' }, conditions: 'Systemic action. Use in rotation to prevent resistance.' },
+            { name: 'Difenoconazole (Score)', img: '{% static "images/f8.webp" %}', company: 'Syngenta', desc: 'Triazole fungicide for fruit and vegetable crops.', requirements: { application: 'Foliar spray', dosage: '250-500 ml/ha', timing: 'Preventive or early infection', target: 'Anthracnose, scab' }, conditions: 'Systemic action. Apply before disease development.' },
+            { name: 'Pyraclostrobin (Cabrio)', img: '{% static "images/f9.png" %}', company: 'BASF', desc: 'Strobilurin fungicide for broad-spectrum control.', requirements: { application: 'Foliar spray', dosage: '250-500 ml/ha', timing: 'Preventive', target: 'Powdery mildew, rust, blight' }, conditions: 'Broad-spectrum activity. Use in rotation.' },
+            { name: 'Flutriafol (Impact)', img: '{% static "images/f10.webp" %}', company: 'Cheminova', desc: 'Triazole fungicide for cereal diseases.', requirements: { application: 'Foliar spray', dosage: '500-750 ml/ha', timing: 'Early disease stage', target: 'Rust, powdery mildew' }, conditions: 'Systemic action. Follow label instructions carefully.' }
+        ],
+        Herbicides: [
+            { name: 'Glyphosate (Roundup)', img: '{% static "images/h1.jpeg" %}', company: 'Bayer', companies: ['Bayer', 'Syngenta'], desc: 'Non-selective systemic herbicide.', requirements: { application: 'Foliar spray', dosage: '2-4 L/ha', timing: 'Post-emergence', target: 'Annual and perennial weeds' }, conditions: 'Non-selective. Avoid drift to crops. Use with surfactant.' },
+            { name: '2,4-D Amine', img: '{% static "images/h2.jpg" %}', company: 'UPL', desc: 'Selective herbicide for broadleaf weeds.', requirements: { application: 'Foliar spray', dosage: '1-2 L/ha', timing: 'Post-emergence', target: 'Broadleaf weeds' }, conditions: 'Selective for grasses. Avoid drift to sensitive crops.' },
+            { name: 'Atrazine', img: '{% static "images/h3.webp" %}', company: 'Syngenta', desc: 'Pre-emergence herbicide for corn.', requirements: { application: 'Soil application', dosage: '2-4 kg/ha', timing: 'Pre-emergence', target: 'Annual grasses and broadleaves' }, conditions: 'Soil residual. Use only on labeled crops.' },
+            { name: 'Paraquat (Gramoxone)', img: '{% static "images/h4.webp" %}', company: 'Syngenta', desc: 'Contact herbicide for weed control.', requirements: { application: 'Foliar spray', dosage: '2-3 L/ha', timing: 'Post-emergence', target: 'Annual weeds' }, conditions: 'Contact action only. Highly toxic. Use with extreme caution.' },
+            { name: 'Pendimethalin (Stomp)', img: '{% static "images/h5.webp" %}', company: 'BASF', desc: 'Pre-emergence herbicide for multiple crops.', requirements: { application: 'Soil application', dosage: '2-3 L/ha', timing: 'Pre-emergence', target: 'Annual grasses and broadleaves' }, conditions: 'Soil residual. Incorporate into soil.' },
+            { name: 'Metolachlor (Dual)', img: '{% static "images/h6.webp" %}', company: 'Syngenta', desc: 'Pre-emergence herbicide for corn and soybeans.', requirements: { application: 'Soil application', dosage: '1.5-2.5 L/ha', timing: 'Pre-emergence', target: 'Annual grasses and small-seeded broadleaves' }, conditions: 'Soil residual. Use on labeled crops only.' },
+            { name: 'Imazethapyr (Pursuit)', img: '{% static "images/h7.webp" %}', company: 'BASF', desc: 'Post-emergence herbicide for soybeans.', requirements: { application: 'Foliar spray', dosage: '100-150 ml/ha', timing: 'Post-emergence', target: 'Broadleaf weeds and grasses' }, conditions: 'Systemic action. Use on labeled crops only.' },
+            { name: 'Quizalofop (Targa)', img: '{% static "images/h8.webp" %}', company: 'UPL', desc: 'Selective herbicide for grass control.', requirements: { application: 'Foliar spray', dosage: '500-750 ml/ha', timing: 'Post-emergence', target: 'Annual and perennial grasses' }, conditions: 'Selective for broadleaf crops. Systemic action.' },
+            { name: 'Bentazon (Basagran)', img: '{% static "images/h9.jpeg" %}', company: 'BASF', desc: 'Selective herbicide for broadleaf weeds.', requirements: { application: 'Foliar spray', dosage: '2-3 L/ha', timing: 'Post-emergence', target: 'Broadleaf weeds' }, conditions: 'Contact action. Use on labeled crops only.' },
+            { name: 'Clethodim (Select)', img: '{% static "images/h10.jpg" %}', company: 'Valent', desc: 'Selective herbicide for grass control.', requirements: { application: 'Foliar spray', dosage: '250-500 ml/ha', timing: 'Post-emergence', target: 'Annual and perennial grasses' }, conditions: 'Selective for broadleaf crops. Systemic action.' }
+        ],
+        Insecticides: [
+            { name: 'Imidacloprid (Confidor)', img: '{% static "images/i1.jpg" %}', company: 'Bayer', companies: ['Bayer', 'Syngenta'], desc: 'Systemic neonicotinoid insecticide.', requirements: { application: 'Foliar spray/Soil', dosage: '200-400 ml/ha', timing: 'Early pest infestation', target: 'Sucking pests, soil insects' }, conditions: 'Systemic action. Avoid use during flowering.' },
+            { name: 'Lambda-cyhalothrin (Karate)', img: '{% static "images/i2.jpg" %}', company: 'Syngenta', desc: 'Pyrethroid insecticide for broad-spectrum control.', requirements: { application: 'Foliar spray', dosage: '100-200 ml/ha', timing: 'Pest infestation', target: 'Lepidoptera, Coleoptera' }, conditions: 'Contact and stomach poison. Avoid drift to beneficial insects.' },
+            { name: 'Acephate (Orthene)', img: '{% static "images/i3.jpg" %}', company: 'Valent', desc: 'Organophosphate insecticide.', requirements: { application: 'Foliar spray', dosage: '500-1000 g/ha', timing: 'Pest infestation', target: 'Sucking and chewing pests' }, conditions: 'Systemic action. Highly toxic to bees.' },
+            { name: 'Spinosad (Success)', img: '{% static "images/i4.webp" %}', company: 'Dow', desc: 'Natural insecticide for organic farming.', requirements: { application: 'Foliar spray', dosage: '200-400 ml/ha', timing: 'Pest infestation', target: 'Lepidoptera, thrips' }, conditions: 'Organic approved. Safe for beneficial insects.' },
+            { name: 'Chlorpyrifos (Dursban)', img: '{% static "images/i5.jpg" %}', company: 'Dow', desc: 'Organophosphate insecticide for soil pests.', requirements: { application: 'Soil application', dosage: '2-4 L/ha', timing: 'Pre-planting', target: 'Soil insects, termites' }, conditions: 'Soil residual. Highly toxic. Use with caution.' },
+            { name: 'Deltamethrin (Decis)', img: '{% static "images/i6.jpeg" %}', company: 'Bayer', desc: 'Pyrethroid insecticide for multiple pests.', requirements: { application: 'Foliar spray', dosage: '100-200 ml/ha', timing: 'Pest infestation', target: 'Lepidoptera, Coleoptera, Hemiptera' }, conditions: 'Contact action. Avoid use during flowering.' },
+            { name: 'Thiamethoxam (Actara)', img: '{% static "images/i7.png" %}', company: 'Syngenta', desc: 'Neonicotinoid insecticide for sucking pests.', requirements: { application: 'Foliar spray/Soil', dosage: '100-200 g/ha', timing: 'Early infestation', target: 'Aphids, whiteflies, thrips' }, conditions: 'Systemic action. Avoid use during flowering.' },
+            { name: 'Carbaryl (Sevin)', img: '{% static "images/i8.jpeg" %}', company: 'Bayer', desc: 'Carbamate insecticide for broad-spectrum control.', requirements: { application: 'Foliar spray', dosage: '1-2 kg/ha', timing: 'Pest infestation', target: 'Multiple insect pests' }, conditions: 'Contact and stomach poison. Toxic to beneficial insects.' },
+            { name: 'Malathion', img: '{% static "images/i9.png" %}', company: 'UPL', desc: 'Organophosphate insecticide for multiple pests.', requirements: { application: 'Foliar spray', dosage: '1-2 L/ha', timing: 'Pest infestation', target: 'Sucking and chewing pests' }, conditions: 'Contact action. Short residual life.' },
+            { name: 'Bifenthrin (Capture)', img: '{% static "images/i10.png" %}', company: 'FMC', desc: 'Pyrethroid insecticide for soil and foliar pests.', requirements: { application: 'Foliar spray/Soil', dosage: '200-400 ml/ha', timing: 'Pest infestation', target: 'Soil insects, foliar pests' }, conditions: 'Contact action. Long residual activity.' }
+        ],
+        CropEnhancement: [
+            { name: 'Humic Acid (Humax)', img: '{% static "images/ce1.webp" %}', company: 'BioAg', companies: ['BioAg', 'UPL'], desc: 'Soil conditioner and growth promoter.', requirements: { application: 'Soil/Foliar', dosage: '2-5 L/ha', timing: 'Throughout growing season', target: 'Root development, nutrient uptake' }, conditions: 'Improves soil structure and nutrient availability. Safe for all crops.' },
+            { name: 'Seaweed Extract (Kelpak)', img: '{% static "images/ce2.png" %}', company: 'Kelp Products', desc: 'Natural growth promoter and stress reliever.', requirements: { application: 'Foliar spray', dosage: '1-2 L/ha', timing: 'Vegetative and flowering stages', target: 'Growth promotion, stress tolerance' }, conditions: 'Contains natural hormones and nutrients. Safe for organic farming.' },
+            { name: 'Amino Acids (AminoMax)', img: '{% static "images/ce3.jpeg" %}', company: 'BioAg', desc: 'Plant growth promoter with amino acids.', requirements: { application: 'Foliar spray', dosage: '500-1000 ml/ha', timing: 'Critical growth stages', target: 'Protein synthesis, stress recovery' }, conditions: 'Improves plant metabolism and stress tolerance.' },
+            { name: 'Silicon (SilicaMax)', img: '{% static "images/ce4.jpg" %}', company: 'UPL', desc: 'Silicon-based stress reliever and strengthener.', requirements: { application: 'Foliar spray', dosage: '1-2 L/ha', timing: 'Early growth stages', target: 'Stress tolerance, pest resistance' }, conditions: 'Strengthens cell walls and improves stress tolerance.' },
+            { name: 'Zinc Chelate (ZincMax)', img: '{% static "images/ce5.png" %}', company: 'Syngenta', desc: 'Zinc micronutrient for crop enhancement.', requirements: { application: 'Foliar spray', dosage: '500-1000 ml/ha', timing: 'Vegetative stage', target: 'Zinc deficiency, growth promotion' }, conditions: 'Corrects zinc deficiency and promotes growth.' },
+            { name: 'Boron (Borax)', img: '{% static "images/ce6.jpg" %}', company: 'UPL', desc: 'Boron micronutrient for flowering and fruiting.', requirements: { application: 'Foliar spray', dosage: '500-1000 ml/ha', timing: 'Flowering stage', target: 'Flower and fruit development' }, conditions: 'Essential for pollination and fruit set.' },
+            { name: 'Calcium Nitrate (CalMax)', img: '{% static "images/ce7.jpg" %}', company: 'Yara', desc: 'Calcium and nitrogen source for crops.', requirements: { application: 'Foliar spray', dosage: '1-2 kg/ha', timing: 'Fruiting stage', target: 'Fruit quality, calcium deficiency' }, conditions: 'Prevents blossom end rot and improves fruit quality.' },
+            { name: 'Potassium Humate (Humate Plus)', img: '{% static "images/ce8.png" %}', company: 'BioAg', desc: 'Humic acid with potassium for growth promotion.', requirements: { application: 'Soil/Foliar', dosage: '2-5 L/ha', timing: 'Throughout season', target: 'Root development, stress tolerance' }, conditions: 'Improves soil fertility and plant vigor.' },
+            { name: 'Fulvic Acid (FulvicMax)', img: '{% static "images/ce9.webp" %}', company: 'BioAg', desc: 'Fulvic acid for nutrient transport and absorption.', requirements: { application: 'Foliar spray', dosage: '500-1000 ml/ha', timing: 'Critical stages', target: 'Nutrient absorption, stress relief' }, conditions: 'Enhances nutrient uptake and plant metabolism.' },
+            { name: 'Chitosan (ChitoMax)', img: '{% static "images/ce10.jpeg" %}', company: 'BioAg', desc: 'Natural polymer for plant defense and growth.', requirements: { application: 'Foliar spray', dosage: '500-1000 ml/ha', timing: 'Preventive application', target: 'Disease resistance, growth promotion' }, conditions: 'Activates plant defense mechanisms and promotes growth.' }
+        ]
+    };
+
+    const modalOverlay = document.getElementById('fertilizer-modal-overlay');
+    const modal = document.getElementById('fertilizer-modal');
+    const closeModalBtn = document.getElementById('close-fertilizer-modal');
+    const modalImg = document.getElementById('modal-seed-img');
+    const modalTitle = document.getElementById('modal-seed-title');
+    const modalDesc = document.getElementById('modal-seed-desc');
+    const modalCompany = document.getElementById('modal-seed-company');
+    const modalReqs = document.getElementById('modal-seed-reqs');
+    const groupTypesList = document.getElementById('group-types-list');
+    const groupTypesGrid = document.getElementById('group-types-grid');
+    const backToListBtn = document.getElementById('back-to-list-btn');
+    const groupSearchInput = document.getElementById('group-search-input');
+
+    let currentGroup = null;
+    let currentTypes = [];
+
+    document.querySelectorAll('.fertilizer-card[data-group]').forEach(card => {
+        const group = card.getAttribute('data-group');
+        card.querySelector('.view-btn').addEventListener('click', () => {
+            modalImg.style.display = 'none';
+            modalDesc.style.display = 'none';
+            modalCompany.style.display = 'none';
+            modalReqs.style.display = 'none';
+            backToListBtn.style.display = 'none';
+            modalTitle.textContent = card.querySelector('h3').textContent;
+            groupTypesList.style.display = 'block';
+            currentGroup = group;
+            currentTypes = cropProtectionGroups[group] || [];
+            renderGroupTypes(currentTypes);
+            modalOverlay.classList.add('active');
+        });
+    });
+
+    function renderGroupTypes(types) {
+        groupTypesGrid.innerHTML = '';
+        types.forEach((type, idx) => {
+            const typeCard = document.createElement('div');
+            typeCard.className = 'fertilizer-card';
+            typeCard.style.boxShadow = '0 1px 4px rgba(56,142,60,0.10)';
+            typeCard.style.background = '#f7f7f7';
+            typeCard.style.padding = '1rem';
+            typeCard.style.borderRadius = '0.7rem';
+            typeCard.style.cursor = 'pointer';
+            typeCard.innerHTML = `
+                <img src="${type.img}" alt="${type.name}" style="width:50px;height:50px;">
+                <h4 style="margin:0.5rem 0 0.2rem 0;font-size:1rem;color:#388e3c;">${type.name}</h4>
+                <div style="font-size:0.95rem;color:#444;opacity:0.85;">${type.desc}</div>
+                <div style="font-size:0.95rem;color:#888;">${type.company}</div>
+                <button class="view-btn" style="margin-top:0.7rem;font-size:0.95rem;">View Details</button>
+            `;
+            typeCard.querySelector('.view-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                modalImg.src = type.img;
+                modalImg.alt = type.name;
+                modalImg.style.display = '';
+                modalTitle.textContent = type.name;
+                modalDesc.textContent = type.desc;
+                modalDesc.style.display = '';
+                modalCompany.innerHTML = `<strong>Company:</strong> ${type.company}<br><strong>Other Producers:</strong> ${(type.companies||[]).join(', ')}`;
+                modalCompany.style.display = '';
+                modalReqs.innerHTML = `
+                  <table style='width:100%;border-collapse:collapse;font-size:0.98rem;'>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Application Method</td><td style='padding:0.3rem 0.5rem;'>${type.requirements.application}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Dosage</td><td style='padding:0.3rem 0.5rem;'>${type.requirements.dosage}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Timing</td><td style='padding:0.3rem 0.5rem;'>${type.requirements.timing}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Target</td><td style='padding:0.3rem 0.5rem;'>${type.requirements.target}</td></tr>
+                    <tr><td style='font-weight:600;padding:0.3rem 0.5rem;'>Usage & Precautions</td><td style='padding:0.3rem 0.5rem;'>${type.conditions}</td></tr>
+                  </table>
+                `;
+                modalReqs.style.display = '';
+                groupTypesList.style.display = 'none';
+                backToListBtn.style.display = '';
+            });
+            groupTypesGrid.appendChild(typeCard);
+        });
+    }
+
+    groupSearchInput.addEventListener('input', function() {
+        const val = this.value.trim().toLowerCase();
+        if (!val) {
+            renderGroupTypes(currentTypes);
+        } else {
+            renderGroupTypes(currentTypes.filter(type => type.name.toLowerCase().includes(val) || type.desc.toLowerCase().includes(val) || type.company.toLowerCase().includes(val)));
+        }
+    });
+
+    backToListBtn.addEventListener('click', () => {
+        modalImg.style.display = 'none';
+        modalDesc.style.display = 'none';
+        modalCompany.style.display = 'none';
+        modalReqs.style.display = 'none';
+        backToListBtn.style.display = 'none';
+        groupTypesList.style.display = 'block';
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
+    });
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('active');
+        }
+    });
+    </script>
+</body>
+</html> 
