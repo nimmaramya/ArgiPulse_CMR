@@ -10,4 +10,5 @@ urlpatterns = [
     path("yield-prediction/", views.yield_prediction, name='yield_prediction'),
     # path("api/agri-news/", views.govt_agri_updates, name="agri-news"),
     # path("api/agri-updates/", views.agri_rss_news, name="agri-updates"),
+    path("test_disease_detection/", views.test_disease_detection, name='test_disease_detection'),
 ]

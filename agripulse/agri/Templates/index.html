@@ -321,7 +321,7 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
-    <div class="dynamic-bg" aria-hidden="true">
+    <!-- <div class="dynamic-bg" aria-hidden="true">
         <div class="grain-overlay"></div>
         <div class="sky-overlay"></div>
         <div class="hills-layer" aria-hidden="true">
@@ -347,7 +347,7 @@
             <span class="leaf dark small"></span>
             <span class="leaf green"></span>
         </div>
-    </div>
+    </div> -->
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">
@@ -480,7 +480,7 @@
                 <div class="post-filters">
                     <button class="filter-btn active" data-filter="posts">Posts</button>
                     <button class="filter-btn" data-filter="questions">My Questions</button>
-                    <button class="filter-btn" data-filter="tips">Tips For Me</button>
+                    <!-- <button class="filter-btn" data-filter="tips">Tips For Me</button> -->
                 </div>
                 <div class="identity-card" id="identity-card">
                     <div id="identity-inputs">
@@ -699,27 +699,14 @@
     data-bot-font-color="pink"
     data-user-font-color="pink"
     ></df-messenger>
-    <!-- <div id="chatbot-popup">
-      <div id="chatbot-header">
-        <span>AI Chatbot</span>
-        <button id="chatbot-close">&times;</button>
-      </div>
-      <div id="chatbot-messages"></div>
-      <form id="chatbot-form">
-        <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off" required />
-        <button type="submit">Send</button>
-      </form>
-    </div>
-    <button id="chatbot-toggle">&#128172;</button>
-    -->
-   <script src="{% static 'js/script.js' %}"></script> 
+   <script src="{% static 'js/script.js' %}"></script>
+<!-- transulate--------  -->
     <div class="gtranslate_wrapper"></div>
 <script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","fr","it","es","te","hi","ta","kn","ml","mr","pa","gu"],"wrapper_selector":".gtranslate_wrapper"}</script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
 
    <script>
-   // Auto-scroll for features vertical carousel, restart video on each cycle
    (function() {
        const carousel = document.getElementById('vertical-carousel');
        if (!carousel) return;
@@ -759,7 +746,22 @@
        }
    });
    </script>
-   <script type="module">
+   
+   
+   <script>
+   // Disease Detection Upload Button Navigation
+   (function() {
+       const uploadBtn = document.querySelector('.upload-btn');
+       if (uploadBtn) {
+           uploadBtn.addEventListener('click', function() {
+               // Navigate to the disease detection page
+              window.location.href = '/farmbot/crop-disease/';
+           });
+       }
+   })();
+   </script>
+   <!-- <community----------------------------------->
+    <script type="module">
     import {
     collection,
     addDoc,
@@ -1237,46 +1239,7 @@
            }
        });
 
-       /*postsContainer.addEventListener('submit', async (e) => {
-           // Save edit
-           if (e.target.closest('.btn-save-edit')) {
-               const cwrap = e.target.closest('.comment');
-               const card = e.target.closest('.post-card');
-               const postId = card.getAttribute('data-id');
-               const cid = cwrap.getAttribute('data-cid');
-               const textarea = cwrap.querySelector('.edit-comment-form textarea');
-               const newText = (textarea ? textarea.value.trim() : '');
-               if (!newText) { alert('Comment cannot be empty.'); return; }
-               const posts = await loadPosts();
-               const post = posts.find(p => p.id === postId);
-               if (!post) return;
-               const me = loadIdentity();
-               const cobj = (post.comments || []).find(c => c.id === cid && isMe(c.name, c.mobile));
-               if (!cobj) return;
-               //cobj.content = newText;
-               //savePosts(posts);
-               const updatedComments = post.comments.map(c =>
-                    c.id === cid ? { ...c, content: newText } : c
-                );
-
-                await updateDoc(doc(db, "posts", postId), {
-                comments: updatedComments
-                });
-
-               const textDiv = cwrap.querySelector('.comment-text');
-               if (textDiv) textDiv.innerHTML = linkify(escapeHtml(newText));
-               const form = cwrap.querySelector('.edit-comment-form');
-               if (form) form.style.display = 'none';
-               if (textDiv) textDiv.style.display = 'block';
-           }
-           // Cancel edit
-           if (e.target.closest('.btn-cancel-edit')) {
-               const cwrap = e.target.closest('.comment');
-               const form = cwrap.querySelector('.edit-comment-form');
-               const text = cwrap.querySelector('.comment-text');
-               if (form && text) { form.style.display = 'none'; text.style.display = 'block'; }
-           }
-       });*/ 
+       
        postsContainer.addEventListener('click', async (e) => {
             // Save edited comment
             if (e.target.closest('.btn-save-edit')) {
@@ -1320,19 +1283,6 @@
         });
        Promise.resolve(render('posts'));
 
-   })();
-   </script>
-   
-   <script>
-   // Disease Detection Upload Button Navigation
-   (function() {
-       const uploadBtn = document.querySelector('.upload-btn');
-       if (uploadBtn) {
-           uploadBtn.addEventListener('click', function() {
-               // Navigate to the disease detection page
-               window.location.href = '/farmbot/crop-disease/';
-           });
-       }
    })();
    </script>
 </body>

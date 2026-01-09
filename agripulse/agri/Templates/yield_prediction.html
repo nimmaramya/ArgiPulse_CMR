@@ -1,0 +1,764 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yield Prediction - AgriPulse</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #6ee7b7 0%, #34d399 25%, #10b981 50%, #059669 75%, #047857 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #6ee7b7 0%, #34d399 20%, #10b981 40%, #059669 60%, #047857 80%, #065f46 100%);
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background: linear-gradient(135deg, #6ee7b7 0%, #34d399 20%, #10b981 40%, #059669 60%, #047857 80%, #065f46 100%); }
+            50% { background: linear-gradient(135deg, #065f46 0%, #047857 20%, #059669 40%, #10b981 60%, #34d399 80%, #6ee7b7 100%); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+        
+        /* Floating Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: particleFloat 15s linear infinite;
+        }
+        
+        .particle:nth-child(odd) {
+            animation-duration: 20s;
+            background: rgba(255, 255, 255, 0.4);
+        }
+        
+        .particle:nth-child(even) {
+            animation-duration: 25s;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .yield-prediction-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            color:black;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: black;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .main-title {
+            text-align: center;
+            color: black;
+            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            0% { text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); }
+            100% { text-shadow: 0 4px 30px rgba(255, 255, 255, 0.5); }
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: black;
+            margin-bottom: 3rem;
+            font-size: 1.3rem;
+            font-weight: 400;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .yield-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .form-section {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .form-section:hover::before {
+            left: 100%;
+        }
+        
+        .form-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-section h3 {
+            color: black;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: black;
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: black;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .form-group select option {
+            background: #2d3748;
+            color: black;
+            padding: 0.5rem;
+        }
+        
+        .form-group input::placeholder {
+            color: black;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #4ade80;
+            box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+        
+        .submit-btn {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #4ade80, #22c55e, #16a34a);
+            color: black;
+            border: none;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.3);
+        }
+        
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(74, 222, 128, 0.4);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+        
+        .results-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            margin-top: 3rem;
+            animation: resultsSlideIn 1s ease-out;
+        }
+        
+        @keyframes resultsSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .results-section h2 {
+            color: black;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .result-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4ade80, #22c55e, #16a34a);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .result-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .result-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .result-card h4 {
+            color: black;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: black;
+            text-shadow: 0 2px 10px rgba(74, 222, 128, 0.3);
+            animation: numberPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes numberPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .result-value.warning {
+            color: #f59e0b;
+            text-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+        }
+        
+        .result-value.danger {
+            color: #ef4444;
+            text-shadow: 0 2px 10px rgba(239, 68, 68, 0.3);
+        }
+        
+        .recommendations {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-left: 5px solid #4ade80;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .recommendations h4 {
+            color: black;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .recommendations ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .recommendations li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: black;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 2rem;
+            animation: slideInLeft 0.5s ease-out;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .recommendations li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding-left: 2.5rem;
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .recommendations li:last-child {
+            border-bottom: none;
+        }
+        
+        .recommendations li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            font-size: 1.2rem;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.2) rotate(180deg); }
+        }
+        
+        .error-message {
+            background: rgba(239, 68, 68, 0.2);
+            backdrop-filter: blur(10px);
+            color: #fecaca;
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            color: black;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+        }
+        
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #4ade80;
+            animation: spin 1s ease-in-out infinite;
+            margin-left: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .yield-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .yield-prediction-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animated-bg"></div>
+    <div class="particles" id="particles"></div>
+    
+    <div class="yield-prediction-container">
+        <a href="{% url 'index' %}" class="back-btn">
+            ← Back to Home
+        </a>
+        
+        <h1 class="main-title">
+            🌾 Yield Prediction
+        </h1>
+        
+        <p class="subtitle">
+            Get AI-powered yield predictions based on your soil conditions, weather data, and crop information.
+        </p>
+        
+        <form method="post" class="yield-form" id="yieldForm">
+            {% csrf_token %}
+            
+            <div class="form-section">
+                <h3>📍 Location & Weather</h3>
+                <div class="form-group">
+                    <label for="location">Location (City/District):</label>
+                    <input type="text" id="location" name="location" 
+                           value="{% if form_data.location %}{{ form_data.location }}{% endif %}"
+                           placeholder="e.g., Mumbai, Delhi, Bangalore" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>🌱 Crop Information</h3>
+                <div class="form-group">
+                    <label for="crop">Crop Name:</label>
+                    <select id="crop" name="crop" required>
+                        <option value="">Select Crop</option>
+                        <option value="Rice" {% if form_data.crop == 'Rice' %}selected{% endif %}>Rice</option>
+                        <option value="Wheat" {% if form_data.crop == 'Wheat' %}selected{% endif %}>Wheat</option>
+                        <option value="Maize" {% if form_data.crop == 'Maize' %}selected{% endif %}>Maize</option>
+                        <option value="Cotton" {% if form_data.crop == 'Cotton' %}selected{% endif %}>Cotton</option>
+                        <option value="Soybean" {% if form_data.crop == 'Soybean' %}selected{% endif %}>Soybean</option>
+                        <option value="Potato" {% if form_data.crop == 'Potato' %}selected{% endif %}>Potato</option>
+                        <option value="Tomato" {% if form_data.crop == 'Tomato' %}selected{% endif %}>Tomato</option>
+                        <option value="Groundnut" {% if form_data.crop == 'Groundnut' %}selected{% endif %}>Groundnut</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="previous_crop">Previous Crop:</label>
+                    <input type="text" id="previous_crop" name="previous_crop" 
+                           value="{% if form_data.previous_crop %}{{ form_data.previous_crop }}{% endif %}"
+                           placeholder="e.g., Wheat, Rice, Fallow">
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>🧪 Soil Nutrients (mg/kg)</h3>
+                <div class="form-group">
+                    <label for="nitrogen">Nitrogen (N):</label>
+                    <input type="number" id="nitrogen" name="nitrogen" 
+                           value="{% if form_data.nitrogen %}{{ form_data.nitrogen }}{% else %}100{% endif %}"
+                           min="0" max="1000" required>
+                </div>
+                <div class="form-group">
+                    <label for="phosphorus">Phosphorus (P):</label>
+                    <input type="number" id="phosphorus" name="phosphorus" 
+                           value="{% if form_data.phosphorus %}{{ form_data.phosphorus }}{% else %}50{% endif %}"
+                           min="0" max="200" required>
+                </div>
+                <div class="form-group">
+                    <label for="potassium">Potassium (K):</label>
+                    <input type="number" id="potassium" name="potassium" 
+                           value="{% if form_data.potassium %}{{ form_data.potassium }}{% else %}100{% endif %}"
+                           min="0" max="500" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>🌡️ Soil Properties</h3>
+                
+                <div class="form-group">
+                    <label for="ph">Soil pH (0-14):</label>
+                    <input type="number" id="ph" name="ph" step="0.1" 
+                           value="{% if form_data.ph %}{{ form_data.ph }}{% else %}7.0{% endif %}"
+                           min="0" max="14" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                🔮 Predict Yield
+            </button>
+        </form>
+        
+        <div class="loading" id="loading">
+            Analyzing your data and generating predictions...
+        </div>
+        
+        {% if result %}
+        <div class="results-section">
+            <h2>📊 Prediction Results</h2>
+            
+            {% if result.error %}
+            <div class="error-message">
+                <strong>Error:</strong> {{ result.error }}
+            </div>
+            {% else %}
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <h4>🌱 Soil Fertility Score</h4>
+                    <div class="result-value {% if result.Soil_Fertility_Score <= 6 %}danger{% elif result.Soil_Fertility_Score <= 9 %}warning{% endif %}">
+                        {{ result.Soil_Fertility_Score }}/12
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <h4>📊 Predicted Remark</h4>
+                    <div class="result-value {% if result.Predicted_Remark == 'crop failure' %}danger{% elif result.Predicted_Remark == 'normal' %}{% else %}warning{% endif %}">
+                        {{ result.Predicted_Remark|upper }}
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <h4>🌾 Predicted Yield</h4>
+                    <div class="result-value {% if result.Final_Adjusted_Yield_kg_ha < 10 %}danger{% elif result.Final_Adjusted_Yield_kg_ha < 20 %}warning{% endif %}">
+                        {{ result.final2|floatformat:2 }}-{{ result.Final_Adjusted_Yield_kg_ha|floatformat:2 }} q/ha
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recommendations">
+                <h4>💡 Recommendations</h4>
+                <ul>
+                    {% for recommendation in result.Recommendations %}
+                    <li>{{ recommendation }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","fr","it","es","te","hi","ta","kn","ml","mr","pa","gu"],"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Form submission with loading animation
+        document.getElementById('yieldForm').addEventListener('submit', function() {
+            document.getElementById('loading').style.display = 'block';
+            document.querySelector('.yield-form').style.opacity = '0.5';
+            document.querySelector('.yield-form').style.pointerEvents = 'none';
+        });
+        
+        // Auto-scroll to results after page load if results exist
+        document.addEventListener('DOMContentLoaded', function() {
+            const resultsSection = document.querySelector('.results-section');
+            if (resultsSection) {
+                setTimeout(() => {
+                    resultsSection.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 500);
+            }
+        });
+        
+        // Initialize particles on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            
+            // Add staggered animation to form sections
+            const formSections = document.querySelectorAll('.form-section');
+            formSections.forEach((section, index) => {
+                section.style.animationDelay = (index * 0.2) + 's';
+            });
+        });
+        
+        // Add hover effects to result cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const resultCards = document.querySelectorAll('.result-card');
+            resultCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.05)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

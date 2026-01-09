@@ -12,7 +12,7 @@ def index(request):
     return render(request, "index.html")
 
 def crop_protection(request):
-    return render(request, "crop-protection.html")
+    return render(request, "crop_protection.html")
 
 def seed(request):
     return render(request, "seeds.html")
@@ -22,6 +22,9 @@ def fertilizer(request):
 
 def tools(request):
     return render(request, "tools.html")
+
+def test_disease_detection(request):
+    return render(request, "test_disease_detection.html")
 
 def yield_prediction(request):
     if request.method == 'POST':
@@ -250,7 +253,8 @@ def predict_from_input(user_input):
             "pH_Factor": ph_factor,
             "Temperature_Factor": temp_factor,
             "Rainfall_Factor": rain_factor,
-            "Final_Adjusted_Yield_kg_ha": adjusted_yield,
+            "Final_Adjusted_Yield_kg_ha": max(5, adjusted_yield/100),
+            "final2": max(0,(adjusted_yield/100)-10),
             "Recommendations": recs
         }
         
@@ -266,7 +270,7 @@ def predict_from_input(user_input):
         }
 
 def adjust_yield(predicted_yield, crop_name, ph, temperature, rainfall):
-    DATASET_AVG_YIELD = 1645
+    DATASET_AVG_YIELD = 1645  # kg/ha
     crop_baseline = {"Rice": 4000, "Wheat": 3500, "Cotton": 2500, "Maize": 5000, "Soybean": 2800}
     crop_caps = {"Rice": 9000, "Wheat": 8000, "Maize": 8500, "Cotton": 6000, "Soybean": 5000}
     
@@ -360,9 +364,9 @@ def fertilizer_recommendation(crop, N, P, K, ph, fertility_score_val):
     if fertility_score_val <= 6:
         recs.extend(["Apply organic compost", "Use green manure (e.g., Dhaincha)", "Add biofertilizers with FYM"])
     elif fertility_score_val <= 9:
-        recs.extend(["Apply balanced NPK (20:20:0)", "Incorporate green manure before sowing"])
+        recs.extend(["Moderately alkaline","Apply balanced NPK (20:20:0)", "Incorporate green manure before sowing"])
     else:
-        recs.extend(["Maintain current fertilization routine", "Use micronutrients only if deficiencies appear"])
+        recs.extend(["Maintain current fertilization routine", "Use micronutrients only if deficiencies appear","Strongly alkaline (sodic soils)","Apply gypsum (CaSO₄) to improve soil structure","Incorporate organic matter to enhance microbial activity"])
 
     recs.extend(ph_recommendation(ph))
     return recs

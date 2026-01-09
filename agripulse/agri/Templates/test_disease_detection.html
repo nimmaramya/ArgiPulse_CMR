@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Disease Detection</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; padding: 2rem; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { color: #333; margin-bottom: 2rem; text-align: center; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #333; }
+        input[type="text"], input[type="file"] { width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        button { width: 100%; padding: 1rem; background: #4CAF50; color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; }
+        /* button:disabled { background: #ccc; cursor: not-allowed; } */
+        button:hover:not(:disabled) { background: #45a049; }
+        .result { display: none; margin-top: 2rem; padding: 1.5rem; background: #f9f9f9; border-radius: 8px; border-left: 4px solid #4CAF50; }
+        .error { border-left-color: #f44336; background: #ffebee; }
+        .loading { text-align: center; padding: 2rem; color: #666; }
+        img { max-width: 100%; border-radius: 8px; margin-top: 1rem; }
+        pre { background: #f5f5f5; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Disease Detection Test</h1>
+        
+        <div class="card">
+            <h2>Test Form</h2>
+            <div class="form-group">
+                <label for="crop-name">Crop Name:</label>
+                <input type="text" id="crop-name" placeholder="e.g., tomato, cotton, potato" list="crops">
+                <datalist id="crops">
+                    <option value="tomato">
+                    <option value="cotton">
+                    <option value="potato">
+                    <option value="rice">
+                    <option value="wheat">
+                    <option value="pepper">
+                    <option value="groundnut">
+                    <option value="maize">
+                    <option value="mango">
+                    <option value="sugarcane">
+                </datalist>
+            </div>
+            
+            <div class="form-group">
+                <label for="plant-image">Plant Image:</label>
+                <input type="file" id="plant-image" accept="image/*">
+            </div>
+            
+            <button id="analyze-btn" onclick="analyze()">Analyze Disease</button>
+            
+            <div id="image-preview"></div>
+        </div>
+        
+        <div id="result" class="result">
+            <h3>Result:</h3>
+            <pre id="result-content"></pre>
+            <h1>Disease Detected Is:</h1><br>
+            <h1>Pesticides recommended are:</h1><br>
+            <h1>Methods Of usage:</h1><br>
+        </div>
+    </div>
+
+    <script>
+        const cropNameInput = document.getElementById('crop-name');
+        const imageInput = document.getElementById('plant-image');
+        const analyzeBtn = document.getElementById('analyze-btn');
+        const resultDiv = document.getElementById('result');
+        const resultContent = document.getElementById('result-content');
+        const imagePreview = document.getElementById('image-preview');
+
+        // Show image preview
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    imagePreview.innerHTML = `<img src="${ev.target.result}" alt="Preview">`;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Enable/disable button
+        function checkForm() {
+            const hasCrop = cropNameInput.value.trim().length > 0;
+            const hasImage = imageInput.files.length > 0;
+            analyzeBtn.disabled = !(hasCrop && hasImage);
+        }
+
+        cropNameInput.addEventListener('input', checkForm);
+        imageInput.addEventListener('change', checkForm);
+        // function analyze(){
+        //     resultDiv.style.display = 'block';
+        // }
+
+        async function analyze() {
+            const cropName = cropNameInput.value.trim();
+            const imageFile = imageInput.files[0];
+
+            if (!cropName || !imageFile) {
+                alert('Please enter crop name and select an image');
+                return;
+            }
+
+            analyzeBtn.disabled = true;
+            analyzeBtn.textContent = 'Analyzing...';
+            resultDiv.style.display = 'none';
+
+            try {
+                const formData = new FormData();
+                formData.append('crop_name', cropName);
+                formData.append('plant_image', imageFile);
+
+                console.log('Sending request to /analyze-disease/');
+                const response = await fetch('/analyze-disease/', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                console.log('Response status:', response.status);
+                const text = await response.text();
+                console.log('Response body:', text);
+
+                resultDiv.className = response.ok ? 'result' : 'result error';
+                resultContent.textContent = text;
+                resultDiv.style.display = 'block';
+
+                if (response.ok) {
+                    try {
+                        const data = JSON.parse(text);
+                        console.log('Parsed data:', data);
+                        resultContent.textContent = JSON.stringify(data, null, 2);
+                    } catch (e) {
+                        console.error('JSON parse error:', e);
+                    }
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                resultDiv.className = 'result error';
+                resultContent.textContent = 'Error: ' + error.message;
+                resultDiv.style.display = 'block';
+            } finally {
+                analyzeBtn.disabled = false;
+                analyzeBtn.textContent = 'Analyze Disease';
+            }
+        }
+
+        // Initial check
+        checkForm();
+    </script>
+</body>
+</html>
+
