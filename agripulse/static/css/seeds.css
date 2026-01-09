@@ -1,0 +1,116 @@
+/* seeds.css */
+.marketplace-seeds {
+  background: #fff;
+  padding: 0;
+}
+.seeds-hero-banner {
+  background: linear-gradient(90deg, #f7f3e7 0%, #e6e2d3 100%), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+  padding: 64px 0 48px 0;
+  text-align: center;
+  position: relative;
+}
+.seeds-hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+  padding: 32px 24px 24px 24px;
+  box-shadow: 0 4px 24px rgba(191,160,70,0.08);
+  display: inline-block;
+}
+.seeds-title {
+  font-size: 2.8rem;
+  color: #bfa046;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.seeds-subtitle {
+  color: #555;
+  font-size: 1.18rem;
+  margin-bottom: 0;
+}
+.seeds-section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 16px 64px 16px;
+}
+.seeds-section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #4CAF50;
+  font-weight: 600;
+  margin-bottom: 36px;
+  letter-spacing: 0.01em;
+}
+.seeds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+.seed-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(191,160,70,0.10), 0 1.5px 6px rgba(76,175,80,0.08);
+  padding: 24px 18px 18px 18px;
+  text-align: center;
+  border: 1.5px solid #e6e2d3;
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.seed-card:hover {
+  box-shadow: 0 12px 36px rgba(191,160,70,0.18), 0 3px 12px rgba(76,175,80,0.12);
+  transform: translateY(-6px) scale(1.03);
+  border-color: #bfa046;
+}
+.seed-card img {
+  width: 100%;
+  max-width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  background: #f5f5f5;
+  border: 1.5px solid #e6e2d3;
+}
+.seed-card h3 {
+  color: #4CAF50;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.seed-card p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+.seed-link {
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(90deg, #bfa046 0%, #4CAF50 100%);
+  color: #fff;
+  border-radius: 22px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.seed-link:hover {
+  background: #bfa046;
+}
+
+@media (max-width: 700px) {
+  .seeds-hero-content {
+    padding: 18px 6vw 12px 6vw;
+  }
+  .seeds-title {
+    font-size: 2rem;
+  }
+  .seeds-section-title {
+    font-size: 1.3rem;
+  }
+  .seed-card img {
+    max-width: 98vw;
+    height: 100px;
+  }
+} 

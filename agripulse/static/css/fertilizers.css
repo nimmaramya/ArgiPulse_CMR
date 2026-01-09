@@ -1,0 +1,228 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.fertilizers-header {
+    background: #388e3c;
+    color: #fff;
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.fertilizers-header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.fertilizers-header p {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.fertilizer-category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 2rem 5vw;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.fertilizer-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 1.5rem 1rem 1rem 1rem;
+    text-align: center;
+    transition: transform 0.18s, box-shadow 0.18s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.fertilizer-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(56,142,60,0.18);
+}
+
+.fertilizer-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    background: #f1f8e9;
+    box-shadow: 0 1px 4px rgba(56,142,60,0.07);
+}
+
+.fertilizer-card h3 {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.1rem;
+    color: #388e3c;
+    font-weight: 600;
+}
+
+.fertilizer-card .desc {
+    font-size: 0.95rem;
+    color: #444;
+    margin-top: 0.5rem;
+    opacity: 0.85;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    padding: 2rem 0 0.5rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    margin-top: 0;
+    color: #a5d6a7;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: #bdbdbd;
+}
+
+.view-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1.2rem;
+    background: #388e3c;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.18s;
+    box-shadow: 0 1px 4px rgba(56,142,60,0.10);
+}
+
+.view-btn:hover {
+    background: #256029;
+}
+
+.fertilizer-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.fertilizer-modal-overlay.active {
+    display: flex;
+}
+
+.fertilizer-modal {
+    background: #fff;
+    border-radius: 1rem;
+    max-width: 800px;
+    width: 95vw;
+    min-width: 320px;
+    padding: 2rem 2rem 1.5rem 2rem;
+    box-shadow: 0 8px 32px rgba(56,142,60,0.18);
+    position: relative;
+    text-align: left;
+    animation: modalIn 0.2s;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes modalIn {
+    from { transform: translateY(40px) scale(0.95); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@media (max-width: 900px) {
+    .fertilizer-modal {
+        max-width: 98vw;
+        padding: 1rem 0.5rem 1rem 0.5rem;
+    }
+}
+
+.fertilizer-modal .close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.5rem;
+    color: #388e3c;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.fertilizer-modal .close-modal:hover {
+    color: #d32f2f;
+}
+
+.fertilizer-modal h2 {
+    margin-top: 0;
+    color: #388e3c;
+    font-size: 1.4rem;
+}
+
+.fertilizer-modal img {
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    background: #f1f8e9;
+    box-shadow: 0 1px 4px rgba(56,142,60,0.07);
+}
+
+#modal-seed-img {
+  width: 250px;
+  height: 250px;
+  /* margin-left: 0cap; */
+  object-fit: cover;
+  border-radius: 0.7rem;
+  /* display: block; */
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+
+.fertilizer-modal .modal-desc {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 700px) {
+    .fertilizer-category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        padding: 1rem 2vw;
+    }
+    .fertilizers-header h1 {
+        font-size: 1.5rem;
+    }
+} 
