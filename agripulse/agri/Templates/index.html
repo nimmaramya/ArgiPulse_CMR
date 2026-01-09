@@ -8,6 +8,44 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script type="module" src="{% static 'js/firebase.js' %}"></script>
     <style>
+        /* Floating leaves layer */
+        .leaf-layer { position: absolute; inset: 0; pointer-events: none; }
+        .leaf { position: absolute; width: 28px; height: 28px; opacity: 0.85; background-repeat: no-repeat; background-size: contain; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.08)); animation: leaf-drift 18s linear infinite; }
+        .leaf.small { width: 20px; height: 20px; opacity: 0.75; }
+        .leaf.large { width: 34px; height: 34px; }
+        @keyframes leaf-drift {
+            0% { transform: translate3d(var(--x-start, 0), 0, 0) rotate(0deg); opacity: 0; }
+            5% { opacity: 0.9; }
+            50% { transform: translate3d(calc(var(--x-start, 0) + var(--x-range, 40vw)), 40vh, 0) rotate(180deg); }
+            100% { transform: translate3d(calc(var(--x-start, 0) + var(--x-range, 40vw)), 100vh, 0) rotate(360deg); opacity: 0; }
+        }
+        /* Inline SVG leaves as data URIs for performance */
+        .leaf.green {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><path fill='%2374c69d' d='M53 13c-7 7-18 9-26 7-2 8 0 19 7 26 0 0 7 7 16 7 0 0-2-9 7-16 7-7 7-16 7-16s-9 0-16 7z'/><path fill='none' stroke='%235aa382' stroke-width='2' d='M31 31c6 6 14 8 22 8'/></svg>");
+        }
+        .leaf.teal {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><path fill='%2395d5b2' d='M12 40c8-8 21-11 30-8 3-9 0-22-8-30 0 0-8-8-18-8 0 0 2 11-8 18-8 8-8 18-8 18s10 0 18-8z'/><path fill='none' stroke='%2374b49b' stroke-width='2' d='M32 32c-7-7-16-10-25-10'/></svg>");
+        }
+        .leaf.dark {
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><path fill='%235fab8e' d='M8 18c10 0 22 6 28 14 8 6 14 18 14 28 0 0-12-6-18-14C24 40 18 28 18 18 18 8 8 8 8 8z'/><path fill='none' stroke='%234f927a' stroke-width='2' d='M18 18c0 10 6 22 14 28'/></svg>");
+        }
+        .leaf:nth-child(1) { left: 5%;  --x-start: -10vw; --x-range: 30vw; animation-duration: 22s; animation-delay: 0s; }
+        .leaf:nth-child(2) { left: 15%; --x-start: -5vw;  --x-range: 35vw; animation-duration: 24s; animation-delay: 2s; }
+        .leaf:nth-child(3) { left: 25%; --x-start: 0vw;   --x-range: 30vw; animation-duration: 20s; animation-delay: 4s; }
+        .leaf:nth-child(4) { left: 35%; --x-start: -8vw;  --x-range: 40vw; animation-duration: 26s; animation-delay: 6s; }
+        .leaf:nth-child(5) { left: 45%; --x-start: -12vw; --x-range: 45vw; animation-duration: 28s; animation-delay: 1s; }
+        .leaf:nth-child(6) { left: 55%; --x-start: -6vw;  --x-range: 30vw; animation-duration: 23s; animation-delay: 3s; }
+        .leaf:nth-child(7) { left: 65%; --x-start: -4vw;  --x-range: 35vw; animation-duration: 25s; animation-delay: 5s; }
+        .leaf:nth-child(8) { left: 75%; --x-start: -10vw; --x-range: 40vw; animation-duration: 27s; animation-delay: 7s; }
+        .leaf:nth-child(9) { left: 85%; --x-start: -12vw; --x-range: 30vw; animation-duration: 21s; animation-delay: 9s; }
+        .leaf:nth-child(10){ left: 95%; --x-start: -8vw;  --x-range: 25vw; animation-duration: 24s; animation-delay: 11s; }
+        @media (prefers-reduced-motion: reduce) {
+            .leaf { animation: none !important; opacity: 0.5; }
+        }
+    </style>
+    <style></style>
+
+    <style>
     .forecast-row {
         display: flex;
         gap: 1rem;
@@ -324,7 +362,7 @@
     <div class="dynamic-bg" aria-hidden="true">
         <div class="grain-overlay"></div>
         <div class="sky-overlay"></div>
-        <div class="hills-layer" aria-hidden="true">
+        <!-- <div class="hills-layer" aria-hidden="true">
             <svg viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
                 <path fill="#a7c4a0" d="M0,224L60,208C120,192,240,160,360,154.7C480,149,600,171,720,170.7C840,171,960,149,1080,138.7C1200,128,1320,128,1380,128L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/>
                 <path fill="#8fb391" d="M0,256L80,240C160,224,320,192,480,176C640,160,800,160,960,149.3C1120,139,1280,117,1360,106.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"/>
@@ -334,7 +372,7 @@
             <path fill="#b7e4c7" d="M0,288L48,256C96,224,192,160,288,133.3C384,107,480,117,576,122.7C672,128,768,128,864,149.3C960,171,1056,213,1152,213.3C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"/>
             <path fill="#95d5b2" d="M0,288L60,272C120,256,240,224,360,197.3C480,171,600,149,720,154.7C840,160,960,192,1080,213.3C1200,235,1320,245,1380,250.7L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"/>
             <path fill="#74c69d" d="M0,288L80,272C160,256,320,224,480,213.3C640,203,800,213,960,208C1120,203,1280,181,1360,170.7L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"/>
-        </svg>
+        </svg> -->
         <div class="leaf-layer">
             <span class="leaf green small"></span>
             <span class="leaf teal"></span>
@@ -348,10 +386,22 @@
             <span class="leaf green"></span>
         </div>
     </div>
+     <div class="floating-elements">
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+    </div>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">
-            <a href="#home"><img src="{% static 'images/agripulse logo.png' %}" alt="agripulse"></a> 
+            <a href="#home" style="margin-left: 10px; margin-bottom: 10px;"><img src="{% static 'images/agripulse logo.png' %}" alt="agripulse"></a> 
         </div>
         <div class="nav-links">
             <a href="#home" class="active" data-translate="nav.home">Home</a>
@@ -480,7 +530,7 @@
                 <div class="post-filters">
                     <button class="filter-btn active" data-filter="posts">Posts</button>
                     <button class="filter-btn" data-filter="questions">My Questions</button>
-                    <button class="filter-btn" data-filter="tips">Tips For Me</button>
+                    <!-- <button class="filter-btn" data-filter="tips">Tips For Me</button> -->
                 </div>
                 <div class="identity-card" id="identity-card">
                     <div id="identity-inputs">
@@ -699,27 +749,14 @@
     data-bot-font-color="pink"
     data-user-font-color="pink"
     ></df-messenger>
-    <!-- <div id="chatbot-popup">
-      <div id="chatbot-header">
-        <span>AI Chatbot</span>
-        <button id="chatbot-close">&times;</button>
-      </div>
-      <div id="chatbot-messages"></div>
-      <form id="chatbot-form">
-        <input type="text" id="chatbot-input" placeholder="Type your message..." autocomplete="off" required />
-        <button type="submit">Send</button>
-      </form>
-    </div>
-    <button id="chatbot-toggle">&#128172;</button>
-    -->
-   <script src="{% static 'js/script.js' %}"></script> 
+   <script src="{% static 'js/script.js' %}"></script>
+<!-- transulate--------  -->
     <div class="gtranslate_wrapper"></div>
 <script>window.gtranslateSettings = {"default_language":"en","native_language_names":true,"detect_browser_language":true,"languages":["en","fr","it","es","te","hi","ta","kn","ml","mr","pa","gu"],"wrapper_selector":".gtranslate_wrapper"}</script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
 
    <script>
-   // Auto-scroll for features vertical carousel, restart video on each cycle
    (function() {
        const carousel = document.getElementById('vertical-carousel');
        if (!carousel) return;
@@ -759,7 +796,22 @@
        }
    });
    </script>
-   <script type="module">
+   
+   
+   <script>
+   // Disease Detection Upload Button Navigation
+   (function() {
+       const uploadBtn = document.querySelector('.upload-btn');
+       if (uploadBtn) {
+           uploadBtn.addEventListener('click', function() {
+               // Navigate to the disease detection page
+              window.location.href = '/farmbot/crop-disease/';
+           });
+       }
+   })();
+   </script>
+   <!-- <community----------------------------------->
+    <script type="module">
     import {
     collection,
     addDoc,
@@ -1237,46 +1289,7 @@
            }
        });
 
-       /*postsContainer.addEventListener('submit', async (e) => {
-           // Save edit
-           if (e.target.closest('.btn-save-edit')) {
-               const cwrap = e.target.closest('.comment');
-               const card = e.target.closest('.post-card');
-               const postId = card.getAttribute('data-id');
-               const cid = cwrap.getAttribute('data-cid');
-               const textarea = cwrap.querySelector('.edit-comment-form textarea');
-               const newText = (textarea ? textarea.value.trim() : '');
-               if (!newText) { alert('Comment cannot be empty.'); return; }
-               const posts = await loadPosts();
-               const post = posts.find(p => p.id === postId);
-               if (!post) return;
-               const me = loadIdentity();
-               const cobj = (post.comments || []).find(c => c.id === cid && isMe(c.name, c.mobile));
-               if (!cobj) return;
-               //cobj.content = newText;
-               //savePosts(posts);
-               const updatedComments = post.comments.map(c =>
-                    c.id === cid ? { ...c, content: newText } : c
-                );
-
-                await updateDoc(doc(db, "posts", postId), {
-                comments: updatedComments
-                });
-
-               const textDiv = cwrap.querySelector('.comment-text');
-               if (textDiv) textDiv.innerHTML = linkify(escapeHtml(newText));
-               const form = cwrap.querySelector('.edit-comment-form');
-               if (form) form.style.display = 'none';
-               if (textDiv) textDiv.style.display = 'block';
-           }
-           // Cancel edit
-           if (e.target.closest('.btn-cancel-edit')) {
-               const cwrap = e.target.closest('.comment');
-               const form = cwrap.querySelector('.edit-comment-form');
-               const text = cwrap.querySelector('.comment-text');
-               if (form && text) { form.style.display = 'none'; text.style.display = 'block'; }
-           }
-       });*/ 
+       
        postsContainer.addEventListener('click', async (e) => {
             // Save edited comment
             if (e.target.closest('.btn-save-edit')) {
@@ -1320,19 +1333,6 @@
         });
        Promise.resolve(render('posts'));
 
-   })();
-   </script>
-   
-   <script>
-   // Disease Detection Upload Button Navigation
-   (function() {
-       const uploadBtn = document.querySelector('.upload-btn');
-       if (uploadBtn) {
-           uploadBtn.addEventListener('click', function() {
-               // Navigate to the disease detection page
-               window.location.href = '/farmbot/crop-disease/';
-           });
-       }
    })();
    </script>
 </body>

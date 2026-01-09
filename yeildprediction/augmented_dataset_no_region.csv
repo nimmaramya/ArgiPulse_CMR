@@ -1,0 +1,1137 @@
+N,P,K,pH,Temperature,Rainfall,Crop,PreviousCrop,Yield,Remark
+393,29,211,6.8,22,195,Millet,Rice,3340,normal
+128,39,85,6.7,38,175,Pigeon Pea,Rice,3004,normal
+123,20,103,6.3,38,144,Pigeon Pea,Rice,2851,normal
+184,34,285,5.3,37,222,Sorghum,Maize,3001,normal
+202,36,294,6.7,29,194,Sugarcane,Rice,3527,normal
+160,34,201,7.2,30,281,Groundnut,Pulses,3202,normal
+355,26,134,6.1,22,102,Lentil,Pulses,3285,normal
+298,32,288,5.5,28,265,Sorghum,Rice,3484,normal
+268,9,104,5.6,29,116,Chickpea,Wheat,2621,normal
+212,20,189,8.3,20,225,Soybean,Pulses,2979,normal
+278,33,189,8.4,23,321,Cotton,Rice,3163,normal
+124,28,268,7,25,107,Millet,Rice,3259,normal
+323,16,211,7,34,199,Groundnut,Maize,3274,normal
+235,31,333,5.6,36,333,Sorghum,Rice,3535,normal
+322,26,148,7.6,30,189,Rice,Maize,3435,normal
+391,20,344,8.3,27,187,Pigeon Pea,Maize,3362,normal
+162,10,209,6,34,101,Wheat,Wheat,3050,normal
+297,33,103,7.1,26,157,Rice,Wheat,3261,normal
+235,18,202,5.5,38,158,Millet,Wheat,3142,normal
+235,27,247,7,34,188,Groundnut,Rice,3205,normal
+355,14,151,7.8,32,135,Maize,Rice,3221,normal
+170,19,309,6.2,23,202,Groundnut,Rice,3286,normal
+373,21,83,7.1,29,173,Sorghum,Rice,3052,normal
+338,30,260,5.1,30,131,Millet,Wheat,3061,normal
+447,13,137,5,31,168,Chickpea,Rice,2987,normal
+347,28,240,5.2,36,125,Barley,Pulses,2998,normal
+200,15,216,7.5,32,107,Mustard,Maize,3045,normal
+228,20,177,7,35,339,Chickpea,Maize,3044,normal
+258,32,238,8.2,23,273,Wheat,Rice,3369,normal
+134,36,105,6.3,21,221,Lentil,Wheat,3130,normal
+189,25,161,7.1,28,327,Soybean,Pulses,3179,normal
+199,10,88,5.5,31,102,Sugarcane,Pulses,2858,normal
+428,36,206,5.2,22,148,Lentil,Wheat,3063,normal
+121,24,119,7.9,22,129,Millet,Rice,2936,normal
+342,5,202,7.1,30,111,Rice,Rice,3275,normal
+137,33,242,7.6,36,147,Mustard,Rice,3206,normal
+285,40,305,5.8,36,221,Cotton,Rice,3431,normal
+403,24,140,6.5,20,170,Wheat,Rice,3305,normal
+329,11,336,8.3,36,280,Soybean,Pulses,3470,normal
+389,25,238,5.4,24,194,Cotton,Pulses,2921,normal
+349,5,245,5.5,20,284,Rice,Rice,3240,normal
+236,35,153,6.1,33,242,Soybean,Pulses,3280,normal
+401,20,141,8.1,26,249,Mustard,Wheat,3215,normal
+460,7,275,5.9,29,166,Cotton,Wheat,2943,normal
+221,37,114,5.4,35,296,Groundnut,Wheat,3001,normal
+494,21,208,8,37,256,Millet,Maize,3382,normal
+180,5,286,7.1,34,185,Mustard,Maize,3049,normal
+133,39,95,7.6,24,176,Maize,Wheat,3233,normal
+215,13,92,6.5,33,200,Wheat,Wheat,3055,normal
+400,28,177,6.6,20,176,Barley,Wheat,3527,normal
+373,36,106,6.1,28,341,Mustard,Wheat,3380,normal
+409,37,326,7.4,36,285,Sorghum,Maize,3608,normal
+303,36,325,7.9,29,241,Millet,Pulses,3594,normal
+260,32,194,7.1,24,301,Maize,Maize,3110,normal
+169,27,257,8.3,31,311,Barley,Maize,3105,normal
+198,14,308,7.9,24,248,Sugarcane,Pulses,3264,normal
+309,15,307,8.1,27,298,Pigeon Pea,Rice,3299,normal
+293,35,348,6.5,29,292,Pigeon Pea,Wheat,3520,normal
+347,10,92,8.5,21,115,Sorghum,Wheat,3026,normal
+453,31,287,6.1,38,138,Cotton,Wheat,3666,normal
+497,19,240,8.1,26,325,Maize,Pulses,3138,normal
+225,34,319,7.9,34,169,Sugarcane,Maize,3506,normal
+234,24,219,7.6,25,191,Groundnut,Wheat,3057,normal
+448,39,130,7,31,212,Mustard,Pulses,3459,normal
+390,32,289,5.7,36,291,Rice,Wheat,3655,normal
+247,21,305,8.4,34,102,Lentil,Rice,3376,normal
+398,6,235,5.5,28,125,Rice,Pulses,3196,normal
+447,14,96,7.6,27,296,Soybean,Pulses,3067,normal
+267,18,83,7.1,21,118,Pigeon Pea,Maize,3028,normal
+134,27,132,8.4,38,130,Groundnut,Wheat,3282,normal
+294,37,120,5.3,27,160,Wheat,Rice,3130,normal
+184,39,239,5.6,35,233,Sugarcane,Wheat,3307,normal
+377,9,276,7.3,27,138,Barley,Wheat,3042,normal
+248,10,217,5.1,29,313,Soybean,Rice,2861,normal
+224,29,315,8.3,23,154,Soybean,Maize,3370,normal
+285,14,294,7.2,31,211,Wheat,Maize,3343,normal
+191,6,100,6,20,176,Millet,Rice,2790,normal
+141,7,148,8.4,26,162,Sugarcane,Maize,2954,normal
+340,31,337,7.6,20,289,Rice,Maize,3664,normal
+392,20,141,6.4,20,120,Maize,Maize,3324,normal
+300,39,306,8.5,20,332,Lentil,Wheat,3479,normal
+255,7,220,6.4,35,192,Chickpea,Wheat,2888,normal
+243,38,324,5.4,38,146,Chickpea,Wheat,2978,normal
+242,21,83,5.3,20,167,Maize,Rice,2728,normal
+311,11,153,5.7,23,211,Cotton,Pulses,3257,normal
+273,33,194,7.6,32,190,Soybean,Maize,3218,normal
+365,19,248,5.9,34,182,Cotton,Pulses,3231,normal
+454,25,297,5.6,31,120,Wheat,Rice,3425,normal
+484,37,212,5.4,29,187,Soybean,Wheat,3065,normal
+304,31,88,7.7,34,187,Millet,Wheat,3315,normal
+228,18,231,6.4,22,210,Cotton,Maize,3053,normal
+168,16,89,8.2,37,328,Sorghum,Maize,2997,normal
+445,38,275,7.9,20,172,Wheat,Pulses,3413,normal
+463,16,135,6.4,37,178,Mustard,Wheat,3375,normal
+398,40,227,7.1,24,156,Lentil,Maize,3385,normal
+283,18,146,5.6,20,169,Rice,Rice,3382,normal
+307,21,228,7,29,219,Wheat,Wheat,3420,normal
+493,18,304,5.9,25,275,Maize,Rice,3554,normal
+420,39,168,6.9,26,170,Lentil,Pulses,3509,normal
+472,39,256,7.2,37,298,Sorghum,Wheat,3523,normal
+368,7,304,7.5,23,277,Chickpea,Maize,3190,normal
+214,20,144,5.1,31,342,Millet,Pulses,2764,normal
+411,15,253,6.6,20,350,Soybean,Rice,3233,normal
+257,22,320,7.7,25,187,Groundnut,Maize,3144,normal
+243,7,196,8.3,28,201,Maize,Pulses,3011,normal
+457,28,326,6.7,37,339,Groundnut,Wheat,3678,normal
+184,39,254,6.6,26,183,Chickpea,Rice,3383,normal
+306,9,330,7.7,22,128,Sorghum,Rice,3204,normal
+408,30,348,8,30,346,Lentil,Rice,3414,normal
+193,23,157,5.9,30,199,Sorghum,Wheat,3018,normal
+242,30,103,7.1,37,217,Chickpea,Rice,2961,normal
+221,31,231,5.5,20,231,Sorghum,Rice,3204,normal
+382,5,98,5.5,31,269,Maize,Rice,3025,normal
+126,8,348,5.3,33,160,Barley,Maize,2739,normal
+185,31,143,5.8,22,267,Barley,Maize,3384,normal
+323,34,187,6.2,37,122,Groundnut,Pulses,3272,normal
+197,16,335,8,27,206,Rice,Pulses,3323,normal
+205,39,308,6.1,37,140,Pigeon Pea,Rice,3397,normal
+251,7,129,6.4,23,163,Mustard,Wheat,2983,normal
+479,5,215,6.6,35,312,Cotton,Maize,3092,normal
+118,13,196,7.8,27,115,Millet,Wheat,3222,normal
+199,5,142,6.6,25,110,Pigeon Pea,Wheat,3061,normal
+365,26,81,5.6,37,263,Groundnut,Wheat,3355,normal
+175,14,180,6.1,25,105,Sorghum,Pulses,3182,normal
+331,35,259,5.4,25,231,Soybean,Rice,2982,normal
+345,15,277,8.3,21,101,Chickpea,Maize,3190,normal
+483,19,248,7.5,30,111,Sorghum,Maize,3377,normal
+174,11,109,6.8,24,134,Lentil,Rice,2948,normal
+469,33,168,5.1,35,296,Millet,Rice,3162,normal
+263,24,206,7.5,25,111,Maize,Rice,3185,normal
+178,17,203,8,27,338,Chickpea,Rice,3178,normal
+276,6,305,5.5,31,116,Cotton,Wheat,3200,normal
+337,32,125,6.7,22,154,Millet,Maize,3490,normal
+483,7,203,5.2,21,269,Barley,Rice,2807,normal
+393,36,327,8.1,22,160,Soybean,Pulses,3579,normal
+276,12,306,5.5,23,108,Rice,Rice,3262,normal
+337,34,320,8.5,32,108,Wheat,Rice,3599,normal
+244,18,113,6.7,37,190,Sorghum,Maize,3039,normal
+151,40,86,5.3,33,123,Pigeon Pea,Wheat,2679,normal
+498,7,263,8,20,281,Wheat,Rice,3148,normal
+332,11,105,6.3,32,247,Soybean,Wheat,3005,normal
+114,13,215,5.7,34,341,Wheat,Maize,3152,normal
+100,17,326,7.7,35,212,Barley,Rice,3149,normal
+220,5,289,6.1,27,126,Chickpea,Rice,2931,normal
+100,13,320,7.8,26,304,Mustard,Wheat,3271,normal
+320,22,290,6.8,22,342,Mustard,Rice,3491,normal
+410,28,310,7.6,35,154,Chickpea,Maize,3630,normal
+157,11,235,6.7,31,262,Chickpea,Wheat,3101,normal
+154,30,104,6.6,25,290,Chickpea,Pulses,2971,normal
+426,25,325,5.3,35,200,Pigeon Pea,Rice,3201,normal
+138,36,261,6.5,23,110,Lentil,Pulses,3177,normal
+212,40,206,5.6,22,324,Sugarcane,Pulses,3318,normal
+129,26,146,5.8,29,163,Barley,Maize,3247,normal
+110,19,292,7.5,22,269,Wheat,Maize,3192,normal
+105,28,311,5.8,24,186,Groundnut,Wheat,3390,normal
+367,32,214,7.3,38,177,Sugarcane,Maize,3478,normal
+277,26,202,6.1,33,132,Lentil,Pulses,3245,normal
+489,23,279,5.7,25,304,Cotton,Wheat,3280,normal
+343,33,111,5.3,38,219,Chickpea,Wheat,3031,normal
+489,33,166,7.4,30,325,Groundnut,Pulses,3482,normal
+104,20,230,5.1,22,223,Chickpea,Wheat,2640,normal
+453,7,177,7,31,160,Cotton,Maize,3048,normal
+230,29,248,7.2,37,344,Chickpea,Pulses,3227,normal
+331,10,117,5.3,35,117,Groundnut,Wheat,2815,normal
+116,33,338,5.1,26,205,Mustard,Maize,2935,normal
+226,31,349,5.7,20,203,Barley,Wheat,3296,normal
+257,25,201,6.9,29,325,Rice,Rice,3114,normal
+138,18,313,6.4,20,267,Wheat,Wheat,3294,normal
+352,7,149,7.8,26,221,Groundnut,Pulses,3074,normal
+158,36,246,5.7,22,172,Wheat,Pulses,3297,normal
+493,33,304,5.4,27,338,Lentil,Pulses,3209,normal
+316,13,272,8,31,191,Rice,Wheat,3341,normal
+134,32,103,7.6,25,288,Groundnut,Pulses,3158,normal
+151,17,240,5,38,228,Sorghum,Rice,2696,normal
+233,16,123,8.3,25,255,Cotton,Pulses,3054,normal
+267,12,130,7.4,23,278,Lentil,Pulses,3068,normal
+252,11,311,8.3,25,292,Barley,Pulses,3381,normal
+488,31,116,5.2,23,115,Pigeon Pea,Maize,3124,normal
+436,27,129,5.8,25,210,Cotton,Rice,3289,normal
+358,12,294,8.5,31,259,Cotton,Wheat,3395,normal
+403,15,208,7.6,29,147,Mustard,Pulses,3273,normal
+475,20,133,5.8,29,331,Mustard,Wheat,3200,normal
+256,26,277,7.9,28,172,Sugarcane,Pulses,3278,normal
+267,32,178,7.7,25,220,Maize,Maize,3310,normal
+174,31,296,7.4,23,158,Rice,Wheat,3283,normal
+193,15,334,7.3,31,102,Sugarcane,Pulses,3294,normal
+127,40,149,7,34,281,Cotton,Maize,3156,normal
+470,8,113,6.7,25,259,Lentil,Pulses,2950,normal
+148,36,241,7,31,211,Pigeon Pea,Maize,3272,normal
+102,5,197,5.6,36,318,Chickpea,Pulses,3053,normal
+387,7,337,7.5,24,288,Millet,Wheat,3336,normal
+402,37,90,6.2,34,121,Mustard,Wheat,3192,normal
+230,25,281,6.3,34,212,Groundnut,Rice,3224,normal
+232,20,142,5.6,32,287,Cotton,Pulses,3125,normal
+319,28,265,7.3,25,100,Sugarcane,Maize,3413,normal
+296,39,190,6.3,23,340,Sorghum,Pulses,3334,normal
+170,22,113,6.3,33,201,Pigeon Pea,Maize,3022,normal
+246,21,94,5.9,32,212,Mustard,Maize,2778,normal
+175,17,229,8.3,24,196,Barley,Rice,3038,normal
+480,31,189,7.1,22,146,Millet,Rice,3511,normal
+485,19,127,6.3,26,309,Mustard,Maize,3271,normal
+336,13,268,6.3,33,339,Barley,Wheat,3385,normal
+415,20,162,6.7,25,235,Groundnut,Rice,3112,normal
+290,32,326,6.2,30,139,Sugarcane,Maize,3556,normal
+372,16,318,7.1,30,191,Chickpea,Maize,3305,normal
+427,10,268,5.1,27,264,Rice,Pulses,3043,normal
+147,30,218,8.1,21,333,Millet,Pulses,3094,normal
+494,36,148,5.4,37,216,Sorghum,Pulses,3155,normal
+192,12,150,7.6,27,120,Cotton,Pulses,3036,normal
+261,8,266,7.1,22,141,Pigeon Pea,Rice,2924,normal
+385,12,294,5.5,20,275,Groundnut,Wheat,3259,normal
+429,34,181,6.2,21,319,Mustard,Rice,3491,normal
+350,36,212,6.3,21,190,Barley,Rice,3301,normal
+345,30,248,7.4,26,303,Sugarcane,Rice,3319,normal
+387,13,103,7.6,30,128,Chickpea,Maize,3012,normal
+352,17,187,6.4,32,145,Soybean,Pulses,3143,normal
+339,24,325,6.5,29,191,Millet,Wheat,3457,normal
+457,17,135,6.9,24,153,Rice,Wheat,3378,normal
+241,40,159,7.4,37,306,Lentil,Pulses,3123,normal
+480,26,107,7.5,29,285,Groundnut,Maize,3306,normal
+369,14,240,5.3,31,149,Chickpea,Pulses,2893,normal
+281,6,252,7.8,38,303,Mustard,Wheat,3142,normal
+420,28,271,7.4,26,123,Wheat,Pulses,3293,normal
+432,38,100,5.4,20,139,Maize,Rice,3116,normal
+174,26,200,7.5,28,329,Cotton,Pulses,3130,normal
+390,40,165,5.8,23,311,Barley,Pulses,3346,normal
+370,8,287,6.9,29,327,Millet,Wheat,3246,normal
+315,21,314,5.5,34,241,Barley,Pulses,3258,normal
+454,35,336,6.1,33,296,Soybean,Rice,3598,normal
+352,12,259,6.4,24,243,Barley,Rice,3301,normal
+479,36,298,6,34,105,Millet,Wheat,3654,normal
+483,9,177,6.7,28,132,Groundnut,Rice,3116,normal
+253,6,300,6.9,28,134,Maize,Maize,3240,normal
+383,14,225,6.9,23,219,Wheat,Pulses,3308,normal
+334,28,119,7.6,33,330,Barley,Maize,3432,normal
+180,27,269,6.7,37,188,Chickpea,Rice,3122,normal
+248,39,345,7.3,24,175,Soybean,Pulses,3529,normal
+108,30,185,6.7,37,126,Chickpea,Wheat,3295,normal
+181,12,310,6.1,29,318,Sugarcane,Maize,3386,normal
+361,12,344,5,28,229,Groundnut,Maize,3020,normal
+306,24,335,5.2,36,311,Mustard,Rice,3019,normal
+405,18,232,6.6,26,190,Lentil,Wheat,3387,normal
+215,22,193,8.2,30,203,Lentil,Rice,3096,normal
+162,22,120,7,28,207,Sorghum,Rice,3003,normal
+143,18,288,8.3,25,309,Millet,Rice,3193,normal
+408,37,286,6.9,38,277,Pigeon Pea,Pulses,3646,normal
+365,9,211,7.4,32,290,Lentil,Pulses,3083,normal
+123,16,305,7.5,24,165,Mustard,Pulses,3148,normal
+267,39,108,7.3,28,142,Chickpea,Pulses,3107,normal
+497,26,108,5.5,32,229,Barley,Pulses,3172,normal
+360,26,139,7.9,36,208,Sorghum,Rice,3308,normal
+218,32,264,8,25,188,Sugarcane,Maize,3333,normal
+138,16,173,7,28,313,Groundnut,Wheat,3198,normal
+271,16,186,6.9,25,338,Barley,Wheat,3069,normal
+437,8,299,8,33,184,Barley,Maize,3324,normal
+424,37,270,8.1,35,157,Rice,Maize,3456,normal
+200,11,177,7,37,163,Millet,Maize,3068,normal
+324,33,262,5.9,25,235,Lentil,Wheat,3446,normal
+153,16,149,8.5,23,141,Chickpea,Wheat,3025,normal
+164,35,248,8.1,37,161,Millet,Pulses,3280,normal
+144,13,195,5,25,247,Maize,Maize,2979,normal
+484,22,194,6.7,29,129,Pigeon Pea,Pulses,3348,normal
+397,39,263,8.2,24,156,Sugarcane,Wheat,3331,normal
+468,25,335,7.8,28,122,Sorghum,Pulses,3282,normal
+236,36,220,6,38,248,Lentil,Pulses,3143,normal
+148,12,83,7.5,21,208,Soybean,Wheat,2897,normal
+325,13,93,7.4,20,331,Mustard,Wheat,2936,normal
+473,27,185,8.4,36,178,Millet,Wheat,3497,normal
+232,9,179,6.3,34,307,Lentil,Wheat,3027,normal
+447,21,236,8,24,210,Chickpea,Maize,3242,normal
+157,31,152,8.4,31,228,Cotton,Maize,3314,normal
+391,7,340,7.3,30,294,Lentil,Maize,3226,normal
+282,36,94,6.6,34,234,Groundnut,Wheat,3339,normal
+319,13,338,5.4,32,224,Maize,Wheat,3293,normal
+111,38,131,6.1,30,124,Rice,Rice,3431,normal
+220,38,189,6.3,23,268,Groundnut,Pulses,3390,normal
+260,9,188,7.7,34,193,Wheat,Maize,2970,normal
+209,20,213,5.2,33,104,Rice,Maize,2897,normal
+112,35,130,7.5,36,272,Groundnut,Wheat,3367,normal
+476,24,339,7.1,28,100,Sorghum,Wheat,3328,normal
+486,8,251,6.4,26,238,Rice,Wheat,3300,normal
+256,39,138,5.2,25,253,Millet,Pulses,2905,normal
+263,13,198,5.3,25,334,Groundnut,Maize,2793,normal
+112,15,163,6.9,33,226,Maize,Pulses,3283,normal
+350,21,80,6.4,20,340,Mustard,Pulses,3127,normal
+274,10,89,6.2,20,134,Soybean,Pulses,2786,normal
+324,19,91,7.5,20,131,Barley,Maize,3024,normal
+431,34,161,6.2,36,321,Pigeon Pea,Pulses,3484,normal
+453,33,204,8.4,26,227,Pigeon Pea,Rice,3505,normal
+171,21,340,8.3,20,281,Cotton,Pulses,3381,normal
+315,6,244,5.1,37,112,Barley,Wheat,2749,normal
+130,16,152,6.8,31,256,Maize,Pulses,3145,normal
+341,33,87,7.9,20,299,Rice,Wheat,3436,normal
+468,10,229,5.4,33,229,Cotton,Maize,3044,normal
+156,16,224,7.3,21,334,Mustard,Pulses,3208,normal
+215,5,161,5.4,32,196,Soybean,Maize,2547,normal
+163,21,179,7.2,35,216,Mustard,Wheat,2950,normal
+348,11,122,7.6,20,139,Maize,Rice,3343,normal
+486,39,81,6.5,35,313,Maize,Wheat,3205,normal
+411,17,228,5.2,23,242,Barley,Maize,3052,normal
+351,18,176,8.3,20,288,Mustard,Pulses,3390,normal
+488,15,194,7.1,35,109,Wheat,Maize,3314,normal
+342,21,314,6.7,24,263,Soybean,Rice,3256,normal
+469,34,96,6.2,20,168,Cotton,Wheat,3243,normal
+297,14,117,6.7,28,155,Sugarcane,Rice,3356,normal
+378,5,259,5.5,23,253,Barley,Maize,3198,normal
+324,40,87,5.1,29,320,Sorghum,Rice,2796,normal
+409,20,104,5.6,24,289,Wheat,Maize,3296,normal
+437,24,221,5.4,26,282,Sorghum,Pulses,2771,normal
+115,34,308,8.2,29,129,Lentil,Pulses,3335,normal
+181,20,118,7.5,35,230,Cotton,Rice,3178,normal
+327,5,216,5.4,31,120,Barley,Rice,2778,normal
+436,11,314,5.1,32,250,Groundnut,Rice,2972,normal
+384,9,266,5.2,23,297,Rice,Pulses,2878,normal
+177,36,232,6.3,26,305,Chickpea,Pulses,3116,normal
+221,33,321,5.7,28,280,Mustard,Wheat,3335,normal
+468,5,88,6.4,37,332,Sorghum,Maize,2871,normal
+424,37,136,6.7,29,185,Cotton,Pulses,3393,normal
+192,19,118,7.4,27,262,Sugarcane,Rice,3084,normal
+126,8,334,7.7,20,298,Pigeon Pea,Rice,3103,normal
+265,21,135,6.3,35,174,Cotton,Maize,3084,normal
+329,11,169,6.3,28,205,Maize,Wheat,3296,normal
+200,30,91,6.7,20,331,Mustard,Wheat,3200,normal
+350,40,178,8.2,31,177,Barley,Pulses,3415,normal
+126,14,314,5.2,26,181,Mustard,Rice,2898,normal
+172,30,134,8.2,25,132,Barley,Wheat,3345,normal
+122,22,202,5.8,32,259,Pigeon Pea,Pulses,2988,normal
+160,9,280,7.7,29,138,Rice,Maize,2967,normal
+415,18,322,6.7,33,106,Maize,Maize,3420,normal
+461,18,335,6.4,31,161,Wheat,Wheat,3338,normal
+148,38,342,5.5,37,207,Maize,Rice,3414,normal
+188,12,197,7.3,28,256,Rice,Maize,3148,normal
+126,16,80,5.3,30,229,Rice,Wheat,2796,normal
+368,9,276,5.2,32,200,Pigeon Pea,Rice,2732,normal
+107,40,228,5.7,27,213,Rice,Pulses,3342,normal
+344,19,218,8.3,32,250,Wheat,Wheat,3328,normal
+342,6,131,8,32,163,Maize,Pulses,3117,normal
+131,12,87,7.3,23,347,Wheat,Pulses,2909,normal
+159,20,139,7.7,33,149,Sugarcane,Rice,3187,normal
+192,5,261,7,35,230,Maize,Maize,3081,normal
+348,8,224,5.3,35,169,Soybean,Pulses,2646,normal
+358,24,111,7,34,146,Maize,Rice,3261,normal
+433,33,182,7.5,25,156,Sorghum,Rice,3311,normal
+422,20,97,7,38,349,Soybean,Rice,3055,normal
+269,25,207,6,32,169,Pigeon Pea,Maize,3032,normal
+482,12,248,8.5,33,306,Millet,Maize,3091,normal
+224,24,146,6.2,22,191,Chickpea,Pulses,3180,normal
+232,25,330,5.2,23,117,Rice,Wheat,3110,normal
+343,17,189,7.3,27,176,Lentil,Rice,3144,normal
+304,16,289,5.2,37,287,Pigeon Pea,Wheat,3142,normal
+202,20,324,7.2,35,143,Lentil,Pulses,3240,normal
+201,8,164,6,28,201,Chickpea,Maize,2957,normal
+249,8,230,5.8,21,167,Wheat,Maize,3106,normal
+349,15,177,5.7,32,289,Wheat,Pulses,3441,normal
+375,10,231,7.3,27,110,Mustard,Wheat,3182,normal
+469,23,203,7.6,38,203,Sugarcane,Pulses,3136,normal
+224,13,273,8,38,191,Groundnut,Rice,3137,normal
+340,23,177,7.9,22,285,Sugarcane,Pulses,3371,normal
+430,24,246,6,20,152,Chickpea,Pulses,3295,normal
+464,36,223,6,23,176,Soybean,Wheat,3478,normal
+130,21,306,6.5,33,222,Lentil,Rice,3382,normal
+261,11,169,6.8,37,150,Cotton,Maize,3204,normal
+370,8,184,7.6,24,262,Sugarcane,Wheat,3114,normal
+295,10,341,7.1,22,334,Lentil,Rice,3352,normal
+279,13,208,6.8,33,125,Rice,Maize,3263,normal
+478,20,138,8,35,162,Millet,Rice,3356,normal
+254,25,301,7,28,285,Pigeon Pea,Pulses,3155,normal
+147,9,302,8.1,32,217,Cotton,Rice,3189,normal
+376,24,137,7.9,26,200,Mustard,Wheat,3380,normal
+204,10,290,6.5,32,267,Lentil,Wheat,3342,normal
+320,33,183,5.1,25,270,Rice,Pulses,3280,normal
+382,31,244,6.7,32,295,Chickpea,Maize,3388,normal
+243,20,133,5.2,29,199,Wheat,Wheat,2769,normal
+395,25,335,6.5,25,261,Sugarcane,Wheat,3522,normal
+419,20,170,7.6,34,194,Maize,Maize,3384,normal
+203,16,221,6.7,36,103,Sugarcane,Maize,3016,normal
+165,21,308,6.2,31,168,Mustard,Pulses,3151,normal
+421,15,197,5.4,27,255,Millet,Pulses,2981,normal
+335,19,167,5.2,20,101,Chickpea,Maize,2782,normal
+164,37,181,8.5,34,115,Sugarcane,Wheat,3203,normal
+154,18,94,8.4,22,225,Sugarcane,Maize,2829,normal
+275,34,308,7,34,136,Groundnut,Wheat,3307,normal
+259,33,225,7.8,27,266,Barley,Wheat,3253,normal
+267,33,253,6.1,29,269,Soybean,Maize,3179,normal
+310,19,273,7.1,36,147,Barley,Maize,3326,normal
+363,35,308,5.5,37,226,Sugarcane,Maize,3545,normal
+233,14,269,5.6,26,295,Sugarcane,Pulses,3035,normal
+486,12,165,8,33,214,Cotton,Pulses,3231,normal
+101,29,102,5.7,25,223,Rice,Rice,3211,normal
+443,20,201,7,20,280,Maize,Pulses,3435,normal
+251,23,324,5.8,20,104,Maize,Pulses,3314,normal
+266,20,80,6.3,24,113,Chickpea,Maize,3011,normal
+380,9,125,5.9,33,249,Barley,Maize,3080,normal
+337,23,242,7.9,33,105,Wheat,Rice,3206,normal
+164,16,205,5.4,23,264,Sugarcane,Rice,2647,normal
+365,22,283,7,20,131,Cotton,Wheat,3423,normal
+313,5,117,7.1,26,261,Pigeon Pea,Rice,3031,normal
+378,30,337,6.1,23,205,Pigeon Pea,Wheat,3569,normal
+432,7,259,5.6,32,132,Mustard,Wheat,3157,normal
+283,30,289,6.7,38,311,Chickpea,Rice,3641,normal
+342,34,318,5.7,32,283,Pigeon Pea,Rice,3463,normal
+244,33,146,7.5,28,299,Chickpea,Pulses,3130,normal
+272,12,218,6.5,24,289,Groundnut,Rice,3140,normal
+482,31,339,6.5,23,103,Mustard,Maize,3692,normal
+461,19,292,8.1,38,113,Sorghum,Wheat,3345,normal
+172,35,255,6.2,33,223,Cotton,Rice,3216,normal
+408,7,150,6.4,28,134,Mustard,Maize,3058,normal
+181,23,105,6,25,226,Millet,Wheat,2880,normal
+225,14,116,5.2,34,166,Sorghum,Rice,2716,normal
+111,19,189,6.9,22,307,Soybean,Maize,3045,normal
+495,23,130,6.7,20,206,Wheat,Maize,3259,normal
+115,38,280,5.3,24,268,Rice,Maize,3001,normal
+173,39,319,7.9,22,297,Maize,Rice,3553,normal
+337,26,120,5.8,28,330,Soybean,Maize,3449,normal
+387,15,270,6.1,30,341,Groundnut,Rice,3165,normal
+403,35,178,7.6,28,214,Maize,Wheat,3495,normal
+348,15,201,5.2,26,282,Millet,Maize,2906,normal
+344,34,290,6.4,26,214,Mustard,Pulses,3501,normal
+476,32,269,5.1,32,210,Millet,Maize,2979,normal
+474,12,206,5.5,20,241,Rice,Wheat,3434,normal
+307,21,314,6.2,30,274,Lentil,Pulses,3535,normal
+452,32,119,7.8,29,244,Pigeon Pea,Maize,3420,normal
+396,17,130,6.3,26,231,Lentil,Wheat,3110,normal
+266,8,188,8.1,28,191,Groundnut,Maize,2918,normal
+432,20,175,7.9,38,272,Lentil,Maize,3290,normal
+241,38,86,7.2,32,197,Wheat,Rice,3290,normal
+421,26,189,7.9,24,224,Barley,Wheat,3293,normal
+359,24,239,5.1,21,280,Cotton,Rice,2797,normal
+176,35,245,6.6,22,342,Wheat,Pulses,3222,normal
+275,6,229,8,20,278,Millet,Pulses,2873,normal
+250,19,274,7,26,148,Cotton,Wheat,3065,normal
+468,35,170,6,20,156,Cotton,Pulses,3512,normal
+447,40,134,7.5,29,248,Millet,Pulses,3317,normal
+399,28,133,5.5,27,154,Pigeon Pea,Rice,3397,normal
+334,40,167,7.8,36,166,Barley,Rice,3357,normal
+180,31,208,6.4,33,180,Mustard,Maize,3274,normal
+195,39,320,8.2,23,236,Wheat,Maize,3292,normal
+478,19,193,6.3,35,211,Millet,Maize,3367,normal
+243,9,233,7,34,138,Cotton,Rice,2927,normal
+194,29,140,7.5,38,326,Lentil,Maize,3377,normal
+137,36,206,5.5,25,102,Rice,Pulses,3445,normal
+385,7,245,5.2,35,150,Soybean,Maize,2833,normal
+197,25,222,8.2,29,121,Pigeon Pea,Pulses,3179,normal
+299,21,232,8.4,27,191,Groundnut,Wheat,3370,normal
+189,23,151,5.8,25,216,Sugarcane,Maize,3224,normal
+323,13,157,6.8,26,231,Sugarcane,Wheat,3334,normal
+218,26,81,8.4,35,116,Maize,Maize,2984,normal
+217,38,164,7.6,29,293,Sorghum,Maize,3151,normal
+129,17,325,8.2,35,337,Millet,Maize,3300,normal
+403,17,297,6.2,37,263,Mustard,Pulses,3258,normal
+115,37,120,5.2,26,123,Soybean,Pulses,2958,normal
+383,11,108,6.3,33,149,Wheat,Pulses,3223,normal
+436,11,218,7,28,200,Pigeon Pea,Wheat,3191,normal
+166,26,290,6.4,24,128,Soybean,Rice,3471,normal
+345,16,346,6.8,31,280,Cotton,Wheat,3370,normal
+331,37,269,6.5,36,189,Millet,Rice,3422,normal
+305,10,83,7.3,21,208,Sorghum,Maize,3091,normal
+405,30,272,7.5,22,107,Rice,Pulses,3583,normal
+302,36,108,7.6,32,102,Maize,Pulses,3093,normal
+314,17,312,5.7,38,267,Sugarcane,Wheat,3309,normal
+170,40,350,5.4,38,291,Sorghum,Rice,3164,normal
+447,22,306,7,27,163,Rice,Pulses,3467,normal
+380,9,150,8.3,20,277,Lentil,Rice,3125,normal
+146,20,234,5.5,34,145,Soybean,Rice,3171,normal
+267,32,286,7.2,27,146,Cotton,Maize,3297,normal
+497,26,84,6.8,21,162,Chickpea,Maize,3359,normal
+134,9,309,5.2,24,129,Wheat,Wheat,2984,normal
+114,36,174,7.4,21,175,Barley,Rice,3148,normal
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+20,30,10,9.9,39,55,Wheat,Pigeon Pea,530,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+20,30,10,9.9,39,55,Wheat,Pigeon Pea,530,crop failure
+20,30,10,9.9,39,55,Wheat,Pigeon Pea,530,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+15,12,20,3,46,35,Maize,Rice,510,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+380,45,300,10.3,35,60,Cotton,Sorghum,500,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+380,45,300,10.3,35,60,Cotton,Sorghum,500,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+380,45,300,10.3,35,60,Cotton,Sorghum,500,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+15,12,20,3,46,35,Maize,Rice,510,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+380,45,300,10.3,35,60,Cotton,Sorghum,500,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+15,12,20,3,46,35,Maize,Rice,510,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+9,5,7,2.9,30,45,Soybean,Sorghum,490,crop failure
+380,45,300,10.3,35,60,Cotton,Sorghum,500,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+9,5,7,2.9,30,45,Soybean,Sorghum,490,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+9,5,7,2.9,30,45,Soybean,Sorghum,490,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+20,30,10,9.9,39,55,Wheat,Pigeon Pea,530,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+15,12,20,3,46,35,Maize,Rice,510,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+15,12,20,3,46,35,Maize,Rice,510,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+9,5,7,2.9,30,45,Soybean,Sorghum,490,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+9,5,7,2.9,30,45,Soybean,Sorghum,490,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+20,30,10,9.9,39,55,Wheat,Pigeon Pea,530,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+9,5,7,2.9,30,45,Soybean,Sorghum,490,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+15,12,20,3,46,35,Maize,Rice,510,crop failure
+9,5,7,2.9,30,45,Soybean,Sorghum,490,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+20,30,10,9.9,39,55,Wheat,Pigeon Pea,530,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+9,5,7,2.9,30,45,Soybean,Sorghum,490,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+15,12,20,3,46,35,Maize,Rice,510,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+20,30,10,9.9,39,55,Wheat,Pigeon Pea,530,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+20,30,10,9.9,39,55,Wheat,Pigeon Pea,530,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+380,45,300,10.3,35,60,Cotton,Sorghum,500,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+20,30,10,9.9,39,55,Wheat,Pigeon Pea,530,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+380,45,300,10.3,35,60,Cotton,Sorghum,500,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+15,12,20,3,46,35,Maize,Rice,510,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+310,30,270,9.7,25,12,Soybean,Wheat,470,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+20,30,10,9.9,39,55,Wheat,Pigeon Pea,530,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+420,45,290,4.2,43,10,Pigeon Pea,Rice,460,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+380,45,300,10.3,35,60,Cotton,Sorghum,500,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+380,45,300,10.3,35,60,Cotton,Sorghum,500,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+5,4,3,2.8,29,25,Mustard,Rice,460,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+300,32,300,10.1,26,500,Lentil,Mustard,510,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+9,5,7,2.9,30,45,Soybean,Sorghum,490,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+390,38,220,9.5,30,15,Chickpea,Pigeon Pea,440,crop failure
+6,3,7,5.1,48,90,Chickpea,Cotton,440,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+280,20,320,3.8,30,80,Mustard,Chickpea,480,crop failure
+4,3,8,9.1,40,50,Rice,Wheat,400,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+5,1,2,3.7,27,60,Cotton,Rice,370,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+350,40,250,9.8,42,50,Wheat,Rice,490,crop failure
+300,28,250,3.5,37,70,Barley,Millet,460,crop failure
+8,10,6,4.5,33,70,Sorghum,Rice,480,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+13,11,14,10.5,31,10,Rice,Mustard,470,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+400,25,300,9.6,39,25,Cotton,Lentil,470,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+12,14,9,9.3,42,60,Lentil,Millet,510,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+7,2,6,8.9,41,40,Millet,Barley,420,crop failure
+3,1,4,3.9,44,15,Groundnut,Pigeon Pea,390,crop failure
+250,50,280,9.9,29,20,Maize,Cotton,430,crop failure
+370,42,310,3,36,35,Sorghum,Groundnut,455,crop failure
+400,35,270,4.1,29,400,Rice,Maize,480,crop failure
+6,2,6,10.1,29,75,Sugarcane,Wheat,495,crop failure
+350,25,300,10,28,40,Groundnut,Lentil,450,crop failure
+10,5,5,10.2,38,30,Barley,Chickpea,470,crop failure
+390,40,400,10.5,31,45,Millet,Sorghum,490,crop failure
+0,0,0,3.2,45,20,Cotton,Maize,350,crop failure
+500,40,180,4,33,30,Sugarcane,Chickpea,470,crop failure
+8,497,2,8.88,39.41,45.28,Rice,Maize,483,crop failure
+4,434,10,8.88,39.41,45.28,Maize,Wheat,107,crop failure
+2,445,25,8.88,39.41,45.28,Sorghum,Pulses,582,crop failure
+16,424,0,8.88,39.41,45.28,Mustard,Pigeon Pea,464,crop failure
+4,427,29,8.88,39.41,45.28,Barley,Barley,173,crop failure
+2,428,19,8.88,39.41,45.28,Chickpea,Cotton,372,crop failure
+18,402,12,8.88,39.41,45.28,Rice,Cotton,334,crop failure
+17,495,4,8.88,39.41,45.28,Maize,Groundnut,293,crop failure
+6,465,5,8.88,39.41,45.28,Wheat,Groundnut,188,crop failure
+6,476,9,8.88,39.41,45.28,Millet,Wheat,434,crop failure
+7,485,30,8.88,39.41,45.28,Groundnut,Cotton,158,crop failure
+8,428,1,8.88,39.41,45.28,Sorghum,Maize,289,crop failure
+4,418,9,8.88,39.41,45.28,Mustard,Chickpea,599,crop failure
+9,467,0,8.88,39.41,45.28,Mustard,Chickpea,140,crop failure
+17,445,19,8.88,39.41,45.28,Pigeon Pea,Pulses,118,crop failure
+19,484,15,8.88,39.41,45.28,Sorghum,Cotton,221,crop failure
+13,475,16,8.88,39.41,45.28,Sugarcane,Pulses,324,crop failure
+2,446,23,8.88,39.41,45.28,Wheat,Barley,534,crop failure
+9,469,12,8.88,39.41,45.28,Mustard,Groundnut,570,crop failure
+14,448,13,8.88,39.41,45.28,Sorghum,Wheat,175,crop failure
+0,486,1,8.88,39.41,45.28,Groundnut,Groundnut,415,crop failure
+14,428,12,8.88,39.41,45.28,Soybean,Maize,107,crop failure
+4,411,18,8.88,39.41,45.28,Sugarcane,Barley,345,crop failure
+5,435,11,8.88,39.41,45.28,Chickpea,Maize,159,crop failure
+13,438,0,8.88,39.41,45.28,Cotton,Pigeon Pea,514,crop failure
+10,494,21,8.88,39.41,45.28,Chickpea,Pigeon Pea,422,crop failure
+19,459,26,8.88,39.41,45.28,Rice,Lentil,262,crop failure
+14,489,24,8.88,39.41,45.28,Sugarcane,Wheat,289,crop failure
+17,472,22,8.88,39.41,45.28,Rice,Mustard,298,crop failure
+4,403,25,8.88,39.41,45.28,Sugarcane,Pulses,115,crop failure
+9,406,0,8.88,39.41,45.28,Rice,Mustard,221,crop failure
+17,479,19,8.88,39.41,45.28,Pigeon Pea,Wheat,368,crop failure
+16,486,10,8.88,39.41,45.28,Mustard,Groundnut,574,crop failure
+15,488,3,8.88,39.41,45.28,Rice,Chickpea,365,crop failure
+3,454,7,8.88,39.41,45.28,Rice,Cotton,551,crop failure
+6,427,11,8.88,39.41,45.28,Wheat,Pulses,262,crop failure
+9,428,3,8.88,39.41,45.28,Mustard,Millet,459,crop failure
+16,426,1,8.88,39.41,45.28,Chickpea,Pulses,145,crop failure
+10,443,10,8.88,39.41,45.28,Sorghum,Wheat,416,crop failure
+7,414,19,8.88,39.41,45.28,Lentil,Sorghum,141,crop failure
+5,440,27,8.88,39.41,45.28,Sorghum,Mustard,445,crop failure
+2,412,22,8.88,39.41,45.28,Sorghum,Barley,182,crop failure
+1,454,27,8.88,39.41,45.28,Millet,Millet,171,crop failure
+16,457,18,8.88,39.41,45.28,Groundnut,Pulses,391,crop failure
+11,408,15,8.88,39.41,45.28,Wheat,Pulses,162,crop failure
+4,425,1,8.88,39.41,45.28,Wheat,Chickpea,420,crop failure
+7,442,3,8.88,39.41,45.28,Maize,Chickpea,273,crop failure
+16,495,30,8.88,39.41,45.28,Sorghum,Barley,143,crop failure
+18,400,3,8.88,39.41,45.28,Wheat,Wheat,598,crop failure
+7,423,14,8.88,39.41,45.28,Rice,Millet,146,crop failure
+17,436,3,8.88,39.41,45.28,Barley,Groundnut,376,crop failure
+5,404,10,8.88,39.41,45.28,Pigeon Pea,Sorghum,223,crop failure
+4,405,26,8.88,39.41,45.28,Mustard,Mustard,214,crop failure
+19,407,6,8.88,39.41,45.28,Groundnut,Millet,326,crop failure
+14,451,0,8.88,39.41,45.28,Rice,Millet,468,crop failure
+8,454,5,8.88,39.41,45.28,Millet,Mustard,219,crop failure
+7,447,15,8.88,39.41,45.28,Millet,Pigeon Pea,559,crop failure
+12,477,30,8.88,39.41,45.28,Chickpea,Pigeon Pea,449,crop failure
+13,417,4,8.88,39.41,45.28,Chickpea,Sorghum,366,crop failure
+7,400,29,8.88,39.41,45.28,Chickpea,Rice,425,crop failure
+11,498,28,8.88,39.41,45.28,Millet,Chickpea,259,crop failure
+17,488,22,8.88,39.41,45.28,Rice,Wheat,161,crop failure
+10,402,22,8.88,39.41,45.28,Wheat,Maize,198,crop failure
+1,435,24,8.88,39.41,45.28,Mustard,Wheat,328,crop failure
+11,436,29,8.88,39.41,45.28,Maize,Lentil,190,crop failure
+6,400,17,8.88,39.41,45.28,Rice,Cotton,144,crop failure
+7,421,5,8.88,39.41,45.28,Sorghum,Rice,437,crop failure
+3,433,18,8.88,39.41,45.28,Mustard,Barley,477,crop failure
+3,500,2,8.88,39.41,45.28,Mustard,Maize,144,crop failure
+19,417,24,8.88,39.41,45.28,Rice,Rice,258,crop failure
+2,496,15,8.88,39.41,45.28,Chickpea,Wheat,133,crop failure
+5,428,9,8.88,39.41,45.28,Cotton,Lentil,556,crop failure
+0,466,15,8.88,39.41,45.28,Soybean,Millet,201,crop failure
+8,464,27,8.88,39.41,45.28,Sorghum,Sorghum,586,crop failure
+14,424,12,8.88,39.41,45.28,Soybean,Lentil,279,crop failure
+7,479,29,8.88,39.41,45.28,Soybean,Groundnut,499,crop failure
+3,490,19,8.88,39.41,45.28,Barley,Cotton,522,crop failure
+7,434,12,8.88,39.41,45.28,Millet,Mustard,218,crop failure
+13,429,26,8.88,39.41,45.28,Pigeon Pea,Chickpea,119,crop failure
+3,469,6,8.88,39.41,45.28,Cotton,Millet,492,crop failure
+15,463,1,8.88,39.41,45.28,Sugarcane,Millet,106,crop failure
+6,487,0,8.88,39.41,45.28,Cotton,Cotton,402,crop failure
+3,492,20,8.88,39.41,45.28,Wheat,Chickpea,287,crop failure
+6,498,0,8.88,39.41,45.28,Cotton,Mustard,260,crop failure
+8,443,17,8.88,39.41,45.28,Maize,Lentil,561,crop failure
+9,430,27,8.88,39.41,45.28,Cotton,Maize,452,crop failure
+0,464,1,8.88,39.41,45.28,Cotton,Cotton,104,crop failure
+13,422,16,8.88,39.41,45.28,Soybean,Groundnut,469,crop failure
+18,459,12,8.88,39.41,45.28,Millet,Maize,195,crop failure
+13,483,20,8.88,39.41,45.28,Sugarcane,Rice,466,crop failure
+15,463,27,8.88,39.41,45.28,Millet,Chickpea,557,crop failure
+10,408,4,8.88,39.41,45.28,Rice,Millet,484,crop failure
+1,414,22,8.88,39.41,45.28,Sorghum,Wheat,231,crop failure
+12,485,22,8.88,39.41,45.28,Rice,Groundnut,385,crop failure
+4,471,1,8.88,39.41,45.28,Cotton,Groundnut,189,crop failure
+3,473,4,8.88,39.41,45.28,Sugarcane,Groundnut,208,crop failure
+17,409,16,8.88,39.41,45.28,Soybean,Sorghum,441,crop failure
+12,482,28,8.88,39.41,45.28,Maize,Lentil,183,crop failure
+2,464,13,8.88,39.41,45.28,Wheat,Wheat,489,crop failure
+6,489,2,8.88,39.41,45.28,Pigeon Pea,Pigeon Pea,133,crop failure
+19,419,16,8.88,39.41,45.28,Cotton,Pigeon Pea,434,crop failure
+8,474,7,8.88,39.41,45.28,Pigeon Pea,Pigeon Pea,382,crop failure
+5,486,17,8.88,39.41,45.28,Sorghum,Pigeon Pea,428,crop failure
+17,469,21,8.88,39.41,45.28,Groundnut,Mustard,471,crop failure
+6,407,20,8.88,39.41,45.28,Wheat,Maize,316,crop failure
+11,409,13,8.88,39.41,45.28,Lentil,Pigeon Pea,128,crop failure
+9,499,29,8.88,39.41,45.28,Maize,Groundnut,422,crop failure
+13,489,11,8.88,39.41,45.28,Cotton,Pigeon Pea,435,crop failure
+0,487,20,8.88,39.41,45.28,Lentil,Sorghum,166,crop failure
+1,446,2,8.88,39.41,45.28,Cotton,Rice,321,crop failure
+11,459,9,8.88,39.41,45.28,Groundnut,Sorghum,417,crop failure
+3,483,15,8.88,39.41,45.28,Pigeon Pea,Lentil,261,crop failure
+12,464,23,8.88,39.41,45.28,Cotton,Rice,481,crop failure
+7,483,24,8.88,39.41,45.28,Millet,Wheat,544,crop failure
+16,449,6,8.88,39.41,45.28,Lentil,Groundnut,467,crop failure
+15,414,14,8.88,39.41,45.28,Groundnut,Wheat,181,crop failure
+9,476,5,8.88,39.41,45.28,Mustard,Sorghum,398,crop failure
+15,417,20,8.88,39.41,45.28,Sugarcane,Pulses,326,crop failure
+13,470,28,8.88,39.41,45.28,Chickpea,Sorghum,291,crop failure
+3,414,24,8.88,39.41,45.28,Pigeon Pea,Rice,592,crop failure
+4,406,19,8.88,39.41,45.28,Maize,Millet,497,crop failure
+5,424,17,8.88,39.41,45.28,Millet,Rice,212,crop failure
+17,446,8,8.88,39.41,45.28,Chickpea,Rice,163,crop failure
+13,406,23,8.88,39.41,45.28,Groundnut,Wheat,301,crop failure
+13,488,13,8.88,39.41,45.28,Millet,Mustard,238,crop failure
+15,437,26,8.88,39.41,45.28,Pigeon Pea,Maize,505,crop failure
+8,427,25,8.88,39.41,45.28,Wheat,Wheat,127,crop failure
+15,417,22,8.88,39.41,45.28,Soybean,Pigeon Pea,209,crop failure
+12,452,17,8.88,39.41,45.28,Sugarcane,Pulses,245,crop failure
+5,401,16,8.88,39.41,45.28,Wheat,Barley,117,crop failure
+18,407,26,8.88,39.41,45.28,Chickpea,Groundnut,433,crop failure
+17,471,11,8.88,39.41,45.28,Groundnut,Maize,289,crop failure
+2,459,13,8.88,39.41,45.28,Millet,Pigeon Pea,250,crop failure
+15,499,17,8.88,39.41,45.28,Cotton,Groundnut,519,crop failure
+11,475,19,8.88,39.41,45.28,Chickpea,Cotton,579,crop failure
+7,434,2,8.88,39.41,45.28,Rice,Groundnut,109,crop failure
+9,407,28,8.88,39.41,45.28,Groundnut,Pulses,103,crop failure
+1,433,24,8.88,39.41,45.28,Lentil,Sorghum,152,crop failure
+14,421,30,8.88,39.41,45.28,Sugarcane,Groundnut,256,crop failure
+19,447,14,8.88,39.41,45.28,Groundnut,Cotton,583,crop failure
+17,439,4,8.88,39.41,45.28,Sugarcane,Rice,361,crop failure
+18,436,17,8.88,39.41,45.28,Barley,Chickpea,396,crop failure
+3,413,7,8.88,39.41,45.28,Barley,Cotton,136,crop failure
+0,440,4,8.88,39.41,45.28,Cotton,Millet,507,crop failure
+4,495,10,8.88,39.41,45.28,Sugarcane,Cotton,561,crop failure
+13,474,1,8.88,39.41,45.28,Chickpea,Groundnut,238,crop failure
+10,456,25,8.88,39.41,45.28,Lentil,Groundnut,186,crop failure
+6,435,16,8.88,39.41,45.28,Millet,Wheat,111,crop failure
+13,488,14,8.88,39.41,45.28,Millet,Chickpea,115,crop failure
+8,468,3,8.88,39.41,45.28,Pigeon Pea,Wheat,194,crop failure
+3,422,17,8.88,39.41,45.28,Groundnut,Cotton,530,crop failure
+9,432,8,8.88,39.41,45.28,Barley,Maize,532,crop failure
+7,441,19,8.88,39.41,45.28,Cotton,Chickpea,576,crop failure
+11,410,4,8.88,39.41,45.28,Pigeon Pea,Rice,146,crop failure
+1,414,11,8.88,39.41,45.28,Millet,Millet,414,crop failure
+6,484,8,8.88,39.41,45.28,Lentil,Sorghum,175,crop failure
+11,485,15,8.88,39.41,45.28,Sorghum,Groundnut,490,crop failure
+6,400,13,8.88,39.41,45.28,Lentil,Pigeon Pea,557,crop failure
+16,423,0,8.88,39.41,45.28,Lentil,Pigeon Pea,214,crop failure
+19,442,9,8.88,39.41,45.28,Groundnut,Groundnut,218,crop failure
+7,413,17,8.88,39.41,45.28,Maize,Wheat,225,crop failure
+2,458,18,8.88,39.41,45.28,Sugarcane,Millet,495,crop failure
+14,488,11,8.88,39.41,45.28,Millet,Mustard,198,crop failure
+10,478,29,8.88,39.41,45.28,Sorghum,Cotton,125,crop failure
+19,441,22,8.88,39.41,45.28,Maize,Maize,541,crop failure
+7,457,22,8.88,39.41,45.28,Pigeon Pea,Wheat,371,crop failure
+8,491,5,8.88,39.41,45.28,Mustard,Pigeon Pea,103,crop failure
+18,458,12,8.88,39.41,45.28,Pigeon Pea,Mustard,561,crop failure
+9,493,6,8.88,39.41,45.28,Pigeon Pea,Pulses,237,crop failure
+5,450,15,8.88,39.41,45.28,Pigeon Pea,Maize,558,crop failure
+12,402,27,8.88,39.41,45.28,Maize,Pigeon Pea,287,crop failure
+12,486,23,8.88,39.41,45.28,Maize,Barley,537,crop failure
+2,408,8,8.88,39.41,45.28,Soybean,Maize,140,crop failure
+15,450,15,8.88,39.41,45.28,Mustard,Rice,591,crop failure
+18,491,2,8.88,39.41,45.28,Sorghum,Pigeon Pea,263,crop failure
+3,421,6,8.88,39.41,45.28,Barley,Wheat,473,crop failure
+18,434,20,8.88,39.41,45.28,Rice,Cotton,292,crop failure
+8,434,25,8.88,39.41,45.28,Groundnut,Cotton,535,crop failure
+2,427,4,8.88,39.41,45.28,Lentil,Chickpea,407,crop failure
+7,470,4,8.88,39.41,45.28,Maize,Pigeon Pea,363,crop failure
+16,448,15,8.88,39.41,45.28,Soybean,Groundnut,506,crop failure
+13,415,11,8.88,39.41,45.28,Sugarcane,Barley,276,crop failure
+10,451,26,8.88,39.41,45.28,Soybean,Chickpea,145,crop failure
+7,455,14,8.88,39.41,45.28,Soybean,Cotton,354,crop failure
+17,452,18,8.88,39.41,45.28,Lentil,Pulses,210,crop failure
+17,436,13,8.88,39.41,45.28,Maize,Wheat,560,crop failure
+10,436,10,8.88,39.41,45.28,Maize,Barley,507,crop failure
+8,456,14,8.88,39.41,45.28,Groundnut,Cotton,440,crop failure
+9,451,17,8.88,39.41,45.28,Pigeon Pea,Cotton,282,crop failure
+14,418,25,8.88,39.41,45.28,Soybean,Maize,580,crop failure
+9,452,23,8.88,39.41,45.28,Mustard,Pigeon Pea,135,crop failure
+16,425,8,8.88,39.41,45.28,Lentil,Mustard,289,crop failure
+8,429,23,8.88,39.41,45.28,Sorghum,Maize,219,crop failure
+18,417,10,8.88,39.41,45.28,Sugarcane,Maize,355,crop failure
+1,417,16,8.88,39.41,45.28,Sugarcane,Pigeon Pea,284,crop failure
+11,474,17,8.88,39.41,45.28,Barley,Cotton,242,crop failure
+11,477,6,8.88,39.41,45.28,Wheat,Sorghum,257,crop failure
+4,483,14,8.88,39.41,45.28,Mustard,Groundnut,423,crop failure
+18,480,0,8.88,39.41,45.28,Mustard,Wheat,227,crop failure
+16,433,1,8.88,39.41,45.28,Sugarcane,Chickpea,150,crop failure

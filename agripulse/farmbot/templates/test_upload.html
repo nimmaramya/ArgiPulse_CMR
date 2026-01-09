@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Disease Prediction Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #ecf0f1;
+            border-left: 4px solid #3498db;
+        }
+        .error {
+            background-color: #f8d7da;
+            border-left-color: #dc3545;
+            color: #721c24;
+        }
+        .success {
+            background-color: #d4edda;
+            border-left-color: #28a745;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 Crop Disease Prediction Test</h1>
+        <p>Upload an image of a crop leaf to test the disease prediction functionality.</p>
+        
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="crop">Crop Type:</label>
+                <input type="text" id="crop" name="crop" placeholder="e.g., potato, tomato, rice" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            
+            <button type="submit">🔬 Analyze Disease</button>
+        </form>
+        
+        <div id="result" class="result" style="display: none;">
+            <h3>Analysis Result:</h3>
+            <div id="resultText"></div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            formData.append('crop', document.getElementById('crop').value);
+            formData.append('image', document.getElementById('image').files[0]);
+            
+            const resultDiv = document.getElementById('result');
+            const resultText = document.getElementById('resultText');
+            
+            // Show loading
+            resultDiv.style.display = 'block';
+            resultDiv.className = 'result';
+            resultText.textContent = 'Analyzing image... Please wait.';
+            
+            try {
+                const response = await fetch('/farmbot/webhook/', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.fulfillmentText) {
+                    resultDiv.className = 'result success';
+                    resultText.textContent = data.fulfillmentText;
+                } else {
+                    throw new Error('No response received');
+                }
+            } catch (error) {
+                resultDiv.className = 'result error';
+                resultText.textContent = 'Error: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>
